@@ -143,7 +143,7 @@
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">No Order</th>
-                                            <th scope="col">TGL Order</th>
+                                            <th scope="col">Tanggal Order</th>
                                             <th scope="col">Nama Pelanggan</th>
                                             <th scope="col">Jenis Paket</th>
                                             <th scope="col">Waktu Kerja</th>
@@ -229,7 +229,7 @@
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">No Order</th>
-                                            <th scope="col">TGL Order</th>
+                                            <th scope="col">Tanggal Order</th>
                                             <th scope="col">Nama Pelanggan</th>
                                             <th scope="col">Jenis Paket</th>
                                             <th scope="col">Waktu Kerja</th>
@@ -315,7 +315,7 @@
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">No Order</th>
-                                            <th scope="col">TGL Order</th>
+                                            <th scope="col">Tanggal Order</th>
                                             <th scope="col">Nama Pelanggan</th>
                                             <th scope="col">Jenis Paket</th>
                                             <th scope="col">Waktu Kerja</th>
