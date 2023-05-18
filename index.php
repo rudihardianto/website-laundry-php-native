@@ -30,7 +30,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item mx-md-2">
-                        <a class="nav-link active" href="#">Riwayat Transaksi</a>
+                        <a class="nav-link active" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item mx-md-2">
+                        <a class="nav-link" href="#">Riwayat Transaksi</a>
                     </li>
                     <li class="nav-item mx-md-2">
                         <a class="nav-link" href="#">Management Karyawan</a>
