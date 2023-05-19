@@ -2,7 +2,6 @@
 require_once '_header.php';
 ?>
 
-
 <!-- START: welcome -->
 <section id="welcome" class="main-welcome my-4">
     <div class="container">
