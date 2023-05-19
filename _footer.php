@@ -1,5 +1,5 @@
 <!-- START: footer -->
-<footer class="border-top p34">
+<footer class="border-top mt-5 py-3">
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col">
@@ -10,7 +10,7 @@
 </footer>
 <!-- END: footer -->
 
-<script src="_assets/bootstrap-5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="<?=url('_assets/bootstrap-5.3.0/js/bootstrap.bundle.min.js');?>"></script>
 </body>
 
 </html>

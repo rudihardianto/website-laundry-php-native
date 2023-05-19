@@ -1,98 +1,39 @@
-<?php require_once '_header.php';?>
+<?php require_once '../_header.php';?>
 
-<!-- START: welcome -->
-<section id="welcome" class="main-welcome my-4">
+<!-- START: title daftar riwayat transaksi -->
+<section id="daftar-riwayat-transaksi" class="daftar-riwayat-transaksi my-4">
     <div class="container">
-        <div class="row d-flex justify-content-between align-items-center">
+        <div class="row align-items-center">
             <div class="col">
-                <div>Selamat datang, <span class="fw-bold">Admin</span></div>
-                <h2>Dashboard</h2>
-            </div>
-            <div class="col text-end">
-                <button type="submit" class="btn btn-primary">+ Tambah Pesanan</button>
+                <h2>Daftar Riwayat Transaksi</h2>
             </div>
         </div>
     </div>
 </section>
-<!-- END: welcome -->
+<!-- END: title daftar riwayat transaksi -->
 
-<!-- START: menu -->
-<section id="menu" class="main-menu my-3">
-    <div class="container">
-        <div class="row">
-            <!-- karyawan -->
-            <div class="col-md-4 my-2 my-md-0">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row d-flex justify-content-center align-items-center">
-                            <div class="col">
-                                <p>Jumlah Karyawan</p>
-                                <h5 class="card-title fw-bold">10</h5>
-                            </div>
-                            <div class="col text-end">
-                                <img src="_assets/img/team.png" alt="" width="70">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- total order -->
-            <div class="col-md-4 my-2 my-md-0">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row d-flex justify-content-center align-items-center">
-                            <div class="col">
-                                <p>Total Order</p>
-                                <h5 class="card-title fw-bold">10</h5>
-                            </div>
-                            <div class="col text-end">
-                                <img src="_assets/img/total_order.png" alt="" width="70">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- jumlah paket -->
-            <div class="col-md-4 my-2 my-md-0">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row d-flex justify-content-center align-items-center">
-                            <div class="col">
-                                <p>Jumlah Paket Tersedia</p>
-                                <h5 class="card-title fw-bold">10</h5>
-                            </div>
-                            <div class="col text-end">
-                                <img src="_assets/img/jumlah_paket.png" alt="" width="70">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- END: menu -->
-
-<!-- START: order cuci komplit -->
-<section id="order-cuci-komplit" class="main-order-cuci-komplit my-3">
+<!-- START: daftar transaksi cuci komplit -->
+<section id="daftar-transaksi-ck" class="daftar-transaksi-ck my-3">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Order Cuci Komplit</h5>
+                        <h5 class="card-title">Daftar Transaksi - Cuci komplit</h5>
                         <hr>
                         <div class="table-responsive text-nowrap">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">No Order</th>
-                                        <th scope="col">Tanggal Order</th>
-                                        <th scope="col">Nama Pelanggan</th>
+                                        <th scope="col">No. Order</th>
+                                        <th scope="col">Nama</th>
                                         <th scope="col">Jenis Paket</th>
-                                        <th scope="col">Waktu Kerja</th>
-                                        <th scope="col">Berat (KG)</th>
+                                        <th scope="col">Jumlah</th>
+                                        <th scope="col">Total</th>
+                                        <th scope="col">Uang Bayar</th>
+                                        <th scope="col">Uang Kembalian</th>
+                                        <th scope="col">Status</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -105,12 +46,15 @@
                                         <td>@mdo</td>
                                         <td>@mdo</td>
                                         <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
                                         <td>
-                                            <a href="">
-                                                <button type="button" class="btn btn-primary btn-sm">Detail</button>
+                                            <a href="<?=url('riwayat_transaksi/riwayat_ck/detail_ck.php');?>">
+                                                <button type="submit" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="">
-                                                <button type="button" class="btn btn-danger btn-sm">Hapus</button>
+                                                <button type="submit" class="btn btn-secondary btn-sm">Cetak
+                                                    Bukti</button>
                                             </a>
                                         </td>
                                     </tr>
@@ -122,12 +66,15 @@
                                         <td>@fat</td>
                                         <td>@fat</td>
                                         <td>@fat</td>
+                                        <td>@fat</td>
+                                        <td>@fat</td>
                                         <td>
-                                            <a href="">
-                                                <button type="button" class="btn btn-primary btn-sm">Detail</button>
+                                            <a href="<?=url('riwayat_transaksi/riwayat_ck/detail_ck.php');?>">
+                                                <button type="submit" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="">
-                                                <button type="button" class="btn btn-danger btn-sm">Hapus</button>
+                                                <button type="submit" class="btn btn-secondary btn-sm">Cetak
+                                                    Bukti</button>
                                             </a>
                                         </td>
                                     </tr>
@@ -139,12 +86,15 @@
                                         <td>@twitter</td>
                                         <td>@twitter</td>
                                         <td>@twitter</td>
+                                        <td>@twitter</td>
+                                        <td>@twitter</td>
                                         <td>
-                                            <a href="">
-                                                <button type="button" class="btn btn-primary btn-sm">Detail</button>
+                                            <a href="<?=url('riwayat_transaksi/riwayat_ck/detail_ck.php');?>">
+                                                <button type="submit" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="">
-                                                <button type="button" class="btn btn-danger btn-sm">Hapus</button>
+                                                <button type="submit" class="btn btn-secondary btn-sm">Cetak
+                                                    Bukti</button>
                                             </a>
                                         </td>
                                     </tr>
@@ -157,28 +107,30 @@
         </div>
     </div>
 </section>
-<!-- END: order cuci komplit -->
+<!-- END: daftar transaksi cuci komplit -->
 
-<!-- START: order cuci komplit -->
-<section id="order-dry-clean" class="main-order-dry-clean my-3">
+<!-- START: daftar transaksi dry clean -->
+<section id="daftar-transaksi-dc" class="daftar-transaksi-dc my-3">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Order Dry Clean (Cuci Kering)</h5>
+                        <h5 class="card-title">Daftar Transaksi - Dry Clean</h5>
                         <hr>
                         <div class="table-responsive text-nowrap">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">No Order</th>
-                                        <th scope="col">Tanggal Order</th>
-                                        <th scope="col">Nama Pelanggan</th>
+                                        <th scope="col">No. Order</th>
+                                        <th scope="col">Nama</th>
                                         <th scope="col">Jenis Paket</th>
-                                        <th scope="col">Waktu Kerja</th>
-                                        <th scope="col">Berat (KG)</th>
+                                        <th scope="col">Jumlah</th>
+                                        <th scope="col">Total</th>
+                                        <th scope="col">Uang Bayar</th>
+                                        <th scope="col">Uang Kembalian</th>
+                                        <th scope="col">Status</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -191,12 +143,15 @@
                                         <td>@mdo</td>
                                         <td>@mdo</td>
                                         <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
                                         <td>
                                             <a href="">
-                                                <button type="button" class="btn btn-primary btn-sm">Detail</button>
+                                                <button type="submit" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="">
-                                                <button type="button" class="btn btn-danger btn-sm">Hapus</button>
+                                                <button type="submit" class="btn btn-secondary btn-sm">Cetak
+                                                    Bukti</button>
                                             </a>
                                         </td>
                                     </tr>
@@ -208,12 +163,15 @@
                                         <td>@fat</td>
                                         <td>@fat</td>
                                         <td>@fat</td>
+                                        <td>@fat</td>
+                                        <td>@fat</td>
                                         <td>
                                             <a href="">
-                                                <button type="button" class="btn btn-primary btn-sm">Detail</button>
+                                                <button type="submit" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="">
-                                                <button type="button" class="btn btn-danger btn-sm">Hapus</button>
+                                                <button type="submit" class="btn btn-secondary btn-sm">Cetak
+                                                    Bukti</button>
                                             </a>
                                         </td>
                                     </tr>
@@ -225,12 +183,15 @@
                                         <td>@twitter</td>
                                         <td>@twitter</td>
                                         <td>@twitter</td>
+                                        <td>@twitter</td>
+                                        <td>@twitter</td>
                                         <td>
                                             <a href="">
-                                                <button type="button" class="btn btn-primary btn-sm">Detail</button>
+                                                <button type="submit" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="">
-                                                <button type="button" class="btn btn-danger btn-sm">Hapus</button>
+                                                <button type="submit" class="btn btn-secondary btn-sm">Cetak
+                                                    Bukti</button>
                                             </a>
                                         </td>
                                     </tr>
@@ -243,34 +204,36 @@
         </div>
     </div>
 </section>
-<!-- END: order cuci komplit -->
+<!-- END: daftar transaksi dry clean -->
 
-<!-- START: order satuan -->
-<section id="order-satuan" class="main-order-satuan my-3">
+<!-- START: daftar transaksi cuci satuan -->
+<section id="daftar-transaksi-cs" class="daftar-transaksi-cs my-3">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Order Satuan</h5>
+                        <h5 class="card-title">Daftar Transaksi - Cuci Satuan</h5>
                         <hr>
                         <div class="table-responsive text-nowrap">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">No Order</th>
-                                        <th scope="col">Tanggal Order</th>
-                                        <th scope="col">Nama Pelanggan</th>
+                                        <th scope="col">No. Order</th>
+                                        <th scope="col">Nama</th>
                                         <th scope="col">Jenis Paket</th>
-                                        <th scope="col">Waktu Kerja</th>
-                                        <th scope="col">Berat (KG)</th>
+                                        <th scope="col">Jumlah</th>
+                                        <th scope="col">Total</th>
+                                        <th scope="col">Uang Bayar</th>
+                                        <th scope="col">Uang Kembalian</th>
+                                        <th scope="col">Status</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td colspan="8" class="text-center">Data Tidak Tersedia</td>
+                                        <td colspan="10" class="text-center">Data Tidak Tersedia</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -281,6 +244,6 @@
         </div>
     </div>
 </section>
-<!-- END: order satuan -->
+<!-- END: daftar transaksi cuci satuan -->
 
-<?php require_once '_footer.php';?>
+<?php require_once '../_footer.php'?>
