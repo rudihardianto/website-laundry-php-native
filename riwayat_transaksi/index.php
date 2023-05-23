@@ -52,7 +52,7 @@
                                             <a href="<?=url('riwayat_transaksi/riwayat_ck/detail_ck.php');?>">
                                                 <button type="submit" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
-                                            <a href="">
+                                            <a href="<?=url('riwayat_transaksi/riwayat_ck/cetak_info.php');?>">
                                                 <button type="submit" class="btn btn-secondary btn-sm">Cetak
                                                     Bukti</button>
                                             </a>

@@ -108,14 +108,14 @@
                                     </div>
                                     <hr class="my-3">
                                     <div class="col text-end">
-                                        <a href="">
-                                            <button type="submit" class="btn btn-primary">
-                                                Cetak Bukti
-                                            </button>
-                                        </a>
-                                        <a href="">
+                                        <a href="<?=url('riwayat_transaksi');?>">
                                             <button type="submit" class="btn btn-outline-secondary">
                                                 Kembali
+                                            </button>
+                                        </a>
+                                        <a href="<?=url('riwayat_transaksi/riwayat_ck/cetak_info.php');?>">
+                                            <button type="submit" class="btn btn-primary">
+                                                Cetak Bukti
                                             </button>
                                         </a>
                                     </div>
