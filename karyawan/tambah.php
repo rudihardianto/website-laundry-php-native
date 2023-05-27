@@ -1,7 +1,7 @@
 <?php require_once '../_header.php';?>
 
-<!-- START: menu -->
-<section id="detail-order-ck" class="detail-order-ck my-3 mt-5">
+<!-- START: tambah data karyawan -->
+<section id="tambah-data-karyawan" class="tambah-data-karyawan my-3 mt-5">
     <div class="container">
         <div class="row justify-content-center">
             <!-- title -->
@@ -63,4 +63,4 @@
         </div>
     </div>
 </section>
-<!-- END: menu -->
+<!-- END: tambah data karyawan -->

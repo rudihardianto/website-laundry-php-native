@@ -1,7 +1,7 @@
 <?php require_once '../_header.php';?>
 
 <!-- START: menu -->
-<section id="detail-order-ck" class="detail-order-ck my-3 mt-5">
+<section id="update-data-karyawan" class="update-data-karyawan my-3 mt-5">
     <div class="container">
         <div class="row justify-content-center">
             <!-- title -->

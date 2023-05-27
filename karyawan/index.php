@@ -1,6 +1,6 @@
 <?php require_once '../_header.php';?>
 
-<!-- START: welcome -->
+<!-- START: management karyawan -->
 <section id="karyawan" class="main-karyawan my-4">
     <div class="container">
         <div class="row d-flex justify-content-between align-items-center">
@@ -13,10 +13,10 @@
         </div>
     </div>
 </section>
-<!-- END: welcome -->
+<!-- END: management karyawan -->
 
-<!-- START: karyawan -->
-<section id="body-karyawan" class="main-body-karyawan my-3">
+<!-- START: form karyawan -->
+<section id="form-karyawan" class="form-karyawan my-3">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -59,4 +59,4 @@
         </div>
     </div>
 </section>
-<!-- END: karyawan -->
+<!-- END: form karyawan -->
