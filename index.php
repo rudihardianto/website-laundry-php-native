@@ -9,7 +9,7 @@
                 <h2>Dashboard</h2>
             </div>
             <div class="col text-end">
-                <button type="submit" class="btn btn-primary">+ Tambah Pesanan</button>
+                <a href="<?=url('order/index.php');?>" class="btn btn-primary">+ Order Baru</a>
             </div>
         </div>
     </div>
