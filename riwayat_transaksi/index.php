@@ -53,7 +53,7 @@
                                                 <button type="submit" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="<?=url('riwayat_transaksi/riwayat_ck/cetak_info.php');?>">
-                                                <button type="submit" class="btn btn-secondary btn-sm">
+                                                <button type="submit" class="btn btn-outline-secondary btn-sm">
                                                     Cetak Bukti
                                                 </button>
                                             </a>
@@ -74,7 +74,7 @@
                                                 <button type="submit" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="<?=url('riwayat_transaksi/riwayat_ck/cetak_info.php');?>">
-                                                <button type="submit" class="btn btn-secondary btn-sm">Cetak
+                                                <button type="submit" class="btn btn-outline-secondary btn-sm">Cetak
                                                     Bukti</button>
                                             </a>
                                         </td>
@@ -94,7 +94,7 @@
                                                 <button type="submit" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="<?=url('riwayat_transaksi/riwayat_ck/cetak_info.php');?>">
-                                                <button type="submit" class="btn btn-secondary btn-sm">Cetak
+                                                <button type="submit" class="btn btn-outline-secondary btn-sm">Cetak
                                                     Bukti</button>
                                             </a>
                                         </td>
@@ -151,7 +151,7 @@
                                                 <button type="submit" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="<?=url('riwayat_transaksi/riwayat_dc/cetak_info.php');?>">
-                                                <button type="submit" class="btn btn-secondary btn-sm">Cetak
+                                                <button type="submit" class="btn btn-outline-secondary btn-sm">Cetak
                                                     Bukti</button>
                                             </a>
                                         </td>
@@ -171,7 +171,7 @@
                                                 <button type="submit" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="<?=url('riwayat_transaksi/riwayat_dc/cetak_info.php');?>">
-                                                <button type="submit" class="btn btn-secondary btn-sm">Cetak
+                                                <button type="submit" class="btn btn-outline-secondary btn-sm">Cetak
                                                     Bukti</button>
                                             </a>
                                         </td>
@@ -191,7 +191,7 @@
                                                 <button type="submit" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="<?=url('riwayat_transaksi/riwayat_dc/cetak_info.php');?>">
-                                                <button type="submit" class="btn btn-secondary btn-sm">Cetak
+                                                <button type="submit" class="btn btn-outline-secondary btn-sm">Cetak
                                                     Bukti</button>
                                             </a>
                                         </td>
@@ -248,7 +248,7 @@
                                                 <button type="submit" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="<?=url('riwayat_transaksi/riwayat_cs/cetak_info.php');?>">
-                                                <button type="submit" class="btn btn-secondary btn-sm">
+                                                <button type="submit" class="btn btn-outline-secondary btn-sm">
                                                     Cetak Bukti
                                                 </button>
                                             </a>
