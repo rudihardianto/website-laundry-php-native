@@ -234,6 +234,27 @@
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry the Bird</td>
+                                        <td>@twitter</td>
+                                        <td>@twitter</td>
+                                        <td>@twitter</td>
+                                        <td>@twitter</td>
+                                        <td>@twitter</td>
+                                        <td>@twitter</td>
+                                        <td>@twitter</td>
+                                        <td>
+                                            <a href="<?=url('riwayat_transaksi/riwayat_cs/detail_cs.php');?>">
+                                                <button type="submit" class="btn btn-primary btn-sm">Detail</button>
+                                            </a>
+                                            <a href="<?=url('riwayat_transaksi/riwayat_cs/cetak_info.php');?>">
+                                                <button type="submit" class="btn btn-secondary btn-sm">
+                                                    Cetak Bukti
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td colspan="10" class="text-center">Data Tidak Tersedia</td>
                                     </tr>
                                 </tbody>
