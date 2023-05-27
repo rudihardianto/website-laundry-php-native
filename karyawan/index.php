@@ -16,7 +16,7 @@
 <!-- END: welcome -->
 
 <!-- START: karyawan -->
-<section id="order-cuci-komplit" class="main-order-cuci-komplit my-3">
+<section id="body-karyawan" class="main-body-karyawan my-3">
     <div class="container">
         <div class="row">
             <div class="col">

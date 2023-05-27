@@ -24,7 +24,7 @@
                         <div class="table-responsive text-nowrap">
                             <table class="table table-hover">
                                 <thead>
-                                    <tr>
+                                    <tr class="table-primary">
                                         <th scope="col">#</th>
                                         <th scope="col">No. Order</th>
                                         <th scope="col">Nama</th>
@@ -122,7 +122,7 @@
                         <div class="table-responsive text-nowrap">
                             <table class="table table-hover">
                                 <thead>
-                                    <tr>
+                                    <tr class="table-primary">
                                         <th scope="col">#</th>
                                         <th scope="col">No. Order</th>
                                         <th scope="col">Nama</th>
@@ -219,7 +219,7 @@
                         <div class="table-responsive text-nowrap">
                             <table class="table table-hover">
                                 <thead>
-                                    <tr>
+                                    <tr class="table-primary">
                                         <th scope="col">#</th>
                                         <th scope="col">No. Order</th>
                                         <th scope="col">Nama</th>
