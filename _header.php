@@ -38,7 +38,7 @@
                         <a class="nav-link" href="<?=url('riwayat_transaksi/index.php');?>">Riwayat Transaksi</a>
                     </li>
                     <li class="nav-item mx-md-2">
-                        <a class="nav-link" href="#">Management Karyawan</a>
+                        <a class="nav-link" href="<?=url('karyawan/index.php');?>">Management Karyawan</a>
                     </li>
                     <li class="nav-item mx-md-2">
                         <a class="nav-link" href="#">Daftar Paket</a>
