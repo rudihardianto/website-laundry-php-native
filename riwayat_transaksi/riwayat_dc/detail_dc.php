@@ -14,7 +14,7 @@
                             </div>
                             <div class="col text-end text-nowrap">
                                 <h5 class="card-title text-muted">No Order:
-                                    <span class="fw-bold text-black">CK-6454F5A</span>
+                                    <span class="fw-bold text-black">DC-6454F5A</span>
                                 </h5>
                             </div>
                         </div>
@@ -37,6 +37,10 @@
                                             <tr>
                                                 <td class="fw-semibold">Nomer Telepon</td>
                                                 <td>089012930101</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-semibold">Alamat</td>
+                                                <td>Sidoarjo</td>
                                             </tr>
                                             <tr>
                                                 <td class="fw-semibold">Order Masuk</td>
@@ -113,7 +117,7 @@
                                                 Kembali
                                             </button>
                                         </a>
-                                        <a href="<?=url('riwayat_transaksi/riwayat_ck/cetak_info.php');?>">
+                                        <a href="<?=url('riwayat_transaksi/riwayat_dc/cetak_info.php');?>">
                                             <button type="submit" class="btn btn-primary">
                                                 Cetak Bukti
                                             </button>

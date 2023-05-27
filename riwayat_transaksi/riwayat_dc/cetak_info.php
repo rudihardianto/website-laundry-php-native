@@ -17,7 +17,7 @@
                                     </div>
                                     <!-- no order -->
                                     <div class="invoice-no_order">
-                                        <span class="fw-semibold text-muted">Invoice Number : CK-6454F5A</span>
+                                        <span class="fw-semibold text-muted">Invoice Number : DC-6454F5A</span>
                                     </div>
                                     <hr>
                                 </div>

@@ -39,6 +39,10 @@
                                                 <td>089012930101</td>
                                             </tr>
                                             <tr>
+                                                <td class="fw-semibold">Alamat</td>
+                                                <td>Sidoarjo</td>
+                                            </tr>
+                                            <tr>
                                                 <td class="fw-semibold">Order Masuk</td>
                                                 <td>12 Mei 2023</td>
                                             </tr>
