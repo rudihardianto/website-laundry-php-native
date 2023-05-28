@@ -13,7 +13,7 @@
                                 <h5 class="card-title fw-bold">Tambah Order Baru</h5>
                             </div>
                             <div class="col text-end text-nowrap">
-                                <a href="" class="btn btn-sm btn-outline-secondary">Kembali</a>
+                                <a href="" class="btn btn-sm btn-outline-primary">Kembali</a>
                             </div>
                         </div>
 
@@ -39,8 +39,7 @@
                             <div class="col col-md-4 my-2 my-md-0">
                                 <a href="" class="text-decoration-none text-muted">
                                     <div class="card d-flex justify-content-center align-items-center">
-                                        <img src="<?=url('_assets/img/cuci_komplit.png')?>" class="" alt="..."
-                                            width="165">
+                                        <img src="<?=url('_assets/img/dry_clean.png')?>" class="" alt="..." width="165">
                                         <div class="card-body">
                                             <h5 class="text-center">Cuci Komplit</h5>
                                         </div>
@@ -53,8 +52,7 @@
                             <div class="col col-md-4 my-2 my-md-0">
                                 <a href="" class="text-decoration-none text-muted">
                                     <div class="card d-flex justify-content-center align-items-center">
-                                        <img src="<?=url('_assets/img/cuci_komplit.png')?>" class="" alt="..."
-                                            width="165">
+                                        <img src="<?=url('_assets/img/kemeja_2.png')?>" class="" alt="..." width="165">
                                         <div class="card-body">
                                             <h5 class="text-center">Cuci Komplit</h5>
                                         </div>
