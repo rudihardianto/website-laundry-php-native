@@ -10,7 +10,6 @@
 </footer>
 <!-- END: footer -->
 
-<script src="<?=url('_assets/bootstrap-5.3.0/js/bootstrap.bundle.min.js');?>"></script>
 </body>
 
 </html>

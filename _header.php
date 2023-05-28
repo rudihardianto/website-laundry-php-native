@@ -14,6 +14,7 @@
 
     <!-- bootstrap 5 -->
     <link rel="stylesheet" href="<?=url('_assets/bootstrap-5.3.0/css/bootstrap.min.css');?>">
+    <script src="<?=url('_assets/bootstrap-5.3.0/js/bootstrap.bundle.min.js');?>"></script>
 </head>
 
 <body>

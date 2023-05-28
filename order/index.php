@@ -23,7 +23,7 @@
                         <div class="row">
                             <!-- START: cuci komplit -->
                             <div class="col col-md-4 my-2 my-md-0">
-                                <a href="" class="text-decoration-none text-muted">
+                                <a href="<?=url('order/order_ck.php');?>" class="text-decoration-none text-muted">
                                     <div class="card d-flex justify-content-center align-items-center">
                                         <img src="<?=url('_assets/img/cuci_komplit.png')?>" class="" alt="..."
                                             width="165">
