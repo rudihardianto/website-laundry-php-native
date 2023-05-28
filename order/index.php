@@ -13,7 +13,7 @@
                                 <h5 class="card-title fw-bold">Tambah Order Baru</h5>
                             </div>
                             <div class="col text-end text-nowrap">
-                                <a href="" class="btn btn-sm btn-outline-primary">Kembali</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary">Kembali</a>
                             </div>
                         </div>
 
