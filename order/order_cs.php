@@ -29,13 +29,13 @@
                                             <div class="mb-3">
                                                 <label for="nama" class="form-label">Nama Pelanggan</label>
                                                 <input type="text" name="nama_pel_cs" id="nama" class="form-control"
-                                                    required>
+                                                    autocomplete="off" required>
                                             </div>
                                             <!-- no telepon -->
                                             <div class="mb-3">
                                                 <label for="no-telp" class="form-label">No Telepon</label>
                                                 <input type="number" name="no_telp_cs" id="no-telp" class="form-control"
-                                                    required>
+                                                    autocomplete="off" required>
                                             </div>
                                             <!-- alamat -->
                                             <div class="mb-3">
@@ -56,14 +56,11 @@
                                                     <option value="3">Cuci Komplit Express</option>
                                                 </select>
                                             </div>
-                                            <!-- berat -->
+                                            <!-- order per/pcs -->
                                             <div class="mb-3">
-                                                <label for="kuantitas" class="form-label">Berat</label>
-                                                <div class="input-group">
-                                                    <input type="number" name="berat_qty_cs" id="kuantitas"
-                                                        class="form-control" required>
-                                                    <span class="input-group-text">Kilogram</span>
-                                                </div>
+                                                <label for="kuantitas" class="form-label">Jumlah Order Per/Pcs</label>
+                                                <input type="number" name="jml_pcs" id="kuantitas" class="form-control"
+                                                    autocomplete="off" required>
                                             </div>
                                             <!-- tanggal order masuk -->
                                             <div class="mb-3">
@@ -71,7 +68,7 @@
                                                     Tanggal Order Masuk
                                                 </label>
                                                 <input type="date" name="tgl_masuk_cs" id="tgl_order_msk"
-                                                    class="form-control" required>
+                                                    class="form-control" autocomplete="off" required>
                                             </div>
                                             <!-- tanggal order keluar -->
                                             <div class="mb-3">
@@ -79,7 +76,7 @@
                                                     Tanggal Order Keluar
                                                 </label>
                                                 <input type="date" name="tgl_keluar_cs" id="tgl_order_klr"
-                                                    class="form-control" required>
+                                                    class="form-control" autocomplete="off" required>
                                             </div>
                                             <!-- keterangan -->
                                             <div class="mb-3">
@@ -88,7 +85,10 @@
                                             </div>
 
                                             <div class="text-end">
-                                                <button type="submit" class="btn btn-primary">Tambah Order</button>
+                                                <button type="reset" class="btn">Batal</button>
+                                                <button type="submit" name="order_cs" class="btn btn-primary">
+                                                    Tambah Order
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
