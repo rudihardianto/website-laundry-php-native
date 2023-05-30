@@ -42,7 +42,7 @@
                         <a class="nav-link" href="<?=url('karyawan/index.php');?>">Management Karyawan</a>
                     </li>
                     <li class="nav-item mx-md-2">
-                        <a class="nav-link" href="#">Daftar Paket</a>
+                        <a class="nav-link" href="<?= url('paket/index.php'); ?>">Daftar Paket</a>
                     </li>
                 </ul>
                 <!-- dropdown -->
