@@ -27,31 +27,35 @@
                                     <div class="mb-3 row">
                                         <label for="nama" class="col-sm-3 col-form-label">Nama</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="nama" id="nama" class="form-control" required
-                                                autofocus>
+                                            <input type="text" name="nama" id="nama" class="form-control"
+                                                autocomplete="off" required autofocus>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="username" class="col-sm-3 col-form-label">Username</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="username" id="username" class="form-control"
-                                                required>
+                                                autocomplete="off" required>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="email" class="col-sm-3 col-form-label">Email address</label>
                                         <div class="col-sm-9">
-                                            <input type="email" name="email" id="email" class="form-control" required>
+                                            <input type="email" name="email" id="email" class="form-control"
+                                                autocomplete="off" required>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="password" class="col-sm-3 col-form-label">Password</label>
                                         <div class="col-sm-9">
-                                            <input type="password" name="password" id="password" class="form-control">
+                                            <input type="password" name="password" id="password" class="form-control"
+                                                autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-end">
-                                        <button type="submit" name="submit" class="btn btn-primary">Tambah Data</button>
+                                        <button type="submit" name="tambah_karyawan" class="btn btn-primary">
+                                            Tambah
+                                        </button>
                                     </div>
                                 </form>
                             </div>

@@ -28,31 +28,33 @@
                                     <div class="mb-3 row">
                                         <label for="nama" class="col-sm-3 col-form-label">Nama</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="nama" id="nama" class="form-control" value="">
+                                            <input type="text" name="nama" id="nama" class="form-control" value=""
+                                                autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="username" class="col-sm-3 col-form-label">Username</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="username" id="username" class="form-control"
-                                                value="">
+                                                value="" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="email" class="col-sm-3 col-form-label">Email address</label>
                                         <div class="col-sm-9">
-                                            <input type="email" name="email" id="email" class="form-control" value="">
+                                            <input type="email" name="email" id="email" class="form-control" value=""
+                                                autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="password" class="col-sm-3 col-form-label">Password</label>
                                         <div class="col-sm-9">
                                             <input type="password" name="password" id="password" class="form-control"
-                                                value="">
+                                                value="" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-end">
-                                        <button type="submit" name="submit" class="btn btn-primary">Update Data</button>
+                                        <button type="submit" name="update" class="btn btn-primary">Update Data</button>
                                     </div>
                                 </form>
                             </div>
