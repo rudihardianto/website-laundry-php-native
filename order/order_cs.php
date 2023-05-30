@@ -1,6 +1,6 @@
 <?php require_once '../_header.php';?>
 
-<!-- START: order cuci komplit -->
+<!-- START: order cuci satuan -->
 <section id="order-cuci-komplit" class="order-cuci-komplit my-3 mt-5">
     <div class="container">
         <div class="row justify-content-center">
@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <div class="row d-flex justify-content-between align-items-center">
                             <div class="col">
-                                <h5 class="card-title fw-bold">Cuci Komplit</h5>
+                                <h5 class="card-title fw-bold">Cuci Satuan</h5>
                             </div>
                             <div class="col text-end text-nowrap">
                                 <a href="<?=url('order/index.php');?>"
@@ -28,19 +28,19 @@
                                             <!-- nama -->
                                             <div class="mb-3">
                                                 <label for="nama" class="form-label">Nama Pelanggan</label>
-                                                <input type="text" name="nama_pel_ck" id="nama" class="form-control"
+                                                <input type="text" name="nama_pel_cs" id="nama" class="form-control"
                                                     required>
                                             </div>
                                             <!-- no telepon -->
                                             <div class="mb-3">
                                                 <label for="no-telp" class="form-label">No Telepon</label>
-                                                <input type="number" name="no_telp_ck" id="no-telp" class="form-control"
+                                                <input type="number" name="no_telp_cs" id="no-telp" class="form-control"
                                                     required>
                                             </div>
                                             <!-- alamat -->
                                             <div class="mb-3">
                                                 <label for="alamat" class="form-label">Alamat</label>
-                                                <textarea name="alamat_ck" id="alamat" class="form-control"
+                                                <textarea name="alamat_cs" id="alamat" class="form-control"
                                                     required></textarea>
                                             </div>
                                         </div>
@@ -49,7 +49,7 @@
                                             <!-- pilih paket -->
                                             <div class="mb-3">
                                                 <label for="pilih_paket" class="form-label">Pilih Paket</label>
-                                                <select name="jenis_paket_ck" id="pilih_paket" class="form-select">
+                                                <select name="jenis_paket_cs" id="pilih_paket" class="form-select">
                                                     <option selected>- Pilih Jenis Paket -</option>
                                                     <option value="1">Cuci Komplit Reguler</option>
                                                     <option value="2">Cuci Komplit Kilat</option>
@@ -60,7 +60,7 @@
                                             <div class="mb-3">
                                                 <label for="kuantitas" class="form-label">Berat</label>
                                                 <div class="input-group">
-                                                    <input type="number" name="berat_qty_ck" id="kuantitas"
+                                                    <input type="number" name="berat_qty_cs" id="kuantitas"
                                                         class="form-control" required>
                                                     <span class="input-group-text">Kilogram</span>
                                                 </div>
@@ -70,7 +70,7 @@
                                                 <label for="tgl_order_msk" class="form-label">
                                                     Tanggal Order Masuk
                                                 </label>
-                                                <input type="date" name="tgl_masuk_ck" id="tgl_order_msk"
+                                                <input type="date" name="tgl_masuk_cs" id="tgl_order_msk"
                                                     class="form-control" required>
                                             </div>
                                             <!-- tanggal order keluar -->
@@ -78,13 +78,13 @@
                                                 <label for="tgl_order_klr" class="form-label">
                                                     Tanggal Order Keluar
                                                 </label>
-                                                <input type="date" name="tgl_keluar_ck" id="tgl_order_klr"
+                                                <input type="date" name="tgl_keluar_cs" id="tgl_order_klr"
                                                     class="form-control" required>
                                             </div>
                                             <!-- keterangan -->
                                             <div class="mb-3">
                                                 <label for="ket" class="form-label">Keterangan</label>
-                                                <textarea name="keterangan_ck" id="ket" class="form-control"></textarea>
+                                                <textarea name="keterangan_cs" id="ket" class="form-control"></textarea>
                                             </div>
 
                                             <div class="text-end">
@@ -104,4 +104,4 @@
     </div>
     </div>
 </section>
-<!-- END: order cuci komplit -->
+<!-- END: order cuci satuan -->
