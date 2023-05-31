@@ -1,7 +1,7 @@
 <?php require_once '_header.php';?>
 
 <!-- START: welcome -->
-<section id="welcome" class="main-welcome my-4">
+<section id="welcome" class="welcome my-4">
     <div class="container">
         <div class="row d-flex justify-content-between align-items-center">
             <div class="col">
@@ -17,7 +17,7 @@
 <!-- END: welcome -->
 
 <!-- START: menu -->
-<section id="menu" class="main-menu my-3">
+<section id="menu" class="menu my-3">
     <div class="container">
         <div class="row">
             <!-- karyawan -->
@@ -106,7 +106,7 @@
                                         <td>@mdo</td>
                                         <td>@mdo</td>
                                         <td>
-                                            <a href="">
+                                            <a href="<?= url('detail_order/detail_ck/detail_order_ck.php'); ?>">
                                                 <button type="button" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="">
@@ -123,7 +123,7 @@
                                         <td>@fat</td>
                                         <td>@fat</td>
                                         <td>
-                                            <a href="">
+                                            <a href="<?= url('detail_order/detail_ck/detail_order_ck.php'); ?>">
                                                 <button type="button" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="">
@@ -140,7 +140,7 @@
                                         <td>@twitter</td>
                                         <td>@twitter</td>
                                         <td>
-                                            <a href="">
+                                            <a href="<?= url('detail_order/detail_ck/detail_order_ck.php'); ?>">
                                                 <button type="button" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="">
