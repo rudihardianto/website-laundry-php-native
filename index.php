@@ -159,7 +159,7 @@
 </section>
 <!-- END: order cuci komplit -->
 
-<!-- START: order cuci komplit -->
+<!-- START: dry clean -->
 <section id="order-dry-clean" class="main-order-dry-clean my-3">
     <div class="container">
         <div class="row">
@@ -192,7 +192,7 @@
                                         <td>@mdo</td>
                                         <td>@mdo</td>
                                         <td>
-                                            <a href="">
+                                            <a href="<?= url('detail_order/detail_dc/detail_order_dc.php'); ?>">
                                                 <button type="button" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="">
@@ -209,7 +209,7 @@
                                         <td>@fat</td>
                                         <td>@fat</td>
                                         <td>
-                                            <a href="">
+                                            <a href="<?= url('detail_order/detail_dc/detail_order_dc.php'); ?>">
                                                 <button type="button" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="">
@@ -226,7 +226,7 @@
                                         <td>@twitter</td>
                                         <td>@twitter</td>
                                         <td>
-                                            <a href="">
+                                            <a href="<?= url('detail_order/detail_dc/detail_order_dc.php'); ?>">
                                                 <button type="button" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
                                             <a href="">
@@ -243,7 +243,7 @@
         </div>
     </div>
 </section>
-<!-- END: order cuci komplit -->
+<!-- END: dry clean -->
 
 <!-- START: order satuan -->
 <section id="order-satuan" class="main-order-satuan my-3">
