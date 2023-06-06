@@ -1,11 +1,14 @@
-<?php require_once '../_header.php';?>
+<?php
+require_once '../_header.php';
+$data_karyawan = query('SELECT * FROM master LIMIT 20 OFFSET 1');
+?>
 
-<section id="karyawan" class="main-karyawan my-3">
+<section id="karyawan" class="main-karyawan">
     <div class="row justify-content-center">
         <div class="col col-md-10">
             <div class="container">
                 <!-- START: management karyawan -->
-                <div class="row d-flex justify-content-between align-items-center my-3">
+                <div class="row d-flex justify-content-between align-items-center mb-3">
                     <div class="col">
                         <h2>Management Karyawan</h2>
                     </div>
@@ -34,22 +37,27 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php $no = 1;?>
+                                            <?php foreach ($data_karyawan as $karyawan): ?>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
+                                                <th scope="row"><?=$no++;?></th>
+                                                <td><?=$karyawan['nama']?></td>
+                                                <td><?=$karyawan['username']?></td>
+                                                <td><?=$karyawan['email']?></td>
                                                 <td>
-                                                    <a href="<?=url('karyawan/edit.php');?>">
-                                                        <button type="button"
-                                                            class="btn btn-primary btn-sm">Edit</button>
+                                                    <a
+                                                        href="<?=url('karyawan/edit.php');?>?id_user=<?=$karyawan['id_user']?>"><button
+                                                            type="button" class="btn btn-primary btn-sm">Edit</button>
                                                     </a>
-                                                    <a href="">
+                                                    <a
+                                                        href="<?=url('karyawan/hapus.php')?>?id_user=<?=$karyawan['id_user']?>">
                                                         <button type="button"
+                                                            onclick="return confirm('Yakin ingin menghapus?');"
                                                             class="btn btn-danger btn-sm">Hapus</button>
                                                     </a>
                                                 </td>
                                             </tr>
+                                            <?php endforeach;?>
                                         </tbody>
                                     </table>
                                 </div>

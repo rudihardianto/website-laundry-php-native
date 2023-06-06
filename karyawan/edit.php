@@ -1,7 +1,39 @@
-<?php require_once '../_header.php';?>
+<?php
+require_once '../_header.php';
+$id_user = $_GET['id_user'];
+$update  = query("SELECT * FROM master WHERE id_user='$id_user'")[0];
+?>
+
+<?php if (isset($_POST['update'])): ?>
+<?php if (update_karyawan($_POST) > 0): ?>
+<!-- berhasil -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-md-10">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Selamat!</strong> Data Berhasil Di Ubah.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php else: ?>
+<!-- gagal -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-md-10">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Maaf!</strong> Data Gagal Di Ubah.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif?>
+<?php endif?>
 
 <!-- START: menu -->
-<section id="update-data-karyawan" class="update-data-karyawan my-3 mt-5">
+<section id="update-data-karyawan" class="update-data-karyawan">
     <div class="container">
         <div class="row justify-content-center">
             <!-- title -->
@@ -23,36 +55,36 @@
                         <div class="row justify-content-center">
                             <div class="col col-md-10">
                                 <form action="" method="post">
-                                    <input type="hidden" name="level" value="">
-                                    <input type="hidden" name="id_user" value="">
+                                    <input type="hidden" name="id_user" value="<?=$update['id_user']?>">
+                                    <input type="hidden" name="level" value="<?=$update['level']?>">
                                     <div class="mb-3 row">
                                         <label for="nama" class="col-sm-3 col-form-label">Nama</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="nama" id="nama" class="form-control" value=""
-                                                autocomplete="off">
+                                            <input type="text" name="nama" id="nama" class="form-control"
+                                                value="<?=$update['nama']?>" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="username" class="col-sm-3 col-form-label">Username</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="username" id="username" class="form-control"
-                                                value="" autocomplete="off">
+                                                value="<?=$update['username']?>" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="email" class="col-sm-3 col-form-label">Email address</label>
                                         <div class="col-sm-9">
-                                            <input type="email" name="email" id="email" class="form-control" value=""
-                                                autocomplete="off">
+                                            <input type="email" name="email" id="email" class="form-control"
+                                                value="<?=$update['email']?>" autocomplete="off">
                                         </div>
                                     </div>
-                                    <div class="mb-3 row">
+                                    <!-- <div class="mb-3 row">
                                         <label for="password" class="col-sm-3 col-form-label">Password</label>
                                         <div class="col-sm-9">
                                             <input type="password" name="password" id="password" class="form-control"
-                                                value="" autocomplete="off">
+                                                autocomplete="off">
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="d-flex justify-content-end">
                                         <button type="submit" name="update" class="btn btn-primary">Update Data</button>
                                     </div>

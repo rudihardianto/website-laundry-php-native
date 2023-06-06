@@ -19,7 +19,7 @@
 
 <body>
     <!-- START: navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm mb-5">
         <div class="container">
             <!-- logo -->
             <a class="navbar-brand" href="<?=url()?>">

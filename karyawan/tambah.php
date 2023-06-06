@@ -1,7 +1,35 @@
 <?php require_once '../_header.php';?>
 
+<?php if (isset($_POST['tambah_karyawan'])): ?>
+<?php if (add_karyawan($_POST) > 0): ?>
+<!-- berhasil -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-md-10">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Selamat!</strong> Data Berhasil Di Tambahkan.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php else: ?>
+<!-- gagal -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-md-10">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Maaf!</strong> Data Gagal Di Tambahkan.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif?>
+<?php endif;?>
+
 <!-- START: tambah data karyawan -->
-<section id="tambah-data-karyawan" class="tambah-data-karyawan my-3 mt-5">
+<section id="tambah-data-karyawan" class="tambah-data-karyawan">
     <div class="container">
         <div class="row justify-content-center">
             <!-- title -->
