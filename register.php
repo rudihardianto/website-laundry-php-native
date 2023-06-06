@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="text-center mt-4">
                         <img src="<?=url('_assets/img/logo/dry_dry.png')?>" alt="" width="75">
-                        <h5 class="fw-bold my-4">Login</h5>
+                        <h5 class="fw-bold my-4">Daftar Akun Baru</h5>
                     </div>
                     <div class="card-body">
                         <form action="" method="post">
@@ -27,7 +27,7 @@
                                     autocomplete="off" required>
                             </div>
                             <div class="text-end">
-                                <button type="submit" class="btn btn-primary">Login</button>
+                                <button type="submit" class="btn btn-primary">Daftar</button>
                             </div>
                         </form>
                     </div>

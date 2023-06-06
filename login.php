@@ -24,6 +24,10 @@
                             <div class="text-end">
                                 <button type="submit" class="btn btn-primary">Login</button>
                             </div>
+                            <hr>
+                            <p>
+                                Belum punya akun? <a href="<?=url('register.php');?>" class="fw-bold">Daftar Akun</a>
+                            </p>
                         </form>
                     </div>
                 </div>
