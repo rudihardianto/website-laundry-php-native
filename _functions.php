@@ -68,13 +68,11 @@ function update_karyawan($up_kary)
     $nama     = htmlspecialchars($up_kary['nama']);
     $username = htmlspecialchars($up_kary['username']);
     $email    = htmlspecialchars($up_kary['email']);
-    $password = password_hash($up_kary['email'], PASSWORD_DEFAULT);
 
     $up_query = "UPDATE master SET
 		nama 		= '$nama',
 		username    = '$username',
 		email 	    = '$email',
-		password    = '$password'
 		WHERE id_user = '$id_user'
 	";
 
