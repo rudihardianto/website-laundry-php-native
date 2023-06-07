@@ -143,4 +143,71 @@ function delete_ck($del_ck)
     return mysqli_affected_rows($db);
 }
 /* END: CRUD Cuci Komplit */
+
+/* START: CRUD Dry Clean */
+// create
+function add_dc($data_dc)
+{
+    global $db;
+
+    $nama_pkt_dc  = ucwords(htmlspecialchars($data_dc['nama_paket_dc']));
+    $waktu_krj_dc = ucwords(htmlspecialchars($data_dc['waktu_kerja_dc']));
+    $qty_dc       = htmlspecialchars($data_dc['kuantitas_dc']);
+    $tarif_dc     = htmlspecialchars($data_dc['tarif_dc']);
+
+    // Cek apakah paket sudah terdaftar
+    $tb_dry_clean = mysqli_query($db, "SELECT * FROM tb_dry_clean WHERE nama_paket_dc='$nama_pkt_dc'");
+    if (mysqli_num_rows($tb_dry_clean) > 0) {
+        echo "
+              <script>
+                  alert('Nama Paket Sudah Terdaftar')
+              </script>
+          ";
+
+        return false;
+    }
+
+    $query_dc = "INSERT INTO tb_dry_clean VALUES (
+		null,'$nama_pkt_dc','$waktu_krj_dc','$qty_dc','$tarif_dc'
+	)";
+    mysqli_query($db, $query_dc);
+
+    header("refresh:3"); // refresh halaman 3 detik setelah update data
+
+    return mysqli_affected_rows($db);
+}
+
+// update
+function update_dc($edit_dc)
+{
+    global $db;
+
+    $id_dc        = $edit_dc['id_dc'];
+    $nama_pkt_dc  = ucwords(htmlspecialchars($edit_dc['nama_paket_dc']));
+    $waktu_krj_dc = ucwords(htmlspecialchars($edit_dc['waktu_kerja_dc']));
+    $qty_dc       = htmlspecialchars($edit_dc['kuantitas_dc']);
+    $tarif_dc     = htmlspecialchars($edit_dc['tarif_dc']);
+
+    mysqli_query($db, "UPDATE tb_dry_clean SET
+		nama_paket_dc = '$nama_pkt_dc',
+		waktu_kerja_dc = '$waktu_krj_dc',
+		kuantitas_dc = '$qty_dc',
+		tarif_dc = '$tarif_dc'
+		WHERE id_dc = '$id_dc'
+	");
+
+    header("refresh:1"); // refresh halaman 1 detik setelah update data
+
+    return mysqli_affected_rows($db);
+}
+
+// delete
+function delete_dc($del_dc)
+{
+    global $db;
+    mysqli_query($db, "DELETE FROM tb_dry_clean WHERE id_dc = '$del_dc'");
+
+    return mysqli_affected_rows($db);
+}
+/* END: CRUD Dry Clean */
 ?>

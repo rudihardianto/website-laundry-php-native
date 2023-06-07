@@ -1,12 +1,15 @@
-<?php require_once '../../_header.php';?>
+<?php
+require_once '../../_header.php';
+$data_dc = query('SELECT * FROM tb_dry_clean');
+?>
 
 <!-- START: daftar paket dry clean -->
-<section id="daftar-paket-ck" class="daftar-paket-ck my-4">
+<section id="daftar-paket-ck" class="daftar-paket-ck">
     <div class="row justify-content-center">
         <div class="col col-md-10">
             <div class="container">
                 <!-- START: title daftar paket -->
-                <div class="row d-flex justify-content-between align-items-center my-3">
+                <div class="row d-flex justify-content-between align-items-center mb-3">
                     <div class="col">
                         <h2>Daftar Paket Dry Clean</h2>
                     </div>
@@ -46,23 +49,28 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php $no = 1;?>
+                                            <?php foreach ($data_dc as $dc): ?>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
+                                                <th scope="row"><?=$no++;?></th>
+                                                <td><?=$dc["nama_paket_dc"];?></td>
+                                                <td><?=$dc["waktu_kerja_dc"];?></td>
+                                                <td><?=$dc["kuantitas_dc"];?></td>
+                                                <td><?=$dc["tarif_dc"];?></td>
                                                 <td>
-                                                    <a href="<?=url('paket/paket_dc/edit.php');?>">
+                                                    <a
+                                                        href="<?=url('paket/paket_dc/edit.php');?>?id_dc=<?=$dc['id_dc']?>">
                                                         <button type="button"
                                                             class="btn btn-primary btn-sm">Edit</button>
                                                     </a>
-                                                    <a href="">
+                                                    <a href="<?=url('paket/paket_dc/hapus.php');?>?id_dc=<?=$dc['id_dc']?>"
+                                                        onclick="return confirm('Yakin akan menghapus?');">
                                                         <button type="button"
                                                             class="btn btn-danger btn-sm">Hapus</button>
                                                     </a>
                                                 </td>
                                             </tr>
+                                            <?php endforeach;?>
                                         </tbody>
                                     </table>
                                 </div>
