@@ -34,8 +34,8 @@ function add_karyawan($karyawan)
 {
     global $db;
 
-    $nama     = htmlspecialchars($karyawan['nama']);
-    $username = htmlspecialchars($karyawan['username']);
+    $nama     = ucwords(htmlspecialchars($karyawan['nama']));
+    $username = strtolower(htmlspecialchars($karyawan['username']));
     $email    = htmlspecialchars($karyawan['email']);
     $password = stripcslashes(htmlspecialchars($karyawan['password']));
     $level    = $karyawan['level'];
@@ -56,6 +56,8 @@ function add_karyawan($karyawan)
     $insert   = "INSERT INTO master VALUES (null,'$nama','$email','$username','$password','$level')";
     mysqli_query($db, $insert);
 
+    header("refresh:3"); // refresh halaman 3 detik setelah update data
+
     return mysqli_affected_rows($db);
 }
 
@@ -65,8 +67,8 @@ function update_karyawan($up_kary)
     global $db;
 
     $id_user  = $up_kary['id_user'];
-    $nama     = htmlspecialchars($up_kary['nama']);
-    $username = htmlspecialchars($up_kary['username']);
+    $nama     = ucwords(htmlspecialchars($up_kary['nama']));
+    $username = strtolower(htmlspecialchars($up_kary['username']));
     $email    = htmlspecialchars($up_kary['email']);
 
     $up_query = "UPDATE master SET
@@ -97,15 +99,29 @@ function delete_karyawan($id_karyawan)
 function add_ck($data_ck)
 {
     global $db;
-    $nama_pkt_ck  = htmlspecialchars($data_ck['nama_paket_ck']);
-    $waktu_krj_ck = htmlspecialchars($data_ck['waktu_kerja_ck']);
+    $nama_pkt_ck  = ucwords(htmlspecialchars($data_ck['nama_paket_ck']));
+    $waktu_krj_ck = ucwords(htmlspecialchars($data_ck['waktu_kerja_ck']));
     $qty_ck       = htmlspecialchars($data_ck['kuantitas_ck']);
     $tarif_ck     = htmlspecialchars($data_ck['tarif_ck']);
+
+    // Cek apakah paket sudah terdaftar
+    $tb_cuci_komplit = mysqli_query($db, "SELECT * FROM tb_cuci_komplit WHERE nama_paket_ck='$nama_pkt_ck'");
+    if (mysqli_num_rows($tb_cuci_komplit) > 0) {
+        echo "
+              <script>
+                  alert('Nama Paket Sudah Terdaftar')
+              </script>
+          ";
+
+        return false;
+    }
 
     $query_ck = "INSERT INTO tb_cuci_komplit VALUES (
 		null,'$nama_pkt_ck','$waktu_krj_ck','$qty_ck','$tarif_ck'
 	)";
     mysqli_query($db, $query_ck);
+
+    header("refresh:3"); // refresh halaman 3 detik setelah update data
 
     return mysqli_affected_rows($db);
 }
@@ -116,8 +132,8 @@ function update_ck($edit_ck)
     global $db;
 
     $id_ck        = $edit_ck['id_ck'];
-    $nama_pkt_ck  = htmlspecialchars($edit_ck['nama_paket_ck']);
-    $waktu_krj_ck = htmlspecialchars($edit_ck['waktu_kerja_ck']);
+    $nama_pkt_ck  = ucwords(htmlspecialchars($edit_ck['nama_paket_ck']));
+    $waktu_krj_ck = ucwords(htmlspecialchars($edit_ck['waktu_kerja_ck']));
     $qty_ck       = htmlspecialchars($edit_ck['kuantitas_ck']);
     $tarif_ck     = htmlspecialchars($edit_ck['tarif_ck']);
 
