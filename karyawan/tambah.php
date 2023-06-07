@@ -96,3 +96,5 @@
     </div>
 </section>
 <!-- END: tambah data karyawan -->
+
+<?php require_once '../_footer.php';?>

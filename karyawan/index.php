@@ -70,3 +70,5 @@ $data_karyawan = query('SELECT * FROM master LIMIT 20 OFFSET 1');
         </div>
     </div>
 </section>
+
+<?php require_once '../_footer.php'; ?>

@@ -99,3 +99,5 @@ $update  = query("SELECT * FROM master WHERE id_user='$id_user'")[0];
     </div>
 </section>
 <!-- END: menu -->
+
+<?php require_once '../_footer.php';?>
