@@ -93,3 +93,5 @@
     </div>
 </section>
 <!-- END: tambah paket cuci satuan -->
+
+<?php require_once '../../_footer.php';?>

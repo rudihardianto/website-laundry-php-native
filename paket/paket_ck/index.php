@@ -84,3 +84,5 @@ $data_ck = query('SELECT * FROM tb_cuci_komplit');
     </div>
 </section>
 <!-- END: daftar paket cuci komplit -->
+
+<?php require_once '../../_footer.php';?>

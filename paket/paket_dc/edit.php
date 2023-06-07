@@ -100,3 +100,5 @@ $data_dc = query("SELECT * FROM tb_dry_clean WHERE id_dc = '$id_dc'")[0];
     </div>
 </section>
 <!-- END: update dry clean -->
+
+<?php require_once '../../_footer.php';?>

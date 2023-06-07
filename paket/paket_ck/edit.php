@@ -99,3 +99,5 @@ $data_ck = query("SELECT * FROM tb_cuci_komplit WHERE id_ck = '$id_ck'")[0];
     </div>
 </section>
 <!-- END: update paket cuci komplit -->
+
+<?php require_once '../../_footer.php';?>

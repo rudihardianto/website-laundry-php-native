@@ -98,3 +98,5 @@ $data_cs = query("SELECT * FROM tb_cuci_satuan WHERE id_cs = '$id_cs'")[0];
     </div>
 </section>
 <!-- END: update paket cuci satuan -->
+
+<?php require_once '../../_footer.php';?>

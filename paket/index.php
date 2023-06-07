@@ -66,3 +66,5 @@
     </div>
 </section>
 <!-- END: daftar paket -->
+
+<?php require_once '../_footer.php';?>

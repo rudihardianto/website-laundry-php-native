@@ -96,3 +96,5 @@ $data_dc = query('SELECT * FROM tb_dry_clean');
     </div>
 </section>
 <!-- END: tambah paket dry clean -->
+
+<?php require_once '../../_footer.php';?>

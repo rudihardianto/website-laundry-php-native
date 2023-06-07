@@ -84,3 +84,5 @@ $data_cs = query('SELECT * FROM tb_cuci_satuan');
     </div>
 </section>
 <!-- END: daftar cuci satuan -->
+
+<?php require_once '../../_footer.php';?>

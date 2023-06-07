@@ -54,21 +54,21 @@
                                         <label for="nama" class="col-sm-3 col-form-label">Nama Paket</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="nama_paket_ck" id="nama" class="form-control"
-                                                value="" autocomplete="off" required autofocus>
+                                                autocomplete="off" required autofocus>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="wk" class="col-sm-3 col-form-label">Waktu Kerja</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="waktu_kerja_ck" id="wk" class="form-control"
-                                                value="" autocomplete="off" required>
+                                                autocomplete="off" required>
                                         </div>
                                     </div>
                                     <div class="mb-3 row align-items-center">
                                         <label for="kuantitas" class="col-sm-3 form-label">Berat Min</label>
                                         <div class="col input-group">
                                             <input type="number" name="kuantitas_ck" id="kuantitas" class="form-control"
-                                                value="" autocomplete="off" required>
+                                                autocomplete="off" required>
                                             <span class="input-group-text">Kilogram</span>
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@
                                         <label for="tarif" class="col-sm-3 col-form-label">Tarif</label>
                                         <div class="col-sm-9">
                                             <input type="number" name="tarif_ck" id="tarif" class="form-control"
-                                                value="" autocomplete="off" required>
+                                                autocomplete="off" required>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-end">
@@ -93,3 +93,5 @@
     </div>
 </section>
 <!-- END: tambah paket cuci komplit -->
+
+<?php require_once '../../_footer.php';?>
