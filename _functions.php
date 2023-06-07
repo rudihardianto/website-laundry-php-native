@@ -77,9 +77,9 @@ function update_karyawan($up_kary)
 	";
 
     mysqli_query($db, $up_query);
+    header("refresh:1"); // refresh halaman 1 detik setelah update data
 
     return mysqli_affected_rows($db);
-    header("refresh: 3");
 }
 
 // delete
