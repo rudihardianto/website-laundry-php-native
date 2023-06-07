@@ -1,12 +1,15 @@
-<?php require_once '../../_header.php';?>
+<?php
+require_once '../../_header.php';
+$data_cs = query('SELECT * FROM tb_cuci_satuan');
+?>
 
 <!-- START: daftar cuci satuan -->
-<section id="daftar-paket-ck" class="daftar-paket-ck my-4">
+<section id="daftar-paket-ck" class="daftar-paket-ck">
     <div class="row justify-content-center">
         <div class="col col-md-10">
             <div class="container">
                 <!-- START: title daftar paket -->
-                <div class="row d-flex justify-content-between align-items-center my-3">
+                <div class="row d-flex justify-content-between align-items-center mb-3">
                     <div class="col">
                         <h2>Daftar Paket Cuci Satuan</h2>
                     </div>
@@ -46,23 +49,28 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php $no = 1;?>
+                                            <?php foreach ($data_cs as $cs): ?>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
+                                                <th scope="row"><?=$no++;?></th>
+                                                <td><?=$cs['nama_cs'];?></td>
+                                                <td><?=$cs['waktu_kerja_cs'];?></td>
+                                                <td><?=$cs['kuantitas_cs'];?></td>
+                                                <td><?=$cs['tarif_cs'];?></td>
                                                 <td>
-                                                    <a href="<?=url('paket/paket_cs/edit.php');?>">
+                                                    <a
+                                                        href="<?=url('paket/paket_cs/edit.php');?>?id_cs=<?=$cs['id_cs']?>">
                                                         <button type="button"
                                                             class="btn btn-primary btn-sm">Edit</button>
                                                     </a>
-                                                    <a href="">
+                                                    <a href="<?=url('paket/paket_cs/hapus.php');?>?id_cs=<?=$cs['id_cs']?>"
+                                                        onclick="return confirm('Yakin akan menghapus?');">
                                                         <button type="button"
                                                             class="btn btn-danger btn-sm">Hapus</button>
                                                     </a>
                                                 </td>
                                             </tr>
+                                            <?php endforeach;?>
                                         </tbody>
                                     </table>
                                 </div>

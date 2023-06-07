@@ -226,4 +226,72 @@ function delete_dc($del_dc)
     return mysqli_affected_rows($db);
 }
 /* END: CRUD Dry Clean */
+
+/* START: CRUD Cuci Satuan */
+// create
+function add_cs($data_cs)
+{
+    global $db;
+
+    $nama_pkt_cs  = ucwords(htmlspecialchars($data_cs['nama_cs']));
+    $waktu_krj_cs = ucwords(htmlspecialchars($data_cs['waktu_kerja_cs']));
+    $qty_cs       = htmlspecialchars($data_cs['kuantitas_cs']);
+    $tarif_cs     = htmlspecialchars($data_cs['tarif_cs']);
+
+    // Cek apakah paket sudah terdaftar
+    $tb_cuci_satuan = mysqli_query($db, "SELECT * FROM tb_cuci_satuan WHERE nama_cs='$nama_pkt_cs'");
+    if (mysqli_num_rows($tb_cuci_satuan) > 0) {
+        echo "
+              <script>
+                  alert('Nama Paket Sudah Terdaftar')
+              </script>
+          ";
+
+        return false;
+    }
+
+    $query_cs = "INSERT INTO tb_cuci_satuan VALUES (
+		null,'$nama_pkt_cs','$waktu_krj_cs','$qty_cs','$tarif_cs'
+	)";
+
+    mysqli_query($db, $query_cs);
+
+    header("refresh:3"); // refresh halaman 3 detik setelah update data
+
+    return mysqli_affected_rows($db);
+}
+
+// update
+function update_cs($edit_cs)
+{
+    global $db;
+
+    $id_cs        = $edit_cs['id_cs'];
+    $nama_pkt_cs  = ucwords(htmlspecialchars($edit_cs['nama_cs']));
+    $waktu_krj_cs = ucwords(htmlspecialchars($edit_cs['waktu_kerja_cs']));
+    $qty_cs       = htmlspecialchars($edit_cs['kuantitas_cs']);
+    $tarif_cs     = htmlspecialchars($edit_cs['tarif_cs']);
+
+    mysqli_query($db, "UPDATE tb_cuci_satuan SET
+		nama_cs = '$nama_pkt_cs',
+		waktu_kerja_cs = '$waktu_krj_cs',
+		kuantitas_cs = '$qty_cs',
+		tarif_cs = '$tarif_cs'
+		WHERE id_cs = '$id_cs'
+	");
+
+    header("refresh:1"); // refresh halaman 1 detik setelah update data
+
+    return mysqli_affected_rows($db);
+}
+
+// delete
+function delete_cs($del_cs)
+{
+    global $db;
+    mysqli_query($db, "DELETE FROM tb_cuci_satuan WHERE id_cs = '$del_cs'");
+
+    return mysqli_affected_rows($db);
+}
+/* END: CRUD Cuci Satuan */
 ?>
