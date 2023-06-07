@@ -1,7 +1,35 @@
 <?php require_once '../../_header.php';?>
 
+<?php if (isset($_POST['tambah'])): ?>
+<?php if (add_ck($_POST) > 0): ?>
+<!-- berhasil -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-md-10">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Selamat!</strong> Paket Berhasil Di Tambahkan.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php else: ?>
+<!-- gagal -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-md-10">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Maaf!</strong> Paket Gagal Di Tambahkan.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif?>
+<?php endif?>
+
 <!-- START: tambah paket cuci komplit -->
-<section id="tambah-paket-ck" class="tambah-paket-ck my-3 mt-5">
+<section id="tambah-paket-ck" class="tambah-paket-ck">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col col-md-10 my-2 my-md-0">
@@ -22,7 +50,6 @@
                         <div class="row justify-content-center">
                             <div class="col col-md-10">
                                 <form action="" method="post">
-                                    <input type="hidden" name="id_ck" value="">
                                     <div class="mb-3 row">
                                         <label for="nama" class="col-sm-3 col-form-label">Nama Paket</label>
                                         <div class="col-sm-9">
