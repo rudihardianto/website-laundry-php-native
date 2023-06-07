@@ -27,7 +27,7 @@
                                         <label for="nama" class="col-sm-3 col-form-label">Nama Paket</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="nama_paket_dc" id="nama" class="form-control"
-                                                value="" autocomplete="off" required>
+                                                value="" autocomplete="off" required disabled>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">

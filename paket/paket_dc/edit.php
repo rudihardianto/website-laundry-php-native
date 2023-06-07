@@ -60,7 +60,8 @@ $data_dc = query("SELECT * FROM tb_dry_clean WHERE id_dc = '$id_dc'")[0];
                                         <label for="nama" class="col-sm-3 col-form-label">Nama Paket</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="nama_paket_dc" id="nama" class="form-control"
-                                                value="<?=$data_dc["nama_paket_dc"];?>" autocomplete="off" required>
+                                                value="<?=$data_dc["nama_paket_dc"];?>" autocomplete="off" required
+                                                disabled>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
