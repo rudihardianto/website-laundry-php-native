@@ -1,7 +1,11 @@
-<?php require_once '_header.php';?>
+<?php
+require_once '_header.php';
+$jml_karyawan = count(query('SELECT * FROM master WHERE level ="Karyawan"'));
+?>
+
 
 <!-- START: welcome -->
-<section id="welcome" class="welcome my-4">
+<section id="welcome" class="welcome mb-4">
     <div class="container">
         <div class="row d-flex justify-content-between align-items-center">
             <div class="col">
@@ -27,7 +31,7 @@
                         <div class="row d-flex justify-content-center align-items-center">
                             <div class="col">
                                 <p>Jumlah Karyawan</p>
-                                <h5 class="card-title fw-bold">10</h5>
+                                <h5 class="card-title fw-bold"><?=$jml_karyawan;?></h5>
                             </div>
                             <div class="col text-end">
                                 <img src="_assets/img/team.png" alt="" width="70">

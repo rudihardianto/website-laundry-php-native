@@ -1,7 +1,40 @@
-<?php require_once '../_header.php';?>
+<?php
+require_once '../_header.php';
+$id_pel_ck = query('SELECT * FROM master WHERE level ="User"');
+$data_ck   = query("SELECT * FROM tb_cuci_komplit");
+// var_dump($id_pel_ck);
+?>
+
+<?php if (isset($_POST['order_ck'])): ?>
+<?php if (order_ck($_POST) > 0): ?>
+<!-- berhasil -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-md-10">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Selamat!</strong> Order Berhasil Di Tambahkan.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php else: ?>
+<!-- gagal -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-md-10">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Maaf!</strong> Order Gagal Di Tambahkan.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif?>
+<?php endif?>
 
 <!-- START: order cuci komplit -->
-<section id="order-cuci-komplit" class="order-cuci-komplit my-3 mt-5">
+<section id="order-cuci-komplit" class="order-cuci-komplit">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col col-md-10 my-2 my-md-0">
@@ -25,6 +58,15 @@
                                 <form action="" method="post">
                                     <div class="row d-flex">
                                         <div class="col-12 col-md-6">
+                                            <div class="mb-3">
+                                                <label for="id_pel" class="form-label">Pilih ID Pelanggan</label>
+                                                <select name="id_pelanggan_ck" id="id_pel" class="form-select">
+                                                    <option selected>- ID Pelanggan -</option>
+                                                    <?php foreach ($id_pel_ck as $id_pel): ?>
+                                                    <option><?=$id_pel['id_pelanggan']?></option>
+                                                    <?php endforeach?>
+                                                </select>
+                                            </div>
                                             <!-- nama -->
                                             <div class="mb-3">
                                                 <label for="nama" class="form-label">Nama Pelanggan</label>
@@ -51,9 +93,9 @@
                                                 <label for="pilih_paket" class="form-label">Pilih Paket</label>
                                                 <select name="jenis_paket_ck" id="pilih_paket" class="form-select">
                                                     <option selected>- Pilih Jenis Paket -</option>
-                                                    <option value="1">Cuci Komplit Reguler</option>
-                                                    <option value="2">Cuci Komplit Kilat</option>
-                                                    <option value="3">Cuci Komplit Express</option>
+                                                    <?php foreach ($data_ck as $ck): ?>
+                                                    <option><?=$ck['nama_paket_ck']?></option>
+                                                    <?php endforeach?>
                                                 </select>
                                             </div>
                                             <!-- berat -->

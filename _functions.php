@@ -294,4 +294,65 @@ function delete_cs($del_cs)
     return mysqli_affected_rows($db);
 }
 /* END: CRUD Cuci Satuan */
-?>
+
+// Order
+function order_ck($order_ck)
+{
+    global $db;
+
+    $id_pel     = htmlspecialchars($order_ck['id_pel_ck']);
+    $nama_pel   = htmlspecialchars($order_ck['nama_pel_ck']);
+    $no_telp    = htmlspecialchars($order_ck['no_telp_ck']);
+    $alamat     = htmlspecialchars($order_ck['alamat_ck']);
+    $jns_pkt    = htmlspecialchars($order_ck['jenis_paket_ck']);
+    $berat_qty  = htmlspecialchars($order_ck['berat_qty_ck']);
+    $tgl_masuk  = htmlspecialchars($order_ck['tgl_masuk_ck']);
+    $tgl_keluar = htmlspecialchars($order_ck['tgl_keluar_ck']);
+    $ket        = htmlspecialchars($order_ck['keterangan_ck']);
+
+    // Ambil data id pelanggan dari tabel master
+    $id_pel_ck = mysqli_query($db, "SELECT * FROM master WHERE id_pelanggan = '$id_pel'");
+    if (mysqli_num_rows($id_pel_ck) === 1) {
+        $result_ck = mysqli_fetch_assoc($id_pel_ck);
+
+        $id_pel_ck = $result_ck['id_pelanggan'];
+    }
+
+    // Ambil data dari tabel daftar paket cuci komplit
+    $pkt_ck = mysqli_query($db, "SELECT * FROM tb_cuci_komplit WHERE nama_paket_ck = '$jns_pkt'");
+
+    if (mysqli_num_rows($pkt_ck) === 1) {
+
+        $result_ck = mysqli_fetch_assoc($pkt_ck);
+
+        $wkt_kerja_ck  = $result_ck['waktu_kerja_ck'];
+        $tarif_perkilo = $result_ck['tarif_ck'];
+        $total_bayar   = $berat_qty * $result_ck['tarif_ck'];
+
+        /* Generate nomor order */
+        $str      = uniqid();
+        $limitNum = substr($str, 0, 7);
+        $orderNum = 'CK-'.strtoupper($limitNum);
+    }
+
+    $insert_ck = "INSERT INTO tb_order_ck VALUES(
+		null,'$orderNum',' $id_pel_ck','$nama_pel','$no_telp','$alamat',
+		'$jns_pkt','$wkt_kerja_ck','$berat_qty','$tarif_perkilo',
+		'$tgl_masuk','$tgl_keluar','$total_bayar',
+		'$ket' )";
+    mysqli_query($db, $insert_ck);
+
+    header("refresh:3"); // refresh halaman 3 detik setelah update data
+
+    return mysqli_affected_rows($db);
+}
+
+// Hapus Daftar Orderan Cuci Kering
+function del_or_ck($or_numb_ck)
+{
+    global $db;
+    $del_query_ck = "DELETE FROM tb_order_ck WHERE or_ck_number='$or_numb_ck'";
+    mysqli_query($db, $del_query_ck);
+
+    return mysqli_affected_rows($db);
+}

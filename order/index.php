@@ -66,3 +66,5 @@
     </div>
 </section>
 <!-- END: order baru -->
+
+<?php require_once '../_footer.php'?>

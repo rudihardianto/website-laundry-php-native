@@ -13,66 +13,47 @@
                                     <tr class="table-primary">
                                         <th scope="col">#</th>
                                         <th scope="col">No Order</th>
-                                        <th scope="col">Tanggal Order</th>
+                                        <th scope="col">ID Pelanggan</th>
                                         <th scope="col">Nama Pelanggan</th>
                                         <th scope="col">Jenis Paket</th>
                                         <th scope="col">Waktu Kerja</th>
                                         <th scope="col">Berat (KG)</th>
+                                        <th scope="col">Tanggal Masuk</th>
+                                        <th scope="col">Tanggal Keluar</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php $cuci_komplit = query("SELECT * FROM tb_order_ck ORDER BY id_order_ck DESC");
+                                    if (!empty($cuci_komplit)): ?>
+                                    <?php $no = 1;foreach ($cuci_komplit as $ck): ?>
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
+                                        <th scope="row"><?=$no++;?></th>
+                                        <td><?=$ck['or_ck_number'];?></td>
+                                        <td><?=$ck['id_pelanggan_ck'];?></td>
+                                        <td><?=$ck['nama_pel_ck'];?></td>
+                                        <td><?=$ck['jenis_paket_ck'];?></td>
+                                        <td><?=$ck['wkt_krj_ck'];?></td>
+                                        <td><?=$ck['berat_qty_ck'].' Kg';?></td>
+                                        <td><?=$ck['tgl_masuk_ck'];?></td>
+                                        <td><?=$ck['tgl_keluar_ck'];?></td>
                                         <td>
-                                            <a href="<?=url('detail_order/detail_ck/detail_order_ck.php');?>">
+                                            <a
+                                                href="<?=url('detail_order/detail_ck/detail_order_ck.php?or_ck_number=')?><?=$ck['or_ck_number']?>">
                                                 <button type="button" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
-                                            <a href="">
-                                                <button type="button" class="btn btn-danger btn-sm">Hapus</button>
+                                            <a href="<?=url('daftar_order/hapus_ck.php?or_ck_number=')?><?=$ck['or_ck_number']?>"
+                                                onclick="return confirm('Yakin akan menghapus?');" <button type="button"
+                                                class="btn btn-danger btn-sm">Hapus</button>
                                             </a>
                                         </td>
                                     </tr>
+                                    <?php endforeach;?>
+                                    <?php else: ?>
                                     <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                        <td>
-                                            <a href="<?=url('detail_order/detail_ck/detail_order_ck.php');?>">
-                                                <button type="button" class="btn btn-primary btn-sm">Detail</button>
-                                            </a>
-                                            <a href="">
-                                                <button type="button" class="btn btn-danger btn-sm">Hapus</button>
-                                            </a>
-                                        </td>
+                                        <td colspan="8" class="txt-center">Data Tidak Tersedia</td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry the Bird</td>
-                                        <td>@twitter</td>
-                                        <td>@twitter</td>
-                                        <td>@twitter</td>
-                                        <td>@twitter</td>
-                                        <td>@twitter</td>
-                                        <td>
-                                            <a href="<?=url('detail_order/detail_ck/detail_order_ck.php');?>">
-                                                <button type="button" class="btn btn-primary btn-sm">Detail</button>
-                                            </a>
-                                            <a href="">
-                                                <button type="button" class="btn btn-danger btn-sm">Hapus</button>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    <?php endif;?>
                                 </tbody>
                             </table>
                         </div>
