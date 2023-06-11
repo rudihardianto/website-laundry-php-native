@@ -300,7 +300,7 @@ function order_ck($order_ck)
 {
     global $db;
 
-    $id_pel     = htmlspecialchars($order_ck['id_pel_ck']);
+    $id_pel     = htmlspecialchars($order_ck['id_pelanggan_ck']);
     $nama_pel   = htmlspecialchars($order_ck['nama_pel_ck']);
     $no_telp    = htmlspecialchars($order_ck['no_telp_ck']);
     $alamat     = htmlspecialchars($order_ck['alamat_ck']);
