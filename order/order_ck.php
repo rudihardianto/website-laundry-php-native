@@ -63,7 +63,9 @@ $data_ck   = query("SELECT * FROM tb_cuci_komplit");
                                                 <select name="id_pelanggan_ck" id="id_pel" class="form-select">
                                                     <option selected>- ID Pelanggan -</option>
                                                     <?php foreach ($id_pel_ck as $id_pel): ?>
-                                                    <option><?=$id_pel['id_pelanggan']?></option>
+                                                    <option value="<?=$id_pel['id_pelanggan']?>">
+                                                        <?=$id_pel['id_pelanggan']?> || <?=$id_pel['nama']?>
+                                                    </option>
                                                     <?php endforeach?>
                                                 </select>
                                             </div>
