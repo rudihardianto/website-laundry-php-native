@@ -52,97 +52,89 @@ $data_ck   = query("SELECT * FROM tb_cuci_komplit");
 
                         <hr>
 
-                        <div class="row">
-                            <!-- START: form -->
-                            <div class="col">
-                                <form action="" method="post">
-                                    <div class="row d-flex">
-                                        <div class="col-12 col-md-6">
-                                            <div class="mb-3">
-                                                <label for="id_pel" class="form-label">Pilih ID Pelanggan</label>
-                                                <select name="id_pelanggan_ck" id="id_pel" class="form-select">
-                                                    <option selected>- ID Pelanggan -</option>
-                                                    <?php foreach ($id_pel_ck as $id_pel): ?>
-                                                    <option value="<?=$id_pel['id_pelanggan']?>">
-                                                        <?=$id_pel['id_pelanggan']?> || <?=$id_pel['nama']?>
-                                                    </option>
-                                                    <?php endforeach?>
-                                                </select>
-                                            </div>
-                                            <!-- nama -->
-                                            <div class="mb-3">
-                                                <label for="nama" class="form-label">Nama Pelanggan</label>
-                                                <input type="text" name="nama_pel_ck" id="nama" class="form-control"
-                                                    autocomplete="off" required>
-                                            </div>
-                                            <!-- no telepon -->
-                                            <div class="mb-3">
-                                                <label for="no-telp" class="form-label">No Telepon</label>
-                                                <input type="number" name="no_telp_ck" id="no-telp" class="form-control"
-                                                    autocomplete="off" required>
-                                            </div>
-                                            <!-- alamat -->
-                                            <div class="mb-3">
-                                                <label for="alamat" class="form-label">Alamat</label>
-                                                <textarea name="alamat_ck" id="alamat" class="form-control"
-                                                    required></textarea>
-                                            </div>
-                                        </div>
+                        <!-- START: form -->
+                        <form action="" method="post">
+                            <div class="row d-flex">
+                                <div class="col-12 col-md-6">
+                                    <div class="mb-3">
+                                        <label for="id_pel" class="form-label">Pilih ID Pelanggan</label>
+                                        <select name="id_pelanggan_ck" id="id_pel" class="form-select">
+                                            <option selected>- ID Pelanggan -</option>
+                                            <?php foreach ($id_pel_ck as $id_pel): ?>
+                                            <option><?=$id_pel['id_pelanggan']?></option>
+                                            <?php endforeach?>
+                                        </select>
+                                    </div>
+                                    <!-- nama -->
+                                    <div class="mb-3">
+                                        <label for="nama" class="form-label">Nama Pelanggan</label>
+                                        <input type="text" name="nama_pel_ck" id="nama" class="form-control"
+                                            autocomplete="off" required>
+                                    </div>
+                                    <!-- no telepon -->
+                                    <div class="mb-3">
+                                        <label for="no-telp" class="form-label">No Telepon</label>
+                                        <input type="number" name="no_telp_ck" id="no-telp" class="form-control"
+                                            autocomplete="off" required>
+                                    </div>
+                                    <!-- alamat -->
+                                    <div class="mb-3">
+                                        <label for="alamat" class="form-label">Alamat</label>
+                                        <textarea name="alamat_ck" id="alamat" class="form-control" required></textarea>
+                                    </div>
+                                </div>
 
-                                        <div class="col-12 col-md-6">
-                                            <!-- pilih paket -->
-                                            <div class="mb-3">
-                                                <label for="pilih_paket" class="form-label">Pilih Paket</label>
-                                                <select name="jenis_paket_ck" id="pilih_paket" class="form-select">
-                                                    <option selected>- Pilih Jenis Paket -</option>
-                                                    <?php foreach ($data_ck as $ck): ?>
-                                                    <option><?=$ck['nama_paket_ck']?></option>
-                                                    <?php endforeach?>
-                                                </select>
-                                            </div>
-                                            <!-- berat -->
-                                            <div class="mb-3">
-                                                <label for="kuantitas" class="form-label">Berat</label>
-                                                <div class="input-group">
-                                                    <input type="number" name="berat_qty_ck" id="kuantitas"
-                                                        class="form-control" autocomplete="off" required>
-                                                    <span class="input-group-text">Kilogram</span>
-                                                </div>
-                                            </div>
-                                            <!-- tanggal order masuk -->
-                                            <div class="mb-3">
-                                                <label for="tgl_order_msk" class="form-label">
-                                                    Tanggal Order Masuk
-                                                </label>
-                                                <input type="date" name="tgl_masuk_ck" id="tgl_order_msk"
-                                                    class="form-control" autocomplete="off" required>
-                                            </div>
-                                            <!-- tanggal order keluar -->
-                                            <div class="mb-3">
-                                                <label for="tgl_order_klr" class="form-label">
-                                                    Tanggal Order Keluar
-                                                </label>
-                                                <input type="date" name="tgl_keluar_ck" id="tgl_order_klr"
-                                                    class="form-control" autocomplete="off" required>
-                                            </div>
-                                            <!-- keterangan -->
-                                            <div class="mb-3">
-                                                <label for="ket" class="form-label">Keterangan</label>
-                                                <textarea name="keterangan_ck" id="ket" class="form-control"></textarea>
-                                            </div>
-
-                                            <div class="text-end">
-                                                <button type="reset" class="btn">Batal</button>
-                                                <button type="submit" name="order_ck" class="btn btn-primary">
-                                                    Tambah Order
-                                                </button>
-                                            </div>
+                                <div class="col-12 col-md-6">
+                                    <!-- pilih paket -->
+                                    <div class="mb-3">
+                                        <label for="pilih_paket" class="form-label">Pilih Paket</label>
+                                        <select name="jenis_paket_ck" id="pilih_paket" class="form-select">
+                                            <option selected>- Pilih Jenis Paket -</option>
+                                            <?php foreach ($data_ck as $ck): ?>
+                                            <option><?=$ck['nama_paket_ck']?></option>
+                                            <?php endforeach?>
+                                        </select>
+                                    </div>
+                                    <!-- berat -->
+                                    <div class="mb-3">
+                                        <label for="kuantitas" class="form-label">Berat</label>
+                                        <div class="input-group">
+                                            <input type="number" name="berat_qty_ck" id="kuantitas" class="form-control"
+                                                autocomplete="off" required>
+                                            <span class="input-group-text">Kilogram</span>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
-                        </div>
+                                    <!-- tanggal order masuk -->
+                                    <div class="mb-3">
+                                        <label for="tgl_order_msk" class="form-label">
+                                            Tanggal Order Masuk
+                                        </label>
+                                        <input type="date" name="tgl_masuk_ck" id="tgl_order_msk" class="form-control"
+                                            autocomplete="off" required>
+                                    </div>
+                                    <!-- tanggal order keluar -->
+                                    <div class="mb-3">
+                                        <label for="tgl_order_klr" class="form-label">
+                                            Tanggal Order Keluar
+                                        </label>
+                                        <input type="date" name="tgl_keluar_ck" id="tgl_order_klr" class="form-control"
+                                            autocomplete="off" required>
+                                    </div>
+                                    <!-- keterangan -->
+                                    <div class="mb-3">
+                                        <label for="ket" class="form-label">Keterangan</label>
+                                        <textarea name="keterangan_ck" id="ket" class="form-control"></textarea>
+                                    </div>
 
+                                    <div class="text-end">
+                                        <button type="reset" class="btn">Batal</button>
+                                        <button type="submit" name="order_ck" class="btn btn-primary">
+                                            Tambah Order
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                         <!-- END: form -->
                     </div>
                 </div>
