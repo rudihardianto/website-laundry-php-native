@@ -26,7 +26,7 @@
                                 <tbody>
                                     <?php $cuci_satuan = query('SELECT * FROM tb_order_cs ORDER BY id_order_cs DESC');
                                     if (!empty($cuci_satuan)): ?>
-                                    <?php $no_cs = 1; foreach ($cuci_satuan as $cs): ?>
+                                    <?php $no = 1; foreach ($cuci_satuan as $cs): ?>
                                     <tr>
                                         <th scope="row"><?=$no++;?></th>
                                         <td><?=$cs['or_cs_number'];?></td>

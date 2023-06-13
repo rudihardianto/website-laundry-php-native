@@ -26,9 +26,9 @@
                                 <tbody>
                                     <?php $dry_clean = query('SELECT * FROM tb_order_dc ORDER BY id_order_dc DESC');
                                     if (!empty($dry_clean)): ?>
-                                    <?php $no_dc = 1; foreach ($dry_clean as $dc): ?>
+                                    <?php $no = 1; foreach ($dry_clean as $dc): ?>
                                     <tr>
-                                        <th scope="row">1</th>
+                                        <th scope="row"><?= $no++; ?></th>
                                         <td><?=$dc['or_dc_number'];?></td>
                                         <td><?=$dc['id_pelanggan_dc'];?></td>
                                         <td><?=$dc['nama_pel_dc'];?></td>
