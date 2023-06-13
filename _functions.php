@@ -39,6 +39,17 @@ function jmlOrder()
     return $total_order;
 }
 
+// hitung semua paket yang tersedia
+function jmlPaket()
+{
+    $jml_pkt_ck = count(query("SELECT * FROM tb_cuci_komplit"));
+    $jml_pkt_cs = count(query("SELECT * FROM tb_cuci_satuan"));
+    $jml_pkt_dc = count(query("SELECT * FROM tb_dry_clean"));
+    $jmlPkt     = $jml_pkt_ck + $jml_pkt_cs + $jml_pkt_dc;
+
+    return $jmlPkt;
+}
+
 // fungsi untuk merubah format tanggal
 function formatDate($tgl)
 {
