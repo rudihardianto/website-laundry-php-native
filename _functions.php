@@ -39,6 +39,42 @@ function jmlOrder()
     return $total_order;
 }
 
+// fungsi untuk merubah format tanggal
+function formatDate($tgl)
+{
+    $tgl = explode('-', $tgl);
+
+    if ($tgl[1] == '01') {
+        $tgl[1] = "Januari";
+    } else if ($tgl[1] == '02') {
+        $tgl[1] = "Februari";
+    } else if ($tgl[1] == '03') {
+        $tgl[1] = "Maret";
+    } else if ($tgl[1] == '04') {
+        $tgl[1] = "April";
+    } else if ($tgl[1] == '05') {
+        $tgl[1] = "Mei";
+    } else if ($tgl[1] == '06') {
+        $tgl[1] = "Juni";
+    } else if ($tgl[1] == '07') {
+        $tgl[1] = "Juli";
+    } else if ($tgl[1] == '08') {
+        $tgl[1] = "Agustus";
+    } else if ($tgl[1] == '09') {
+        $tgl[1] = "September";
+    } else if ($tgl[1] == '10') {
+        $tgl[1] = "Oktober";
+    } else if ($tgl[1] == '11') {
+        $tgl[1] = "November";
+    } else if ($tgl[1] == '12') {
+        $tgl[1] = "Desember";
+    }
+
+    $tgl = $tgl[2].' '.$tgl[1].' '.$tgl[0];
+
+    return $tgl;
+}
+
 /* START: CRUD (Management karyawan) */
 // create
 function add_karyawan($karyawan)
@@ -318,8 +354,8 @@ function order_ck($order_ck)
     $alamat     = htmlspecialchars($order_ck['alamat_ck']);
     $jns_pkt    = htmlspecialchars($order_ck['jenis_paket_ck']);
     $berat_qty  = htmlspecialchars($order_ck['berat_qty_ck']);
-    $tgl_masuk  = htmlspecialchars($order_ck['tgl_masuk_ck']);
-    $tgl_keluar = htmlspecialchars($order_ck['tgl_keluar_ck']);
+    $tgl_masuk  = htmlspecialchars(formatDate($order_ck['tgl_masuk_ck']));
+    $tgl_keluar = htmlspecialchars(formatDate($order_ck['tgl_keluar_ck']));
     $ket        = htmlspecialchars($order_ck['keterangan_ck']);
 
     // Ambil data id pelanggan dari tabel master
@@ -382,8 +418,8 @@ function order_dc($order_dc)
     $alamat_dc   = htmlspecialchars($order_dc['alamat_dc']);
     $jns_paket   = htmlspecialchars($order_dc['jenis_paket_dc']);
     $berat_dc    = htmlspecialchars($order_dc['berat_qty_dc']);
-    $tgl_msk_dc  = htmlspecialchars($order_dc['tgl_masuk_dc']);
-    $tgl_kel_dc  = htmlspecialchars($order_dc['tgl_keluar_dc']);
+    $tgl_msk_dc  = htmlspecialchars(formatDate($order_dc['tgl_masuk_dc']));
+    $tgl_kel_dc  = htmlspecialchars(formatDate($order_dc['tgl_keluar_dc']));
     $ket_dc      = htmlspecialchars($order_dc['keterangan_dc']);
 
     // Ambil data id pelanggan dari tabel master
@@ -446,8 +482,8 @@ function order_cs($order_cs)
     $alamat_cs    = htmlspecialchars($order_cs['alamat_cs']);
     $jenis_pkt_cs = htmlspecialchars($order_cs['jenis_paket_cs']);
     $jml_pcs      = htmlspecialchars($order_cs['jml_pcs']);
-    $tgl_msk_cs   = htmlspecialchars($order_cs['tgl_masuk_cs']);
-    $tgl_kel_cs   = htmlspecialchars($order_cs['tgl_keluar_cs']);
+    $tgl_msk_cs   = htmlspecialchars(formatDate($order_cs['tgl_masuk_cs']));
+    $tgl_kel_cs   = htmlspecialchars(formatDate($order_cs['tgl_keluar_cs']));
     $ket_cs       = htmlspecialchars($order_cs['keterangan_cs']);
 
     // Ambil data id pelanggan dari tabel master
