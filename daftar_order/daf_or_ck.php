@@ -8,7 +8,7 @@
                         <h5 class="card-title">Order Cuci Komplit</h5>
                         <hr>
                         <div class="table-responsive text-nowrap">
-                            <table class="table table-hover">
+                            <table class="table table-sm table-hover">
                                 <thead>
                                     <tr class="table-primary">
                                         <th scope="col">#</th>
