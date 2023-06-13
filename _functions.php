@@ -28,6 +28,17 @@ function url($url = null)
     }
 }
 
+// Hitung total order semua paket
+function jmlOrder()
+{
+    $jml_ck      = count(query("SELECT * FROM tb_order_ck"));
+    $jml_dc      = count(query("SELECT * FROM tb_order_dc"));
+    $jml_cs      = count(query("SELECT * FROM tb_order_cs"));
+    $total_order = $jml_ck + $jml_dc + $jml_cs;
+
+    return $total_order;
+}
+
 /* START: CRUD (Management karyawan) */
 // create
 function add_karyawan($karyawan)

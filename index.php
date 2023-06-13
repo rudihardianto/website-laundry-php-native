@@ -47,7 +47,7 @@ $jml_karyawan = count(query('SELECT * FROM master WHERE level ="Karyawan"'));
                         <div class="row d-flex justify-content-center align-items-center">
                             <div class="col">
                                 <p>Total Order</p>
-                                <h5 class="card-title fw-bold">10</h5>
+                                <h5 class="card-title fw-bold"><?=jmlOrder();?></h5>
                             </div>
                             <div class="col text-end">
                                 <img src="_assets/img/total_order.png" alt="" width="70">
