@@ -1,6 +1,6 @@
 <?php
 require_once '../_header.php';
-$id_pel_ck = query('SELECT * FROM master WHERE level ="User"');
+$id_pel_ck = query("SELECT * FROM master WHERE level ='User' ORDER BY id_user");
 $data_ck   = query("SELECT * FROM tb_cuci_komplit");
 // var_dump($id_pel_ck);
 ?>
@@ -52,35 +52,65 @@ $data_ck   = query("SELECT * FROM tb_cuci_komplit");
 
                         <hr>
 
+                        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="GET"
+                            class="row row-cols-lg-auto g-3  justify-content-center align-items-center my-4">
+                            <div class="col-12">
+                                <label for="id_pel" class="form-label fw-semibold">Pilih ID Pelanggan</label>
+                            </div>
+                            <div class="col-12">
+                                <!-- select id pelanggan -->
+                                <select name="id_user" class="form-select">
+                                    <option selected>-- Pilih ID Pelanggan --</option>
+                                    <?php foreach ($id_pel_ck as $id): ?>
+                                    <option value="<?=$id['id_user'];?>">
+                                        <?php echo $id['id_pelanggan']; ?> | <?php echo $id['nama']; ?>
+                                    </option>
+                                    <?php endforeach;?>
+                                </select>
+                            </div>
+                            <div class="col-2 col-md-12">
+                                <input type="submit" value="Pilih" class="btn btn-outline-primary">
+                            </div>
+                            <div class="col-2 col-md-12">
+                                <a href="<?=url('order/order_ck.php');?>" class="btn btn-outline-secondary">Refresh</a>
+                            </div>
+                        </form>
+
+                        <hr>
+
                         <!-- START: form -->
+                        <?php
+                        if (isset($_GET['id_user'])) {
+                            //menampilkan data pelanggan berdasarkan pilihan combobox ke dalam form
+                            $id_user = $_GET['id_user'];
+                            $id      = mysqli_query($db, "SELECT * FROM master WHERE id_user='$id_user' ORDER BY id_user");
+                            $id_user = mysqli_fetch_array($id);
+                        ?>
                         <form action="" method="post">
                             <div class="row d-flex">
                                 <div class="col-12 col-md-6">
                                     <div class="mb-3">
-                                        <label for="id_pel" class="form-label">Pilih ID Pelanggan</label>
-                                        <select name="id_pelanggan_ck" id="id_pel" class="form-select">
-                                            <option selected>- ID Pelanggan -</option>
-                                            <?php foreach ($id_pel_ck as $id_pel): ?>
-                                            <option><?=$id_pel['id_pelanggan']?></option>
-                                            <?php endforeach?>
-                                        </select>
+                                        <label for="id_pel" class="form-label">ID Pelanggan</label>
+                                        <input name="id_pelanggan_ck" id="nama" class="form-control"
+                                            value="<?=$id_user["id_pelanggan"];?>" readonly>
                                     </div>
                                     <!-- nama -->
                                     <div class="mb-3">
                                         <label for="nama" class="form-label">Nama Pelanggan</label>
-                                        <input type="text" name="nama_pel_ck" id="nama" class="form-control"
-                                            autocomplete="off" required>
+                                        <input name="nama_pel_ck" id="nama" class="form-control"
+                                            value="<?=$id_user["nama"];?>" readonly>
                                     </div>
                                     <!-- no telepon -->
                                     <div class="mb-3">
                                         <label for="no-telp" class="form-label">No Telepon</label>
-                                        <input type="number" name="no_telp_ck" id="no-telp" class="form-control"
-                                            autocomplete="off" required>
+                                        <input name="no_telp_ck" id="no-telp" class="form-control"
+                                            value="<?=$id_user["no_telp"];?>" readonly>
                                     </div>
                                     <!-- alamat -->
                                     <div class="mb-3">
                                         <label for="alamat" class="form-label">Alamat</label>
-                                        <textarea name="alamat_ck" id="alamat" class="form-control" required></textarea>
+                                        <textarea name="alamat_ck" id="alamat" class="form-control text-start"
+                                            readonly><?=$id_user["alamat"];?></textarea>
                                     </div>
                                 </div>
 
@@ -100,7 +130,7 @@ $data_ck   = query("SELECT * FROM tb_cuci_komplit");
                                         <label for="kuantitas" class="form-label">Berat</label>
                                         <div class="input-group">
                                             <input type="number" name="berat_qty_ck" id="kuantitas" class="form-control"
-                                                autocomplete="off" required>
+                                                required>
                                             <span class="input-group-text">Kilogram</span>
                                         </div>
                                     </div>
@@ -110,7 +140,7 @@ $data_ck   = query("SELECT * FROM tb_cuci_komplit");
                                             Tanggal Order Masuk
                                         </label>
                                         <input type="date" name="tgl_masuk_ck" id="tgl_order_msk" class="form-control"
-                                            autocomplete="off" required>
+                                            required>
                                     </div>
                                     <!-- tanggal order keluar -->
                                     <div class="mb-3">
@@ -118,7 +148,7 @@ $data_ck   = query("SELECT * FROM tb_cuci_komplit");
                                             Tanggal Order Keluar
                                         </label>
                                         <input type="date" name="tgl_keluar_ck" id="tgl_order_klr" class="form-control"
-                                            autocomplete="off" required>
+                                            required>
                                     </div>
                                     <!-- keterangan -->
                                     <div class="mb-3">
@@ -135,6 +165,7 @@ $data_ck   = query("SELECT * FROM tb_cuci_komplit");
                                 </div>
                             </div>
                         </form>
+                        <?php } ?>
                         <!-- END: form -->
                     </div>
                 </div>

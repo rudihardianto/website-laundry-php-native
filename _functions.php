@@ -300,7 +300,7 @@ function order_ck($order_ck)
 {
     global $db;
 
-    $id_pel     = htmlspecialchars($order_ck['id_pelanggan_ck']);
+    $id_pel     = $order_ck['id_pelanggan_ck'];
     $nama_pel   = htmlspecialchars($order_ck['nama_pel_ck']);
     $no_telp    = htmlspecialchars($order_ck['no_telp_ck']);
     $alamat     = htmlspecialchars($order_ck['alamat_ck']);
@@ -316,6 +316,8 @@ function order_ck($order_ck)
         $result_ck = mysqli_fetch_assoc($id_pel_ck);
 
         $id_pel_ck = $result_ck['id_pelanggan'];
+        $no_telp = $result_ck['no_telp'];
+        $alamat = $result_ck['alamat'];
     }
 
     // Ambil data dari tabel daftar paket cuci komplit
