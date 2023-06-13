@@ -307,7 +307,7 @@ function delete_cs($del_cs)
 /* END: CRUD Cuci Satuan */
 
 /* START: CRUD Order */
-// Create Order Cuci Kering
+// Create Order Cuci Komplit
 function order_ck($order_ck)
 {
     global $db;
@@ -361,7 +361,7 @@ function order_ck($order_ck)
     return mysqli_affected_rows($db);
 }
 
-// Hapus Daftar Orderan Cuci Kering
+// Hapus Daftar Orderan Cuci Komplit
 function del_or_ck($or_numb_ck)
 {
     global $db;
