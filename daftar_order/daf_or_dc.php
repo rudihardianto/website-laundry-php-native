@@ -1,5 +1,5 @@
 <!-- START: dry clean -->
-<section id="order-dry-clean" class="main-order-dry-clean my-3">
+<section id="order-dry-clean" class="main-order-dry-clean my-5">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -8,71 +8,54 @@
                         <h5 class="card-title">Order Dry Clean (Cuci Kering)</h5>
                         <hr>
                         <div class="table-responsive text-nowrap">
-                            <table class="table table-hover">
+                            <table class="table table-sm table-hover">
                                 <thead>
                                     <tr class="table-primary">
                                         <th scope="col">#</th>
                                         <th scope="col">No Order</th>
-                                        <th scope="col">Tanggal Order</th>
+                                        <th scope="col">ID Pelanggan</th>
                                         <th scope="col">Nama Pelanggan</th>
                                         <th scope="col">Jenis Paket</th>
                                         <th scope="col">Waktu Kerja</th>
                                         <th scope="col">Berat (KG)</th>
+                                        <th scope="col">Tanggal Masuk</th>
+                                        <th scope="col">Tanggal Keluar</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php $dry_clean = query('SELECT * FROM tb_order_dc ORDER BY id_order_dc DESC');
+                                    if (!empty($dry_clean)): ?>
+                                    <?php $no_dc = 1; foreach ($dry_clean as $dc): ?>
                                     <tr>
                                         <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
+                                        <td><?=$dc['or_dc_number'];?></td>
+                                        <td><?=$dc['id_pelanggan_dc'];?></td>
+                                        <td><?=$dc['nama_pel_dc'];?></td>
+                                        <td><?=$dc['jenis_paket_dc'];?></td>
+                                        <td><?=$dc['wkt_krj_dc'];?></td>
+                                        <td><?=$dc['berat_qty_dc'].' Kg';?></td>
+                                        <td><?=$dc['tgl_masuk_dc'];?></td>
+                                        <td><?=$dc['tgl_keluar_dc'];?></td>
                                         <td>
-                                            <a href="<?=url('detail_order/detail_dc/detail_order_dc.php');?>">
+                                            <a
+                                                href="<?=url('detail_order/detail_dc/detail_order_dc.php?or_dc_number=')?><?=$dc['or_dc_number']?>">
                                                 <button type="button" class="btn btn-primary btn-sm">Detail</button>
                                             </a>
-                                            <a href="">
+                                            <a href="<?=url('daftar_order/hapus_dc.php?or_dc_number=')?><?=$dc['or_dc_number']?>"
+                                                onclick="return confirm('Yakin akan menghapus?');">
                                                 <button type="button" class="btn btn-danger btn-sm">Hapus</button>
                                             </a>
                                         </td>
                                     </tr>
+                                    <?php endforeach; ?>
+                                    <?php else: ?>
                                     <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                        <td>
-                                            <a href="<?=url('detail_order/detail_dc/detail_order_dc.php');?>">
-                                                <button type="button" class="btn btn-primary btn-sm">Detail</button>
-                                            </a>
-                                            <a href="">
-                                                <button type="button" class="btn btn-danger btn-sm">Hapus</button>
-                                            </a>
+                                        <td colspan="10" class="text-center text-muted fw-semibold py-3">
+                                            Data Tidak Tersedia
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry the Bird</td>
-                                        <td>@twitter</td>
-                                        <td>@twitter</td>
-                                        <td>@twitter</td>
-                                        <td>@twitter</td>
-                                        <td>@twitter</td>
-                                        <td>
-                                            <a href="<?=url('detail_order/detail_dc/detail_order_dc.php');?>">
-                                                <button type="button" class="btn btn-primary btn-sm">Detail</button>
-                                            </a>
-                                            <a href="">
-                                                <button type="button" class="btn btn-danger btn-sm">Hapus</button>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    <?php endif?>
                                 </tbody>
                             </table>
                         </div>

@@ -80,18 +80,19 @@ $data_ck   = query("SELECT * FROM tb_cuci_komplit");
 
                         <!-- START: form -->
                         <?php
-                        if (isset($_GET['id_user'])) {
-                            //menampilkan data pelanggan berdasarkan pilihan combobox ke dalam form
-                            $id_user = $_GET['id_user'];
-                            $id      = mysqli_query($db, "SELECT * FROM master WHERE id_user='$id_user' ORDER BY id_user");
-                            $id_user = mysqli_fetch_array($id);
-                        ?>
+if (isset($_GET['id_user'])) {
+    //menampilkan data pelanggan berdasarkan pilihan combobox ke dalam form
+    $id_user = $_GET['id_user'];
+    $id      = mysqli_query($db, "SELECT * FROM master WHERE id_user='$id_user' ORDER BY id_user");
+    $id_user = mysqli_fetch_array($id);
+    ?>
                         <form action="" method="post">
                             <div class="row d-flex">
                                 <div class="col-12 col-md-6">
+                                    <!-- id pelanggan -->
                                     <div class="mb-3">
                                         <label for="id_pel" class="form-label">ID Pelanggan</label>
-                                        <input name="id_pelanggan_ck" id="nama" class="form-control"
+                                        <input name="id_pelanggan_ck" id="id_pel" class="form-control"
                                             value="<?=$id_user["id_pelanggan"];?>" readonly>
                                     </div>
                                     <!-- nama -->
@@ -109,7 +110,7 @@ $data_ck   = query("SELECT * FROM tb_cuci_komplit");
                                     <!-- alamat -->
                                     <div class="mb-3">
                                         <label for="alamat" class="form-label">Alamat</label>
-                                        <textarea name="alamat_ck" id="alamat" class="form-control text-start"
+                                        <textarea name="alamat_ck" id="alamat" class="form-control"
                                             readonly><?=$id_user["alamat"];?></textarea>
                                     </div>
                                 </div>
@@ -165,7 +166,7 @@ $data_ck   = query("SELECT * FROM tb_cuci_komplit");
                                 </div>
                             </div>
                         </form>
-                        <?php } ?>
+                        <?php }?>
                         <!-- END: form -->
                     </div>
                 </div>
@@ -175,3 +176,5 @@ $data_ck   = query("SELECT * FROM tb_cuci_komplit");
     </div>
 </section>
 <!-- END: order cuci komplit -->
+
+<?php include '../_footer.php'?>

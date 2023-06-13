@@ -295,7 +295,8 @@ function delete_cs($del_cs)
 }
 /* END: CRUD Cuci Satuan */
 
-// Order
+/* START: CRUD Order */
+// Create Order Cuci Kering
 function order_ck($order_ck)
 {
     global $db;
@@ -316,8 +317,8 @@ function order_ck($order_ck)
         $result_ck = mysqli_fetch_assoc($id_pel_ck);
 
         $id_pel_ck = $result_ck['id_pelanggan'];
-        $no_telp = $result_ck['no_telp'];
-        $alamat = $result_ck['alamat'];
+        $no_telp   = $result_ck['no_telp'];
+        $alamat    = $result_ck['alamat'];
     }
 
     // Ambil data dari tabel daftar paket cuci komplit
@@ -338,10 +339,10 @@ function order_ck($order_ck)
     }
 
     $insert_ck = "INSERT INTO tb_order_ck VALUES(
-		null,'$orderNum',' $id_pel_ck','$nama_pel','$no_telp','$alamat',
-		'$jns_pkt','$wkt_kerja_ck','$berat_qty','$tarif_perkilo',
-		'$tgl_masuk','$tgl_keluar','$total_bayar',
-		'$ket' )";
+		null,'$orderNum',' $id_pel_ck','$nama_pel','$no_telp','$alamat', '$jns_pkt','$wkt_kerja_ck',
+        '$berat_qty','$tarif_perkilo', '$tgl_masuk','$tgl_keluar','$total_bayar','$ket'
+    )";
+
     mysqli_query($db, $insert_ck);
 
     header("refresh:3"); // refresh halaman 3 detik setelah update data
@@ -358,3 +359,130 @@ function del_or_ck($or_numb_ck)
 
     return mysqli_affected_rows($db);
 }
+
+// Create Order Dry Clean
+function order_dc($order_dc)
+{
+    global $db;
+
+    $id_pel      = $order_dc['id_pelanggan_dc'];
+    $nama_pel_dc = htmlspecialchars($order_dc['nama_pel_dc']);
+    $no_telp     = htmlspecialchars($order_dc['no_telp_dc']);
+    $alamat_dc   = htmlspecialchars($order_dc['alamat_dc']);
+    $jns_paket   = htmlspecialchars($order_dc['jenis_paket_dc']);
+    $berat_dc    = htmlspecialchars($order_dc['berat_qty_dc']);
+    $tgl_msk_dc  = htmlspecialchars($order_dc['tgl_masuk_dc']);
+    $tgl_kel_dc  = htmlspecialchars($order_dc['tgl_keluar_dc']);
+    $ket_dc      = htmlspecialchars($order_dc['keterangan_dc']);
+
+    // Ambil data id pelanggan dari tabel master
+    $id_pel_dc = mysqli_query($db, "SELECT * FROM master WHERE id_pelanggan = '$id_pel'");
+    if (mysqli_num_rows($id_pel_dc) === 1) {
+        $result_ck = mysqli_fetch_assoc($id_pel_dc);
+
+        $id_pel_dc = $result_ck['id_pelanggan'];
+        $no_telp   = $result_ck['no_telp'];
+        $alamat_dc = $result_ck['alamat'];
+    }
+
+    // Ambil data dari tabel daftar paket cuci komplit
+    $pkt_dc = mysqli_query($db, "SELECT * FROM tb_dry_clean WHERE nama_paket_dc = '$jns_paket'");
+
+    if (mysqli_num_rows($pkt_dc) === 1) {
+        $result_dc = mysqli_fetch_assoc($pkt_dc);
+
+        $wkt_kerja_dc = $result_dc['waktu_kerja_dc'];
+        $trf_dc       = $result_dc['tarif_dc'];
+        $tot_bayar_dc = $result_dc['tarif_dc'] * $berat_dc;
+
+        // Generate Nomor Order
+        $no_dc       = uniqid();
+        $limitNum    = substr($no_dc, 0, 7);
+        $orderNum_dc = 'DC-'.strtoupper($limitNum);
+    }
+
+    $query_dc = "INSERT INTO tb_order_dc VALUES(
+		null,'$orderNum_dc','$id_pel_dc','$nama_pel_dc','$no_telp','$alamat_dc','$jns_paket','$wkt_kerja_dc',
+		'$berat_dc','$trf_dc','$tgl_msk_dc','$tgl_kel_dc','$tot_bayar_dc','$ket_dc'
+	)";
+
+    mysqli_query($db, $query_dc);
+
+    header("refresh:3"); // refresh halaman 3 detik setelah update data
+
+    return mysqli_affected_rows($db);
+
+}
+
+// Hapus Daftar Orderan Dry Clean
+function del_or_dc($or_numb_dc)
+{
+    global $db;
+    $del_query_dc = "DELETE FROM tb_order_dc WHERE or_dc_number='$or_numb_dc'";
+    mysqli_query($db, $del_query_dc);
+
+    return mysqli_affected_rows($db);
+}
+
+// Create Order Cuci Satuan
+function order_cs($order_cs)
+{
+    global $db;
+
+    $id_pel       = $order_cs['id_pelanggan_dc'];
+    $nama_pel_cs  = htmlspecialchars($order_cs['nama_pel_cs']);
+    $no_telp_cs   = htmlspecialchars($order_cs['no_telp_cs']);
+    $alamat_cs    = htmlspecialchars($order_cs['alamat_cs']);
+    $jenis_pkt_cs = htmlspecialchars($order_cs['jenis_paket_cs']);
+    $jml_pcs      = htmlspecialchars($order_cs['jml_pcs']);
+    $tgl_msk_cs   = htmlspecialchars($order_cs['tgl_masuk_cs']);
+    $tgl_kel_cs   = htmlspecialchars($order_cs['tgl_keluar_cs']);
+    $ket_cs       = htmlspecialchars($order_cs['keterangan_cs']);
+
+    // Ambil data id pelanggan dari tabel master
+    $id_pel_cs = mysqli_query($db, "SELECT * FROM master WHERE id_pelanggan = '$id_pel'");
+    if (mysqli_num_rows($id_pel_cs) === 1) {
+        $result_ck = mysqli_fetch_assoc($id_pel_cs);
+
+        $id_pel_cs  = $result_ck['id_pelanggan'];
+        $no_telp_cs = $result_ck['no_telp'];
+        $alamat_cs  = $result_ck['alamat'];
+    }
+
+    // Ambil data dari tabel daftar paket cuci komplit
+    $pkt_cs = mysqli_query($db, "SELECT * FROM tb_cuci_satuan WHERE nama_cs = '$jenis_pkt_cs'");
+    if (mysqli_num_rows($pkt_cs) === 1) {
+        $result_cs = mysqli_fetch_assoc($pkt_cs);
+
+        $wkt_krj_cs  = $result_cs['waktu_kerja_cs'];
+        $trf_cs      = $result_cs['tarif_cs'];
+        $totBayar_cs = $result_cs['tarif_cs'] * $jml_pcs;
+
+        // Generate Nomor Order
+        $noCs        = uniqid();
+        $limitNo_cs  = substr($noCs, 0, 7);
+        $orderNum_cs = 'CS-'.strtoupper($limitNo_cs);
+    }
+
+    $query_cs = "INSERT INTO tb_order_cs VALUES (
+		null,'$orderNum_cs','$id_pel_cs','$nama_pel_cs','$no_telp_cs','$alamat_cs','$jenis_pkt_cs',
+		'$wkt_krj_cs','$jml_pcs','$trf_cs','$tgl_msk_cs','$tgl_kel_cs','$totBayar_cs','$ket_cs'
+	)";
+
+    mysqli_query($db, $query_cs);
+
+    header("refresh:3"); // refresh halaman 3 detik setelah update data
+
+    return mysqli_affected_rows($db);
+}
+
+// Hapus Daftar Orderan Cuci Satuan
+function del_or_cs($or_numb_cs)
+{
+    global $db;
+    $del_query_cs = "DELETE FROM tb_order_cs WHERE or_cs_number='$or_numb_cs'";
+    mysqli_query($db, $del_query_cs);
+
+    return mysqli_affected_rows($db);
+}
+/* END: CRUD Order */

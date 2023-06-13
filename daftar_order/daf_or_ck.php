@@ -1,5 +1,5 @@
 <!-- START: order cuci komplit -->
-<section id="order-cuci-komplit" class="main-order-cuci-komplit my-3">
+<section id="order-cuci-komplit" class="main-order-cuci-komplit my-5">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -38,20 +38,19 @@
                                         <td><?=$ck['tgl_masuk_ck'];?></td>
                                         <td><?=$ck['tgl_keluar_ck'];?></td>
                                         <td>
-                                            <a
-                                                href="<?=url('detail_order/detail_ck/detail_order_ck.php?or_ck_number=')?><?=$ck['or_ck_number']?>">
-                                                <button type="button" class="btn btn-primary btn-sm">Detail</button>
-                                            </a>
+                                            <a href="<?=url('detail_order/detail_ck/detail_order_ck.php?or_ck_number=')?><?=$ck['or_ck_number']?>"
+                                                class="btn btn-primary btn-sm">Detail</a>
                                             <a href="<?=url('daftar_order/hapus_ck.php?or_ck_number=')?><?=$ck['or_ck_number']?>"
-                                                onclick="return confirm('Yakin akan menghapus?');" <button type="button"
-                                                class="btn btn-danger btn-sm">Hapus</button>
-                                            </a>
+                                                onclick="return confirm('Yakin akan menghapus?');"
+                                                class="btn btn-danger btn-sm">Hapus</a>
                                         </td>
                                     </tr>
                                     <?php endforeach;?>
                                     <?php else: ?>
                                     <tr>
-                                        <td colspan="8" class="txt-center">Data Tidak Tersedia</td>
+                                        <td colspan="10" class="text-center text-muted fw-semibold py-3">
+                                            Data Tidak Tersedia
+                                        </td>
                                     </tr>
                                     <?php endif;?>
                                 </tbody>
