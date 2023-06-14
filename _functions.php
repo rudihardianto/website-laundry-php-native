@@ -544,3 +544,147 @@ function del_or_cs($or_numb_cs)
     return mysqli_affected_rows($db);
 }
 /* END: CRUD Order */
+
+/* START: Transaksi Bayar */
+// transaksi cuci komplit
+function transaksi_ck($trans_ck)
+{
+    global $db;
+
+    $id_pel        = htmlspecialchars($trans_ck['id_pel']);
+    $or_number     = htmlspecialchars($trans_ck['or_number']);
+    $pelanggan     = htmlspecialchars($trans_ck['pelanggan']);
+    $no_telp       = htmlspecialchars($trans_ck['no_telp']);
+    $alamat        = htmlspecialchars($trans_ck['alamat']);
+    $jns_paket     = htmlspecialchars($trans_ck['j_paket']);
+    $wkt_kerja     = htmlspecialchars($trans_ck['wkt_kerja']);
+    $berat         = htmlspecialchars($trans_ck['berat']);
+    $h_perkilo     = htmlspecialchars($trans_ck['h_perkilo']);
+    $tgl_msk       = htmlspecialchars($trans_ck['tgl_msk']);
+    $tgl_klr       = htmlspecialchars($trans_ck['tgl_klr']);
+    $total         = htmlspecialchars($trans_ck['total']);
+    $keterangan    = htmlspecialchars($trans_ck['keterangan']);
+    $nominal_bayar = htmlspecialchars($trans_ck['nominal']);
+
+    if ($nominal_bayar < $total) {
+        echo "<script>
+			alert('Nominal tidak mencukupi');
+		</script>";
+
+        return false;
+    }
+
+    // Menghitung kembalian
+    if ($nominal_bayar > $total) {
+        $kembalian = $nominal_bayar - $total;
+        $status    = "Sukses";
+    } else if ($nominal_bayar == $total) {
+        $kembalian = 0;
+        $status    = "Sukses";
+    }
+
+    $query_insert_ck = "INSERT INTO tb_riwayat_ck VALUES (
+		null, '$or_number','$id_pel','$pelanggan','$no_telp','$alamat','$jns_paket','$wkt_kerja','$berat',
+        '$h_perkilo','$tgl_msk','$tgl_klr','$total','$nominal_bayar','$kembalian','$status','$keterangan'
+	)";
+
+    mysqli_query($db, $query_insert_ck);
+
+    return mysqli_affected_rows($db);
+}
+
+// transaksi cuci satuan
+function transaksi_cs($trans_cs)
+{
+    global $db;
+
+    $id_pel        = htmlspecialchars($trans_cs['id_pel']);
+    $or_number     = htmlspecialchars($trans_cs['or_number']);
+    $pelanggan     = htmlspecialchars($trans_cs['pelanggan']);
+    $no_telp       = htmlspecialchars($trans_cs['no_telp']);
+    $alamat        = htmlspecialchars($trans_cs['alamat']);
+    $jns_paket     = htmlspecialchars($trans_cs['j_paket']);
+    $wkt_kerja     = htmlspecialchars($trans_cs['wkt_kerja']);
+    $jml_pcs       = htmlspecialchars($trans_cs['jml_pcs']);
+    $h_perpcs      = htmlspecialchars($trans_cs['h_perpcs']);
+    $tgl_msk       = htmlspecialchars($trans_cs['tgl_msk']);
+    $tgl_klr       = htmlspecialchars($trans_cs['tgl_klr']);
+    $total         = htmlspecialchars($trans_cs['total']);
+    $keterangan    = htmlspecialchars($trans_cs['keterangan']);
+    $nominal_bayar = htmlspecialchars($trans_cs['nominal']);
+
+    if ($nominal_bayar < $total) {
+        echo "<script>
+			alert('Nominal tidak mencukupi');
+		</script>";
+
+        return false;
+    }
+
+    // Menghitung kembalian
+    if ($nominal_bayar > $total) {
+        $kembalian = $nominal_bayar - $total;
+        $status    = "Sukses";
+    } else if ($nominal_bayar == $total) {
+        $kembalian = 0;
+        $status    = "Sukses";
+    }
+
+    $query_insert_cs = "INSERT INTO tb_riwayat_cs VALUES (
+		null,'$or_number','$id_pel','$pelanggan','$no_telp','$alamat','$jns_paket','$wkt_kerja','$jml_pcs',
+        '$h_perpcs','$tgl_msk','$tgl_klr','$total','$nominal_bayar','$kembalian','$status','$keterangan'
+	)";
+
+    mysqli_query($db, $query_insert_cs);
+
+    return mysqli_affected_rows($db);
+
+}
+
+// transaksi dry clean
+function transaksi_dc($trans_dc)
+{
+    global $db;
+
+    $id_pel        = htmlspecialchars($trans_dc['id_pel']);
+    $or_number     = htmlspecialchars($trans_dc['or_number']);
+    $pelanggan     = htmlspecialchars($trans_dc['pelanggan']);
+    $no_telp       = htmlspecialchars($trans_dc['no_telp']);
+    $alamat        = htmlspecialchars($trans_dc['alamat']);
+    $jns_paket     = htmlspecialchars($trans_dc['j_paket']);
+    $wkt_kerja     = htmlspecialchars($trans_dc['wkt_kerja']);
+    $berat         = htmlspecialchars($trans_dc['berat']);
+    $h_perkilo     = htmlspecialchars($trans_dc['h_perkilo']);
+    $tgl_msk       = htmlspecialchars($trans_dc['tgl_msk']);
+    $tgl_klr       = htmlspecialchars($trans_dc['tgl_klr']);
+    $total         = htmlspecialchars($trans_dc['total']);
+    $keterangan    = htmlspecialchars($trans_dc['keterangan']);
+    $nominal_bayar = htmlspecialchars($trans_dc['nominal']);
+
+    if ($nominal_bayar < $total) {
+        echo "<script>
+			alert('Nominal tidak mencukupi');
+		</script>";
+
+        return false;
+    }
+
+    // Menghitung kembalian
+    if ($nominal_bayar > $total) {
+        $kembalian = $nominal_bayar - $total;
+        $status    = "Sukses";
+    } else if ($nominal_bayar == $total) {
+        $kembalian = 0;
+        $status    = "Sukses";
+    }
+
+    $query_insert_dc = "INSERT INTO tb_riwayat_dc VALUES (
+		null,'$or_number','$id_pel','$pelanggan','$no_telp','$alamat','$jns_paket','$wkt_kerja','$berat',
+        '$h_perkilo','$tgl_msk','$tgl_klr','$total','$nominal_bayar','$kembalian','$status','$keterangan'
+	)";
+
+    mysqli_query($db, $query_insert_dc);
+
+    return mysqli_affected_rows($db);
+}
+/* END: Transaksi Bayar */
