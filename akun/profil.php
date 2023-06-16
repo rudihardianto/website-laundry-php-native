@@ -102,7 +102,31 @@ $profil = query("SELECT * FROM master")[0];
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                ...
+                                                <div class="row">
+                                                    <div class="col text-start">
+                                                        <div class="mb-3">
+                                                            <label for="password" class="form-label">
+                                                                Password Lama
+                                                            </label>
+                                                            <input type="password" name="password" id="password"
+                                                                class="form-control" autocomplete="off">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="password" class="form-label">
+                                                                Password Baru
+                                                            </label>
+                                                            <input type="password" name="password" id="password"
+                                                                class="form-control" autocomplete="off">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="password" class="form-label">
+                                                                Konfirmasi Password Baru
+                                                            </label>
+                                                            <input type="password" name="password" id="password"
+                                                                class="form-control" autocomplete="off">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
