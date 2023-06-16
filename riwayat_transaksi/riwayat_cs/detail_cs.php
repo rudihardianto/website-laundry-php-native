@@ -91,8 +91,8 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td colspan="4" class="fw-semibold table-active">Berat (Kg)</td>
-                                                <td colspan="4" class="fw-semibold table-active">Harga Per-Kg</td>
+                                                <td colspan="4" class="fw-semibold table-active">Jumlah (Pcs)</td>
+                                                <td colspan="4" class="fw-semibold table-active">Harga Per-Pcs</td>
                                                 <td colspan="4" class="fw-semibold table-active">Total Bayar</td>
                                             </tr>
                                             <tr>
