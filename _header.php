@@ -44,6 +44,9 @@
                     <li class="nav-item mx-md-2">
                         <a class="nav-link" href="<?=url('paket/index.php');?>">Daftar Paket</a>
                     </li>
+                    <li class="nav-item mx-md-2">
+                        <a class="nav-link" href="<?=url('about.php');?>">Tentang Kami</a>
+                    </li>
                 </ul>
                 <!-- dropdown -->
                 <div class="dropdown">
@@ -52,7 +55,7 @@
                         <span class="text-black fw-semibold">Admin</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="<?=url('about.php');?>">Tentang Kami</a></li>
+                        <li><a class="dropdown-item" href="<?=url('akun/profil.php');?>">Profil</a></li>
                         <li><a class="dropdown-item" href="#">keluar</a></li>
                     </ul>
                 </div>

@@ -86,6 +86,36 @@ function formatDate($tgl)
     return $tgl;
 }
 
+/* START: Profile */
+// update
+function update_user($profil)
+{
+    global $db;
+
+    $id_user  = $profil['id_user'];
+    $nama     = ucwords(htmlspecialchars($profil['nama']));
+    $username = strtolower(htmlspecialchars($profil['username']));
+    $email    = htmlspecialchars($profil['email']);
+    $no_telp  = htmlspecialchars($profil['no_telp']);
+    $level    = $profil['level'];
+
+    $profil = "UPDATE master SET
+		nama 		    = '$nama',
+		username        = '$username',
+		email 	        = '$email',
+		no_telp         = '$no_telp',
+		level           = '$level'
+		WHERE id_user   = '$id_user'
+	";
+
+    mysqli_query($db, $profil);
+
+    header("refresh:3"); // refresh halaman 3 detik setelah update data
+
+    return mysqli_affected_rows($db);
+}
+/* END: Profile */
+
 /* START: CRUD (Management karyawan) */
 // create
 function add_karyawan($karyawan)
