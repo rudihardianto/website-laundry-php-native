@@ -87,6 +87,55 @@ function formatDate($tgl)
 }
 
 /* START: Profile */
+// add
+function add_user($profil) {
+    global $db;
+
+    /* Generate ID Pelanggan */
+    $id_pelanggan = 'PLG-'.strtoupper(substr(uniqid(), 0, 4));
+    $nama     = ucwords(htmlspecialchars($profil['nama']));
+    $username = strtolower(stripslashes(htmlspecialchars($profil['username'])));
+    $email    = htmlspecialchars($profil['email']);
+    $no_telp  = htmlspecialchars($profil['no_telp']);
+    $alamat   = htmlspecialchars($profil['alamat']);
+    $password = mysqli_real_escape_string($db, $profil['password']);
+    $password2 = mysqli_real_escape_string($db, $profil['password2']);
+    $level   = htmlspecialchars($profil['level']);
+
+
+    // Cek apakah username dan email masih tersedia
+    $master = mysqli_query($db, "SELECT * FROM master WHERE username='$username' OR email='$email'");
+    if (mysqli_num_rows($master) > 0) {
+        echo "
+            <script>
+				alert('Username atau Email Sudah Terdaftar')
+            </script>
+        ";
+
+        return false;
+    }
+
+    // cek kesamaan password & konfirmasi password
+    if ($password !== $password2) {
+        echo "
+                <script>
+                    alert('Konfirmasi password tidak sesuai');
+                </script>
+            ";
+
+        return false;
+    }
+    // engkripsi password
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
+    $insert   = "INSERT INTO master VALUES (
+            null,'$id_pelanggan','$nama','$email','$username','$no_telp','$alamat','$password', '$level'
+    )";
+    mysqli_query($db, $insert);
+
+    return mysqli_affected_rows($db);
+}
+
 // update
 function update_user($profil)
 {
