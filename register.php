@@ -49,7 +49,7 @@
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="nama" class="form-label">Nama Lengkap</label>
-                                            <input type="text" name="nama" class="form-control" id="nama"
+                                            <input type="text" name="nama" class="form-control" id="nama" required
                                                 autocomplete="off">
                                         </div>
                                         <div class="mb-3">
@@ -59,29 +59,29 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Email</label>
-                                            <input type="email" name="email" class="form-control" id="email"
+                                            <input type="email" name="email" class="form-control" id="email" required
                                                 autocomplete="off">
                                         </div>
                                         <div class="mb-3">
                                             <label for="no_telp" class="form-label">No Telepon</label>
                                             <input type="number" name="no_telp" class="form-control" id="no_telp"
-                                                autocomplete="off">
+                                                required autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="password" class="form-label">Password</label>
                                             <input type="password" name="password" class="form-control" id="password"
-                                                autocomplete="off">
+                                                required autocomplete="off">
                                         </div>
                                         <div class="mb-3">
                                             <label for="konfirm-password" class="form-label">Konfirmasi Password</label>
                                             <input type="password" name="password2" class="form-control"
-                                                id="konfirm-password" autocomplete="off">
+                                                id="konfirm-password" required autocomplete="off">
                                         </div>
                                         <div class="mb-3">
                                             <label for="alamat" class="form-label">Alamat Lengkap</label>
-                                            <textarea name="alamat" id="alamat" class="form-control"
+                                            <textarea name="alamat" id="alamat" class="form-control" required
                                                 autocomplete="off"></textarea>
                                         </div>
                                     </div>

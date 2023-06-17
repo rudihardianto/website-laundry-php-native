@@ -104,17 +104,26 @@ function add_user($profil) {
 
 
     // Cek apakah username dan email masih tersedia
-    $master = mysqli_query($db, "SELECT * FROM master WHERE username='$username' OR email='$email'");
-    if (mysqli_num_rows($master) > 0) {
+    $cek_email = mysqli_query($db, "SELECT * FROM master WHERE email='$email'");
+    $cek_username = mysqli_query($db, "SELECT * FROM master WHERE username='$username'");
+    if (mysqli_num_rows($cek_email) > 0) {
         echo "
             <script>
-				alert('Username atau Email Sudah Terdaftar')
+				alert('Maaf, Email Sudah Terdaftar');
+            </script>
+        ";
+        
+        return false;
+    } elseif (mysqli_num_rows($cek_username) > 0) {
+        echo "
+            <script>
+				alert('Maaf, Username Sudah Terdaftar');
             </script>
         ";
 
         return false;
     }
-
+    
     // cek kesamaan password & konfirmasi password
     if ($password !== $password2) {
         echo "
