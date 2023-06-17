@@ -86,7 +86,7 @@ function formatDate($tgl)
     return $tgl;
 }
 
-/* START: Profile */
+/* START: User */
 // add
 function add_user($profil) {
     global $db;
@@ -172,7 +172,7 @@ function update_user($profil)
 
     return mysqli_affected_rows($db);
 }
-/* END: Profile */
+/* END: User */
 
 /* START: CRUD (Management karyawan) */
 // create
