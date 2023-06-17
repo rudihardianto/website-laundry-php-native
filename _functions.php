@@ -87,24 +87,24 @@ function formatDate($tgl)
 }
 
 /* START: User */
-// add
-function add_user($profil) {
+// create
+function add_user($profil)
+{
     global $db;
 
     /* Generate ID Pelanggan */
     $id_pelanggan = 'PLG-'.strtoupper(substr(uniqid(), 0, 4));
-    $nama     = ucwords(htmlspecialchars($profil['nama']));
-    $username = strtolower(stripslashes(htmlspecialchars($profil['username'])));
-    $email    = htmlspecialchars($profil['email']);
-    $no_telp  = htmlspecialchars($profil['no_telp']);
-    $alamat   = htmlspecialchars($profil['alamat']);
-    $password = mysqli_real_escape_string($db, $profil['password']);
-    $password2 = mysqli_real_escape_string($db, $profil['password2']);
-    $level   = htmlspecialchars($profil['level']);
-
+    $nama         = ucwords(htmlspecialchars($profil['nama']));
+    $username     = strtolower(stripslashes(htmlspecialchars($profil['username'])));
+    $email        = htmlspecialchars($profil['email']);
+    $no_telp      = htmlspecialchars($profil['no_telp']);
+    $alamat       = htmlspecialchars($profil['alamat']);
+    $password     = mysqli_real_escape_string($db, $profil['password']);
+    $password2    = mysqli_real_escape_string($db, $profil['password2']);
+    $level        = htmlspecialchars($profil['level']);
 
     // Cek apakah username dan email masih tersedia
-    $cek_email = mysqli_query($db, "SELECT * FROM master WHERE email='$email'");
+    $cek_email    = mysqli_query($db, "SELECT * FROM master WHERE email='$email'");
     $cek_username = mysqli_query($db, "SELECT * FROM master WHERE username='$username'");
     if (mysqli_num_rows($cek_email) > 0) {
         echo "
@@ -112,7 +112,7 @@ function add_user($profil) {
 				alert('Maaf, Email Sudah Terdaftar');
             </script>
         ";
-        
+
         return false;
     } elseif (mysqli_num_rows($cek_username) > 0) {
         echo "
@@ -123,7 +123,7 @@ function add_user($profil) {
 
         return false;
     }
-    
+
     // cek kesamaan password & konfirmasi password
     if ($password !== $password2) {
         echo "
@@ -137,7 +137,7 @@ function add_user($profil) {
     // engkripsi password
     $password = password_hash($password, PASSWORD_DEFAULT);
 
-    $insert   = "INSERT INTO master VALUES (
+    $insert = "INSERT INTO master VALUES (
             null,'$id_pelanggan','$nama','$email','$username','$no_telp','$alamat','$password', '$level'
     )";
     mysqli_query($db, $insert);
