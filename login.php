@@ -1,6 +1,6 @@
 <?php
     require_once '_functions.php';
-    if (isset($_SESSION["login"]) && isset($_SESSION['master'])) {
+    if (isset($_SESSION["login"]) && isset($_SESSION['username'])) {
         echo "
         <script>
             document.location='http://localhost/laundry_rizal_skripsi/';
@@ -41,7 +41,14 @@
                 $hasil = mysqli_fetch_assoc($data);
                 if (password_verify($password, $hasil['password'])) {
                     // set session
-                    $_SESSION['master'] = $username;
+			        $_SESSION['id_user'] = $hasil['id_user'];
+			        $_SESSION['id_pelanggan'] = $hasil['id_pelanggan'];
+			        $_SESSION['nama'] = $hasil['nama'];
+                    $_SESSION['username'] = $hasil['username'];;
+			        $_SESSION['email'] = $hasil['email'];
+			        $_SESSION['no_telp'] = $hasil['no_telp'];
+			        $_SESSION['alamat'] = $hasil['alamat'];
+			        $_SESSION['level'] = $hasil['level'];
                     $_SESSION['login'] = true;
                     
                     echo "

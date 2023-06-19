@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row d-flex justify-content-between align-items-center">
             <div class="col">
-                <div>Selamat datang, <span class="fw-bold"><?=ucfirst($_SESSION['master'])?></span></div>
+                <div>Selamat datang, <span class="fw-bold"><?=$_SESSION['username']?></span></div>
                 <h2>Dashboard</h2>
             </div>
             <div class="col text-end">

@@ -8,7 +8,7 @@
         ";
         exit();
     }
-    $profil = query("SELECT * FROM master")[0];
+    $profil = query("SELECT * FROM master WHERE id_user = '$_SESSION[id_user]'")[0];
     // var_dump($profil);
 ?>
 
