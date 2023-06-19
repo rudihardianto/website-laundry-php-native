@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // Koneksi ke Database
 $db = mysqli_connect('localhost', 'root', '', 'laundry_app');
 

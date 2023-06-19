@@ -1,7 +1,15 @@
 <?php
-require_once '../_header.php';
-$id_pel_dc = query("SELECT * FROM master WHERE level ='User' ORDER BY id_user");
-$data_dc   = query("SELECT * FROM tb_dry_clean");
+    require_once '../_header.php';
+    if (!isset($_SESSION['login'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
+    $id_pel_dc = query("SELECT * FROM master WHERE level ='User' ORDER BY id_user");
+    $data_dc   = query("SELECT * FROM tb_dry_clean");
 ?>
 
 <?php if (isset($_POST['order_dc'])): ?>
@@ -79,12 +87,12 @@ $data_dc   = query("SELECT * FROM tb_dry_clean");
 
                         <!-- START: form -->
                         <?php
-if (isset($_GET['id_user'])) {
-    //menampilkan data pelanggan berdasarkan pilihan combobox ke dalam form
-    $id_user = $_GET['id_user'];
-    $id      = mysqli_query($db, "SELECT * FROM master WHERE id_user='$id_user' ORDER BY id_user");
-    $id_user = mysqli_fetch_array($id);
-    ?>
+                        if (isset($_GET['id_user'])) {
+                            //menampilkan data pelanggan berdasarkan pilihan combobox ke dalam form
+                            $id_user = $_GET['id_user'];
+                            $id      = mysqli_query($db, "SELECT * FROM master WHERE id_user='$id_user' ORDER BY id_user");
+                            $id_user = mysqli_fetch_array($id);
+                        ?>
                         <form action="" method="post">
                             <div class="row d-flex">
                                 <div class="col-12 col-md-6">

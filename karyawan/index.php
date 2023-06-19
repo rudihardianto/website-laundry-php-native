@@ -1,6 +1,14 @@
 <?php
-require_once '../_header.php';
-$data_karyawan = query('SELECT * FROM master LIMIT 20 OFFSET 1');
+    require_once '../_header.php';
+    if (!isset($_SESSION['login'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
+    $data_karyawan = query('SELECT * FROM master LIMIT 20 OFFSET 1');
 ?>
 
 <section id="karyawan" class="main-karyawan">

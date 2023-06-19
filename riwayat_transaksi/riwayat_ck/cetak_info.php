@@ -1,5 +1,13 @@
 <?php 
     require_once '../../_functions.php';
+    if (!isset($_SESSION['login'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
     $id_ck = $_GET['id_ck'];
     $data  = query("SELECT * FROM tb_riwayat_ck WHERE id_ck = '$id_ck'")[0];
 ?>

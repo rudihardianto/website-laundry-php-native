@@ -1,5 +1,13 @@
 <?php
     require_once '_functions.php';
+    if (isset($_SESSION["login"]) && isset($_SESSION['master'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +40,10 @@
                 // cek password
                 $hasil = mysqli_fetch_assoc($data);
                 if (password_verify($password, $hasil['password'])) {
+                    // set session
+                    $_SESSION['master'] = $username;
+                    $_SESSION['login'] = true;
+                    
                     echo "
                     <script>
                         document.location='http://localhost/laundry_rizal_skripsi/';

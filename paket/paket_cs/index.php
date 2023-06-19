@@ -1,6 +1,14 @@
 <?php
-require_once '../../_header.php';
-$data_cs = query('SELECT * FROM tb_cuci_satuan');
+    require_once '../../_header.php';
+    if (!isset($_SESSION['login'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
+    $data_cs = query('SELECT * FROM tb_cuci_satuan');
 ?>
 
 <!-- START: daftar cuci satuan -->

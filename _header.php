@@ -52,11 +52,12 @@
                 <div class="dropdown">
                     <a class="dropdown-toggle text-decoration-none" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <span class="text-black fw-semibold">Admin</span>
+                        <span class="text-black fw-semibold"><?=ucfirst($_SESSION['master'])?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="<?=url('akun/profil.php');?>">Profil</a></li>
-                        <li><a class="dropdown-item" href="#">keluar</a></li>
+                        <li><a class="dropdown-item" href="<?=url('logout.php')?>"
+                                onclick="return confirm('Ingin Keluar?');">Keluar</a></li>
                     </ul>
                 </div>
             </div>

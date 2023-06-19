@@ -1,5 +1,13 @@
 <?php
 require_once '../../_header.php';
+if (!isset($_SESSION['login'])) {
+    echo "
+    <script>
+        document.location='http://localhost/laundry_rizal_skripsi/';
+    </script>
+    ";
+    exit();
+}
 $id_ck = $_GET['id_ck'];
 
 if (delete_ck($id_ck) > 0) {

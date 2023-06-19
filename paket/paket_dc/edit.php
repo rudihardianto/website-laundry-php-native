@@ -1,7 +1,15 @@
 <?php
-require_once '../../_header.php';
-$id_dc   = $_GET['id_dc'];
-$data_dc = query("SELECT * FROM tb_dry_clean WHERE id_dc = '$id_dc'")[0];
+    require_once '../../_header.php';
+    if (!isset($_SESSION['login'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
+    $id_dc   = $_GET['id_dc'];
+    $data_dc = query("SELECT * FROM tb_dry_clean WHERE id_dc = '$id_dc'")[0];
 ?>
 
 

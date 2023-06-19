@@ -1,6 +1,14 @@
 <?php
-require_once '../../_header.php';
-$data_ck = query('SELECT * FROM tb_cuci_komplit');
+    require_once '../../_header.php';
+    if (!isset($_SESSION['login'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
+    $data_ck = query('SELECT * FROM tb_cuci_komplit');
 ?>
 
 <!-- START: daftar paket cuci komplit -->

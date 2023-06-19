@@ -1,5 +1,13 @@
 <?php 
     require_once '../../_header.php';
+    if (!isset($_SESSION['login'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
     $no_ck = $_GET['or_ck_number'];
     $data = query("SELECT * FROM tb_order_ck WHERE or_ck_number = '$no_ck'")[0];
     // var_dump($data);

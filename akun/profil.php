@@ -1,7 +1,15 @@
 <?php
-require_once '../_header.php';
-$profil = query("SELECT * FROM master")[0];
-// var_dump($profil);
+    require_once '../_header.php';
+    if (!isset($_SESSION['login'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
+    $profil = query("SELECT * FROM master")[0];
+    // var_dump($profil);
 ?>
 
 <?php if (isset($_POST['update'])): ?>

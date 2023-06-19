@@ -1,6 +1,14 @@
 <?php
-require_once '../../_header.php';
-$data_dc = query('SELECT * FROM tb_dry_clean');
+    require_once '../../_header.php';
+    if (!isset($_SESSION['login'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
+    $data_dc = query('SELECT * FROM tb_dry_clean');
 ?>
 
 <!-- START: daftar paket dry clean -->

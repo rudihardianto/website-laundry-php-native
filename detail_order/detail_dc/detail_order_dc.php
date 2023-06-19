@@ -1,5 +1,13 @@
 <?php 
     require_once '../../_header.php';
+    if (!isset($_SESSION['login'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
     $no_dc = $_GET['or_dc_number'];
     $data = query("SELECT * FROM tb_order_dc WHERE or_dc_number = '$no_dc'")[0];
     // var_dump($data);

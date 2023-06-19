@@ -1,7 +1,15 @@
 <?php
-require_once '../_header.php';
-$id_user = $_GET['id_user'];
-$update  = query("SELECT * FROM master WHERE id_user='$id_user'")[0];
+    require_once '../_header.php';
+    if (!isset($_SESSION['login'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
+    $id_user = $_GET['id_user'];
+    $update  = query("SELECT * FROM master WHERE id_user='$id_user'")[0];
 ?>
 
 <?php if (isset($_POST['update'])): ?>

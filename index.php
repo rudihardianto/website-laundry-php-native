@@ -1,6 +1,10 @@
 <?php
-require_once '_header.php';
-$jml_karyawan = count(query('SELECT * FROM master WHERE level ="Karyawan"'));
+    require_once '_header.php';
+    if (!isset($_SESSION['login'])) {
+        header("Location: login.php");
+        exit;
+    }
+    $jml_karyawan = count(query('SELECT * FROM master WHERE level ="Karyawan"'));
 ?>
 
 
@@ -9,7 +13,7 @@ $jml_karyawan = count(query('SELECT * FROM master WHERE level ="Karyawan"'));
     <div class="container">
         <div class="row d-flex justify-content-between align-items-center">
             <div class="col">
-                <div>Selamat datang, <span class="fw-bold">Admin</span></div>
+                <div>Selamat datang, <span class="fw-bold"><?=ucfirst($_SESSION['master'])?></span></div>
                 <h2>Dashboard</h2>
             </div>
             <div class="col text-end">

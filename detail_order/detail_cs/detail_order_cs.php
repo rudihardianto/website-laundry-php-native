@@ -1,5 +1,13 @@
 <?php 
    require_once('../../_header.php'); 
+   if (!isset($_SESSION['login'])) {
+    echo "
+    <script>
+        document.location='http://localhost/laundry_rizal_skripsi/';
+    </script>
+    ";
+    exit();
+}
    $no_cs = $_GET['or_cs_number'];
    $data = query("SELECT * FROM tb_order_cs WHERE or_cs_number = '$no_cs'")[0];
 ?>

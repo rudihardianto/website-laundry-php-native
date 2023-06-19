@@ -1,4 +1,14 @@
-<?php require_once '_header.php';?>
+<?php 
+    require_once '_header.php';
+    if (!isset($_SESSION['login'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
+?>
 
 <!-- START: about -->
 <section id="about" class="about my-5">

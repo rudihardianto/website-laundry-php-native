@@ -1,6 +1,16 @@
 <?php 
     require_once('_functions.php');
 
+    // cek apabila user sudah login
+    if (isset($_SESSION["login"]) && isset($_SESSION['master'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
+
     if (isset($_POST['register'])) {
         if (add_user($_POST) > 0) {
             echo "

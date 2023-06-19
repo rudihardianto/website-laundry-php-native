@@ -1,7 +1,15 @@
 <?php
-require_once '../../_header.php';
-$id_cs   = $_GET['id_cs'];
-$data_cs = query("SELECT * FROM tb_cuci_satuan WHERE id_cs = '$id_cs'")[0];
+    require_once '../../_header.php';
+    if (!isset($_SESSION['login'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
+    $id_cs   = $_GET['id_cs'];
+    $data_cs = query("SELECT * FROM tb_cuci_satuan WHERE id_cs = '$id_cs'")[0];
 ?>
 
 <?php if (isset($_POST['ubah'])): ?>

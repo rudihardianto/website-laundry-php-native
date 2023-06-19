@@ -1,5 +1,13 @@
 <?php 
     require_once '../_header.php';
+    if (!isset($_SESSION['login'])) {
+        echo "
+        <script>
+            document.location='http://localhost/laundry_rizal_skripsi/';
+        </script>
+        ";
+        exit();
+    }
     $query_ck = query("SELECT * FROM tb_riwayat_ck ORDER BY id_ck DESC");
     $query_dc = query("SELECT * FROM tb_riwayat_dc ORDER BY id_dc DESC");
     $query_cs = query("SELECT * FROM tb_riwayat_cs ORDER BY id_cs DESC");
