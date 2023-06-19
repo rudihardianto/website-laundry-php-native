@@ -52,13 +52,13 @@
                 <div class="dropdown">
                     <a class="dropdown-toggle text-decoration-none" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <span class="text-black fw-semibold"><?=ucwords($_SESSION['username'])?></span>
+                        <span class="text-black fw-semibold"><?=$_SESSION['nama']?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="<?=url('akun/profil.php');?>">Profil</a></li>
                         <li>
                             <a class="dropdown-item" href="<?=url('logout.php')?>"
-                                onclick="return confirm('Hi <?=ucwords($_SESSION['username'])?>, Ingin Keluar?');">
+                                onclick="return confirm('Hi <?=$_SESSION['nama']?>, Ingin Keluar?');">
                                 Keluar
                             </a>
                         </li>
