@@ -28,7 +28,7 @@
             $data = mysqli_query($db,  "SELECT * FROM master WHERE username = '$username'");
 
             // cek username
-            if (mysqli_num_rows($data)) {
+            if (mysqli_num_rows($data) > 0) {
                 // cek password
                 $hasil = mysqli_fetch_assoc($data);
                 if (password_verify($password, $hasil['password'])) {
