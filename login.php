@@ -48,6 +48,7 @@
 			        $_SESSION['email'] = $hasil['email'];
 			        $_SESSION['no_telp'] = $hasil['no_telp'];
 			        $_SESSION['alamat'] = $hasil['alamat'];
+			        $_SESSION['password'] = $hasil['password'];
 			        $_SESSION['level'] = $hasil['level'];
                     $_SESSION['login'] = true;
                     
