@@ -1,9 +1,5 @@
 <?php
     require_once '_header.php';
-    if (!isset($_SESSION['login'])) {
-        header("Location: login.php");
-        exit;
-    }
     $jml_karyawan = count(query('SELECT * FROM master WHERE level ="Karyawan"'));
 ?>
 
