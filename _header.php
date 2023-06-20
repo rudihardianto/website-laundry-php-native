@@ -1,4 +1,8 @@
-<?php require_once '_functions.php';?>
+<?php 
+    require_once '_functions.php';
+    $levelAdmin = $_SESSION['level'] == 'Admin';    
+    $levelAdminKaryawan = $_SESSION['level'] == 'Admin' || $_SESSION['level'] == 'Karyawan';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,17 +37,21 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item mx-md-2">
-                        <a class="nav-link active" href="<?=url()?>">Dashboard</a>
+                        <a class="nav-link active" href="<?=url()?>">Home</a>
                     </li>
                     <li class="nav-item mx-md-2">
                         <a class="nav-link" href="<?=url('riwayat_transaksi/index.php');?>">Riwayat Transaksi</a>
                     </li>
+                    <?php if($levelAdmin) { ?>
                     <li class="nav-item mx-md-2">
                         <a class="nav-link" href="<?=url('karyawan/index.php');?>">Management Karyawan</a>
                     </li>
+                    <?php } ?>
+                    <?php if($levelAdminKaryawan) { ?>
                     <li class="nav-item mx-md-2">
                         <a class="nav-link" href="<?=url('paket/index.php');?>">Daftar Paket</a>
                     </li>
+                    <?php } ?>
                     <li class="nav-item mx-md-2">
                         <a class="nav-link" href="<?=url('about.php');?>">Tentang Kami</a>
                     </li>

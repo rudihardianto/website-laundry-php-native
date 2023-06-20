@@ -20,7 +20,9 @@
                                         <th scope="col">Berat (KG)</th>
                                         <th scope="col">Tanggal Masuk</th>
                                         <th scope="col">Tanggal Keluar</th>
+                                        <?php if($levelAdminKaryawan) { ?>
                                         <th scope="col">Action</th>
+                                        <?php } ?>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -37,6 +39,7 @@
                                         <td><?=$dc['berat_qty_dc'].' Kg';?></td>
                                         <td><?=$dc['tgl_masuk_dc'];?></td>
                                         <td><?=$dc['tgl_keluar_dc'];?></td>
+                                        <?php if($levelAdminKaryawan) { ?>
                                         <td>
                                             <a
                                                 href="<?=url('detail_order/detail_dc/detail_order_dc.php?or_dc_number=')?><?=$dc['or_dc_number']?>">
@@ -47,6 +50,7 @@
                                                 <button type="button" class="btn btn-danger btn-sm">Hapus</button>
                                             </a>
                                         </td>
+                                        <?php } ?>
                                     </tr>
                                     <?php endforeach; ?>
                                     <?php else: ?>

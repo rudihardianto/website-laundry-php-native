@@ -17,7 +17,9 @@
                 <h2>Dashboard</h2>
             </div>
             <div class="col text-end">
+                <?php if($levelAdminKaryawan) { ?>
                 <a href="<?=url('order/index.php');?>" class="btn btn-primary">+ Order Baru</a>
+                <?php } ?>
             </div>
         </div>
     </div>
@@ -80,6 +82,16 @@
     </div>
 </section>
 <!-- END: menu -->
+
+<section id="daftar-order" class="daftar-order mt-5">
+    <div class="container">
+        <div class="row d-flex justify-content-between align-items-center">
+            <div class="col">
+                <h2>Daftar Order Semua Pelanggan</h2>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- daftar order cuci komplit -->
 <?php require_once 'daftar_order/daf_or_ck.php'?>

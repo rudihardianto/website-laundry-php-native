@@ -20,7 +20,9 @@
                                         <th scope="col">Jumlah Barang</th>
                                         <th scope="col">Tanggal Masuk</th>
                                         <th scope="col">Tanggal Keluar</th>
+                                        <?php if($levelAdminKaryawan) { ?>
                                         <th scope="col">Action</th>
+                                        <?php } ?>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -37,6 +39,7 @@
                                         <td><?=$cs['jml_pcs'].' Pcs';?></td>
                                         <td><?=$cs['tgl_masuk_cs'];?></td>
                                         <td><?=$cs['tgl_keluar_cs'];?></td>
+                                        <?php if($levelAdminKaryawan) { ?>
                                         <td>
                                             <a
                                                 href="<?=url('detail_order/detail_cs/detail_order_cs.php?or_cs_number=')?><?=$cs['or_cs_number']?>">
@@ -47,6 +50,7 @@
                                                 class="btn btn-danger btn-sm">Hapus</button>
                                             </a>
                                         </td>
+                                        <?php } ?>
                                     </tr>
                                     <?php endforeach;?>
                                     <?php else: ?>

@@ -1,5 +1,5 @@
 <!-- START: order cuci komplit -->
-<section id="order-cuci-komplit" class="main-order-cuci-komplit my-5">
+<section id="order-cuci-komplit" class="main-order-cuci-komplit mt-3 mb-5">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -20,7 +20,9 @@
                                         <th scope="col">Berat (KG)</th>
                                         <th scope="col">Tanggal Masuk</th>
                                         <th scope="col">Tanggal Keluar</th>
+                                        <?php if($levelAdminKaryawan) { ?>
                                         <th scope="col">Action</th>
+                                        <?php } ?>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -37,6 +39,7 @@
                                         <td><?=$ck['berat_qty_ck'].' Kg';?></td>
                                         <td><?=$ck['tgl_masuk_ck'];?></td>
                                         <td><?=$ck['tgl_keluar_ck'];?></td>
+                                        <?php if($levelAdminKaryawan) { ?>
                                         <td>
                                             <a href="<?=url('detail_order/detail_ck/detail_order_ck.php?or_ck_number=')?><?=$ck['or_ck_number']?>"
                                                 class="btn btn-primary btn-sm">Detail</a>
@@ -44,6 +47,7 @@
                                                 onclick="return confirm('Yakin akan menghapus?');"
                                                 class="btn btn-danger btn-sm">Hapus</a>
                                         </td>
+                                        <?php } ?>
                                     </tr>
                                     <?php endforeach;?>
                                     <?php else: ?>
