@@ -95,7 +95,7 @@ function add_user($profil)
     global $db;
 
     /* Generate ID Pelanggan */
-    $id_pelanggan = 'PLG-'.strtoupper(substr(uniqid(), 0, 4));
+    $id_pelanggan = trim('PLG-'.strtoupper(substr(uniqid(), 0, 4)));
     $nama         = ucwords(htmlspecialchars($profil['nama']));
     $username     = strtolower(stripslashes(htmlspecialchars($profil['username'])));
     $email        = htmlspecialchars($profil['email']);
