@@ -36,7 +36,7 @@
                         <h5 class="card-title">Daftar Transaksi - Cuci komplit</h5>
                         <hr>
                         <div class="table-responsive text-nowrap">
-                            <table class="table table-hover">
+                            <table class="table table-sm table-hover">
                                 <thead>
                                     <tr class="table-primary">
                                         <th scope="col">#</th>
@@ -106,7 +106,7 @@
                         <h5 class="card-title">Daftar Transaksi - Dry Clean</h5>
                         <hr>
                         <div class="table-responsive text-nowrap">
-                            <table class="table table-hover">
+                            <table class="table table-sm table-hover">
                                 <thead>
                                     <tr class="table-primary">
                                         <th scope="col">#</th>
@@ -176,7 +176,7 @@
                         <h5 class="card-title">Daftar Transaksi - Cuci Satuan</h5>
                         <hr>
                         <div class="table-responsive text-nowrap">
-                            <table class="table table-hover">
+                            <table class="table table-sm table-hover">
                                 <thead>
                                     <tr class="table-primary">
                                         <th scope="col">#</th>
