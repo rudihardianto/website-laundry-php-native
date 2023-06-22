@@ -8,7 +8,7 @@
                         <h5 class="card-title">Order Dry Clean (Cuci Kering)</h5>
                         <hr>
                         <div class="table-responsive text-nowrap">
-                            <table class="table table-sm table-hover">
+                            <table id="daftar-order-dc" class="table table-sm table-hover">
                                 <thead>
                                     <tr class="table-primary">
                                         <th scope="col">#</th>
@@ -30,7 +30,7 @@
                                     if (!empty($dry_clean)): ?>
                                     <?php $no = 1; foreach ($dry_clean as $dc): ?>
                                     <tr>
-                                        <th scope="row"><?= $no++; ?></th>
+                                        <td scope="row"><?= $no++; ?></td>
                                         <td><?=$dc['or_dc_number'];?></td>
                                         <td><?=$dc['id_pelanggan_dc'];?></td>
                                         <td><?=$dc['nama_pel_dc'];?></td>

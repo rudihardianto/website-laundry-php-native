@@ -8,7 +8,7 @@
                         <h5 class="card-title">Order Cuci Komplit</h5>
                         <hr>
                         <div class="table-responsive text-nowrap">
-                            <table class="table table-sm table-hover">
+                            <table id="daftar-order-ck" class="table table-sm table-hover">
                                 <thead>
                                     <tr class="table-primary">
                                         <th scope="col">#</th>
@@ -30,7 +30,7 @@
                                     if (!empty($cuci_komplit)): ?>
                                     <?php $no = 1;foreach ($cuci_komplit as $ck): ?>
                                     <tr>
-                                        <th scope="row"><?=$no++;?></th>
+                                        <td scope="row"><?=$no++;?></td>
                                         <td><?=$ck['or_ck_number'];?></td>
                                         <td><?=$ck['id_pelanggan_ck'];?></td>
                                         <td><?=$ck['nama_pel_ck'];?></td>

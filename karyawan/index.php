@@ -8,7 +8,7 @@
         ";
         exit();
     }
-    $data_karyawan = query('SELECT * FROM master LIMIT 20 OFFSET 1');
+    $data_karyawan = query("SELECT * FROM master WHERE level = 'Karyawan'");
 ?>
 
 <section id="karyawan" class="main-karyawan">
@@ -34,7 +34,7 @@
                                 <h5 class="card-title">Daftar Karyawan</h5>
                                 <hr>
                                 <div class="table-responsive text-nowrap">
-                                    <table class="table table-hover">
+                                    <table id="management-karyawan" class="table table-hover">
                                         <thead>
                                             <tr class="table-primary">
                                                 <th scope="col">#</th>

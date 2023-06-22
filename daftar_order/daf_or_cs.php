@@ -8,7 +8,7 @@
                         <h5 class="card-title">Order Cuci Satuan</h5>
                         <hr>
                         <div class="table-responsive text-nowrap">
-                            <table class="table table-hover">
+                            <table id="daftar-order-cs" class="table table-hover">
                                 <thead>
                                     <tr class="table-primary">
                                         <th scope="col">#</th>
@@ -30,7 +30,7 @@
                                     if (!empty($cuci_satuan)): ?>
                                     <?php $no = 1; foreach ($cuci_satuan as $cs): ?>
                                     <tr>
-                                        <th scope="row"><?=$no++;?></th>
+                                        <td scope="row"><?=$no++;?></td>
                                         <td><?=$cs['or_cs_number'];?></td>
                                         <td><?=$cs['id_pelanggan_cs'];?></td>
                                         <td><?=$cs['nama_pel_cs'];?></td>

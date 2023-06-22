@@ -17,12 +17,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dry Laundry</title>
     <link rel="shortcut icon" href="<?=url('_assets/img/logo/dry_dry.png')?>" type="image/x-icon">
-    <!-- my css -->
-    <link rel="stylesheet" href="<?=url('_assets/css/style.css')?>">
 
     <!-- bootstrap 5 -->
     <link rel="stylesheet" href="<?=url('_assets/bootstrap-5.3.0/css/bootstrap.min.css');?>">
     <script src="<?=url('_assets/bootstrap-5.3.0/js/bootstrap.bundle.min.js');?>"></script>
+
+    <!-- datatables css -->
+    <link rel="stylesheet"
+        href="<?= url('_assets/bootstrap-5.3.0/css/datatables/cdnjs.cloudflare.com_ajax_libs_twitter-bootstrap_5.2.0_css_bootstrap.min.css'); ?>">
+    <link rel="stylesheet"
+        href="<?= url('_assets/bootstrap-5.3.0/css/datatables/cdn.datatables.net_1.13.4_css_dataTables.bootstrap5.min.css'); ?>">
+
+    <!-- datatables js -->
+    <script defer src="<?= url('_assets/javascript/datatables/code.jquery.com_jquery-3.5.1.js'); ?>"></script>
+    <script defer
+        src="<?= url('_assets/javascript/datatables/cdn.datatables.net_1.13.4_js_jquery.dataTables.min.js'); ?>">
+    </script>
+    <script defer
+        src="<?= url('_assets/javascript/datatables/cdn.datatables.net_1.13.4_js_dataTables.bootstrap5.min.js'); ?>">
+    </script>
+
+    <script defer src="<?= url('_assets/javascript/script.js'); ?>"></script>
 </head>
 
 <body>
