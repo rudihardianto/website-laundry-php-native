@@ -10,7 +10,9 @@
     }
     $no_ck = $_GET['or_ck_number'];
     $data = query("SELECT * FROM tb_order_ck WHERE or_ck_number = '$no_ck'")[0];
-    // var_dump($data);
+
+    $dataSukses = isset(query("SELECT * FROM tb_riwayat_ck WHERE or_number = '$no_ck'")[0]["status"]);
+    // var_dump($dataSukses);
 ?>
 
 
@@ -161,9 +163,15 @@ window.location = "http://localhost/laundry_rizal_skripsi/detail_order/detail_ck
                                         </div>
                                         <hr class="my-3">
                                         <div class="col text-end">
+                                            <?php if(!$dataSukses) { ?>
                                             <button type="submit" name="bayar_ck" class="btn btn-primary">
                                                 Bayar Sekarang
                                             </button>
+                                            <?php } else { ?>
+                                            <span class="btn btn-success">
+                                                Sudah Dibayar
+                                            </span>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>

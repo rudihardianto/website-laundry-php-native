@@ -10,6 +10,8 @@
 }
    $no_cs = $_GET['or_cs_number'];
    $data = query("SELECT * FROM tb_order_cs WHERE or_cs_number = '$no_cs'")[0];
+
+   $dataSukses = isset(query("SELECT * FROM tb_riwayat_cs WHERE or_number = '$no_cs'")[0]["status"]);
 ?>
 
 <?php if (isset($_POST['bayar_cs'])) : ?>
@@ -159,9 +161,15 @@ window.location = "http://localhost/laundry_rizal_skripsi/detail_order/detail_cs
                                         </div>
                                         <hr class="my-3">
                                         <div class="col text-end">
+                                            <?php if(!$dataSukses) { ?>
                                             <button type="submit" name="bayar_cs" class="btn btn-primary">
                                                 Bayar Sekarang
                                             </button>
+                                            <?php } else { ?>
+                                            <span class="btn btn-success">
+                                                Sudah Dibayar
+                                            </span>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>

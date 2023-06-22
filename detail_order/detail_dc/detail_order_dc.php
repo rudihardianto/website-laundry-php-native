@@ -10,6 +10,8 @@
     }
     $no_dc = $_GET['or_dc_number'];
     $data = query("SELECT * FROM tb_order_dc WHERE or_dc_number = '$no_dc'")[0];
+
+    $dataSukses = isset(query("SELECT * FROM tb_riwayat_dc WHERE or_number = '$no_dc'")[0]["status"]);
     // var_dump($data);
 ?>
 
@@ -160,9 +162,15 @@ window.location = "http://localhost/laundry_rizal_skripsi/detail_order/detail_dc
                                         </div>
                                         <hr class="my-3">
                                         <div class="col text-end">
+                                            <?php if(!$dataSukses) { ?>
                                             <button type="submit" name="bayar_dc" class="btn btn-primary">
                                                 Bayar Sekarang
                                             </button>
+                                            <?php } else { ?>
+                                            <span class="btn btn-success">
+                                                Sudah Dibayar
+                                            </span>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>
