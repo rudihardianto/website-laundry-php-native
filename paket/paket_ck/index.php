@@ -45,7 +45,7 @@
                                 </div>
                                 <hr>
                                 <div class="table-responsive text-nowrap">
-                                    <table class="table table-hover">
+                                    <table id="daftar-pkt-ck" class="table table-sm table-hover">
                                         <thead>
                                             <tr class="table-primary">
                                                 <th scope="col">#</th>

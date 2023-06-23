@@ -22,6 +22,20 @@ $(document).ready(function () {
 });
 /* END: datatables daftar riwayat */
 
+/* START: datatables karyawan */
 $(document).ready(function () {
     $("#management-karyawan").DataTable();
 });
+/* END: datatables karyawan */
+
+/* START: datatables daftar paket */
+$(document).ready(function () {
+    $("#daftar-pkt-ck").DataTable();
+});
+$(document).ready(function () {
+    $("#daftar-pkt-dc").DataTable();
+});
+$(document).ready(function () {
+    $("#daftar-pkt-cs").DataTable();
+});
+/* END: datatables daftar paket */

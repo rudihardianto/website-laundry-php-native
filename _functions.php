@@ -272,8 +272,6 @@ function add_ck($data_ck)
 	)";
     mysqli_query($db, $query_ck);
 
-    header("refresh:3"); // refresh halaman 3 detik setelah update data
-
     return mysqli_affected_rows($db);
 }
 
@@ -338,8 +336,6 @@ function add_dc($data_dc)
 		null,'$nama_pkt_dc','$waktu_krj_dc','$qty_dc','$tarif_dc'
 	)";
     mysqli_query($db, $query_dc);
-
-    header("refresh:3"); // refresh halaman 3 detik setelah update data
 
     return mysqli_affected_rows($db);
 }
@@ -406,8 +402,6 @@ function add_cs($data_cs)
 	)";
 
     mysqli_query($db, $query_cs);
-
-    header("refresh:3"); // refresh halaman 3 detik setelah update data
 
     return mysqli_affected_rows($db);
 }
