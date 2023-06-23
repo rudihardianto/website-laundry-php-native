@@ -64,7 +64,7 @@
                     <div class="card-body">
                         <div class="row d-flex justify-content-center align-items-center">
                             <div class="col">
-                                <p>Jumlah Paket Tersedia</p>
+                                <p>Daftar Paket Tersedia</p>
                                 <h5 class="card-title fw-bold"><?=jmlPaket();?></h5>
                             </div>
                             <div class="col text-end">
