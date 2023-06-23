@@ -3,7 +3,7 @@
 session_start();
 
 // Koneksi ke Database
-$db = mysqli_connect('localhost', 'root', '', 'laundry_app');
+$db = mysqli_connect('localhost', 'root', '', 'dry_laundry');
 
 // Fungsi untuk menampilkan semua query(data) dari database
 function query($query)
@@ -493,8 +493,6 @@ function order_ck($order_ck)
 
     mysqli_query($db, $insert_ck);
 
-    header("refresh:3"); // refresh halaman 3 detik setelah update data
-
     return mysqli_affected_rows($db);
 }
 
@@ -556,8 +554,6 @@ function order_dc($order_dc)
 
     mysqli_query($db, $query_dc);
 
-    header("refresh:3"); // refresh halaman 3 detik setelah update data
-
     return mysqli_affected_rows($db);
 
 }
@@ -618,8 +614,6 @@ function order_cs($order_cs)
 	)";
 
     mysqli_query($db, $query_cs);
-
-    header("refresh:3"); // refresh halaman 3 detik setelah update data
 
     return mysqli_affected_rows($db);
 }
