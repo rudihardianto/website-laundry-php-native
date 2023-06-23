@@ -145,6 +145,8 @@
                                     </div>
                                 </div>
 
+                                <a href="<?=url('akun/profil.php');?>" class="btn btn-outline-secondary">Refresh</a>
+
                                 <!-- button update -->
                                 <button type="submit" name="update" class="btn btn-primary"
                                     onclick="return confirm('Ingin ubah Data?');">

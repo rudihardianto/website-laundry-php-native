@@ -86,15 +86,11 @@
                                                 value="<?=$update['email']?>" autocomplete="off">
                                         </div>
                                     </div>
-                                    <!-- <div class="mb-3 row">
-                                        <label for="password" class="col-sm-3 col-form-label">Password</label>
-                                        <div class="col-sm-9">
-                                            <input type="password" name="password" id="password" class="form-control"
-                                                autocomplete="off">
-                                        </div>
-                                    </div> -->
-                                    <div class="d-flex justify-content-end">
-                                        <button type="submit" name="update" class="btn btn-primary">Update Data</button>
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <button type="submit" name="update" class="btn btn-primary"
+                                            onclick="return confirm('Ingin ubah Data?');">
+                                            Update Data
+                                        </button>
                                     </div>
                                 </form>
                             </div>

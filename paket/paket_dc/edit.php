@@ -94,7 +94,10 @@
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-end">
-                                        <button type="submit" name="ubah" class="btn btn-primary">Update Data</button>
+                                        <button type="submit" name="ubah" class="btn btn-primary"
+                                            onclick="return confirm('Ingin ubah Data?');">
+                                            Update Data
+                                        </button>
                                     </div>
                                 </form>
                             </div>
