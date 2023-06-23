@@ -61,6 +61,9 @@
                         <div class="row justify-content-center">
                             <div class="col col-md-10">
                                 <form action="" method="post">
+                                    <input type="hidden" name="id_kar" value="">
+                                    <input type="hidden" name="no_telp" value="">
+                                    <input type="hidden" name="alamat" value="">
                                     <input type="hidden" name="level" value="Karyawan">
                                     <div class="mb-3 row">
                                         <label for="nama" class="col-sm-3 col-form-label">Nama</label>

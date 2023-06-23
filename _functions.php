@@ -182,9 +182,12 @@ function add_karyawan($karyawan)
 {
     global $db;
 
+    $id_kar   = trim('KRY-'.substr(uniqid(), 0, 4));
     $nama     = ucwords(htmlspecialchars($karyawan['nama']));
-    $username = strtolower(htmlspecialchars($karyawan['username']));
     $email    = htmlspecialchars($karyawan['email']);
+    $username = strtolower(htmlspecialchars($karyawan['username']));
+    $no_telp  = htmlspecialchars($karyawan['no_telp']);
+    $alamat   = htmlspecialchars($karyawan['alamat']);
     $password = stripcslashes(htmlspecialchars($karyawan['password']));
     $level    = $karyawan['level'];
 
@@ -201,10 +204,10 @@ function add_karyawan($karyawan)
     }
 
     $password = password_hash($password, PASSWORD_DEFAULT);
-    $insert   = "INSERT INTO master VALUES (null,'$nama','$email','$username','$password','$level')";
+    $insert   = "INSERT INTO master VALUES (
+        null,'$id_kar','$nama','$email','$username','$no_telp','$alamat','$password','$level'
+    )";
     mysqli_query($db, $insert);
-
-    header("refresh:3"); // refresh halaman 3 detik setelah update data
 
     return mysqli_affected_rows($db);
 }
