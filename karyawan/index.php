@@ -34,7 +34,7 @@
                                 <h5 class="card-title">Daftar Karyawan</h5>
                                 <hr>
                                 <div class="table-responsive text-nowrap">
-                                    <table id="management-karyawan" class="table table-hover">
+                                    <table id="management-karyawan" class="table table-sm table-hover">
                                         <thead>
                                             <tr class="table-primary">
                                                 <th scope="col">#</th>
@@ -45,8 +45,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php $no = 1;?>
-                                            <?php foreach ($data_karyawan as $karyawan): ?>
+                                            <?php $no = 1; foreach ($data_karyawan as $karyawan): ?>
                                             <tr>
                                                 <th scope="row"><?=$no++;?></th>
                                                 <td><?=$karyawan['nama']?></td>

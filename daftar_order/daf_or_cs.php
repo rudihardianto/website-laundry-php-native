@@ -53,12 +53,6 @@
                                         <?php } ?>
                                     </tr>
                                     <?php endforeach;?>
-                                    <?php else: ?>
-                                    <tr>
-                                        <td colspan="10" class="text-center text-muted fw-semibold py-3">
-                                            Data Tidak Tersedia
-                                        </td>
-                                    </tr>
                                     <?php endif;?>
                                 </tbody>
                             </table>

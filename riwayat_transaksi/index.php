@@ -78,12 +78,6 @@
                                         </td>
                                     </tr>
                                     <?php endforeach ?>
-                                    <?php else : ?>
-                                    <tr>
-                                        <td colspan="11" class="text-center text-muted py-3">
-                                            Riwayat Transaksi Tidak Tersedia.
-                                        </td>
-                                    </tr>
                                     <?php endif?>
                                 </tbody>
                             </table>
@@ -148,12 +142,6 @@
                                         </td>
                                     </tr>
                                     <?php endforeach ?>
-                                    <?php else : ?>
-                                    <tr>
-                                        <td colspan="11" class="text-center text-muted py-3">
-                                            Riwayat Transaksi Tidak Tersedia.
-                                        </td>
-                                    </tr>
                                     <?php endif ?>
                                 </tbody>
                             </table>
@@ -218,12 +206,6 @@
                                         </td>
                                     </tr>
                                     <?php endforeach ?>
-                                    <?php else : ?>
-                                    <tr>
-                                        <td colspan="11" class="text-center text-muted py-3">
-                                            Riwayat Transaksi Tidak Tersedia.
-                                        </td>
-                                    </tr>
                                     <?php endif ?>
                                 </tbody>
                             </table>
