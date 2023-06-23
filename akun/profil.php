@@ -84,7 +84,7 @@
                                 <!-- alamat -->
                                 <div class="mb-3">
                                     <label for="alamat" class="form-label">Alamat</label>
-                                    <textarea type="text" name="alamat_ck" id="alamat" class="form-control"
+                                    <textarea type="text" name="alamat" id="alamat" class="form-control"
                                         autocomplete="off"><?=$profil["alamat"];?></textarea>
                                 </div>
                             </div>

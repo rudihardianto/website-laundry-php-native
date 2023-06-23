@@ -67,8 +67,7 @@
                                         <label for="nama" class="col-sm-3 col-form-label">Nama Paket</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="nama_paket_ck" id="nama" class="form-control"
-                                                value="<?=$data_ck["nama_paket_ck"];?>" autocomplete="off" required
-                                                disabled>
+                                                value="<?=$data_ck["nama_paket_ck"];?>" autocomplete="off" required>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">

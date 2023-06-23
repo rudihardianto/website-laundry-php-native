@@ -157,6 +157,7 @@ function update_user($profil)
     $username = strtolower(htmlspecialchars($profil['username']));
     $email    = htmlspecialchars($profil['email']);
     $no_telp  = htmlspecialchars($profil['no_telp']);
+    $alamat  = htmlspecialchars($profil['alamat']);
     $level    = $profil['level'];
 
     $profil = "UPDATE master SET
@@ -164,13 +165,12 @@ function update_user($profil)
 		username        = '$username',
 		email 	        = '$email',
 		no_telp         = '$no_telp',
+		alamat          = '$alamat',
 		level           = '$level'
 		WHERE id_user   = '$id_user'
 	";
 
     mysqli_query($db, $profil);
-
-    header("refresh:3"); // refresh halaman 3 detik setelah update data
 
     return mysqli_affected_rows($db);
 }
@@ -230,7 +230,6 @@ function update_karyawan($up_kary)
 	";
 
     mysqli_query($db, $up_query);
-    header("refresh:1"); // refresh halaman 1 detik setelah update data
 
     return mysqli_affected_rows($db);
 }
@@ -293,8 +292,6 @@ function update_ck($edit_ck)
 		tarif_ck = '$tarif_ck'
 		WHERE id_ck = '$id_ck'
 	");
-
-    header("refresh:1"); // refresh halaman 1 detik setelah update data
 
     return mysqli_affected_rows($db);
 }
@@ -359,8 +356,6 @@ function update_dc($edit_dc)
 		WHERE id_dc = '$id_dc'
 	");
 
-    header("refresh:1"); // refresh halaman 1 detik setelah update data
-
     return mysqli_affected_rows($db);
 }
 
@@ -424,8 +419,6 @@ function update_cs($edit_cs)
 		tarif_cs = '$tarif_cs'
 		WHERE id_cs = '$id_cs'
 	");
-
-    header("refresh:1"); // refresh halaman 1 detik setelah update data
 
     return mysqli_affected_rows($db);
 }
