@@ -93,7 +93,9 @@
                                                 value="<?=$data_dc["tarif_dc"];?>" autocomplete="off" required>
                                         </div>
                                     </div>
-                                    <div class="d-flex justify-content-end">
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <a href="" class="btn btn-outline-secondary">Refresh</a>
+
                                         <button type="submit" name="ubah" class="btn btn-primary"
                                             onclick="return confirm('Ingin ubah Data?');">
                                             Update Data
