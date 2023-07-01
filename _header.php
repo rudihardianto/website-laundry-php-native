@@ -61,6 +61,9 @@
                     <li class="nav-item mx-md-2">
                         <a class="nav-link" href="<?=url('riwayat_transaksi/index.php');?>">Riwayat Transaksi</a>
                     </li>
+                    <li class="nav-item mx-md-2">
+                        <a class="nav-link" href="<?=url('paket/list-harga.php');?>">List Harga</a>
+                    </li>
                     <?php if($levelAdmin) { ?>
                     <li class="nav-item mx-md-2">
                         <a class="nav-link" href="<?=url('karyawan/index.php');?>">Management Karyawan</a>
@@ -68,7 +71,7 @@
                     <?php } ?>
                     <?php if($levelAdminKaryawan) { ?>
                     <li class="nav-item mx-md-2">
-                        <a class="nav-link" href="<?=url('paket/index.php');?>">Daftar Paket</a>
+                        <a class="nav-link" href="<?=url('paket/index.php');?>">Management Paket</a>
                     </li>
                     <?php } ?>
                     <li class="nav-item mx-md-2">
