@@ -67,7 +67,7 @@
                             </div>
                             <div class="col-12">
                                 <!-- select id pelanggan -->
-                                <select name="id_user" class="form-select">
+                                <select name="id_user" class="form-select" id="select_box">
                                     <option selected>-- Pilih ID Pelanggan --</option>
                                     <?php foreach ($id_pel_ck as $id): ?>
                                     <option value="<?=$id['id_user'];?>">
