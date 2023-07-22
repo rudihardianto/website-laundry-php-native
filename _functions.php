@@ -88,6 +88,20 @@ function formatDate($tgl)
     return $tgl;
 }
 
+// random key untuk id
+function randomString($length)
+{
+    $str        = "";
+    $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    $max        = strlen($characters) - 1;
+    for ($i = 0; $i < $length; $i++) {
+        $rand = mt_rand(0, $max);
+        $str .= $characters[$rand];
+    }
+
+    return $str;
+}
+
 /* START: User */
 // create
 function add_user($profil)
@@ -95,7 +109,7 @@ function add_user($profil)
     global $db;
 
     /* Generate ID Pelanggan */
-    $id_pelanggan = trim('PLG-'.strtoupper(substr(uniqid(), 0, 4)));
+    $id_pelanggan = trim('PLG-'.randomString(4));
     $nama         = ucwords(htmlspecialchars($profil['nama']));
     $username     = strtolower(stripslashes(htmlspecialchars($profil['username'])));
     $email        = htmlspecialchars($profil['email']);
@@ -183,7 +197,7 @@ function add_karyawan($karyawan)
 {
     global $db;
 
-    $id_kar   = trim('KRY-'.substr(uniqid(), 0, 4));
+    $id_kar   = trim('KRY-'.randomString(4));
     $nama     = ucwords(htmlspecialchars($karyawan['nama']));
     $email    = htmlspecialchars($karyawan['email']);
     $username = strtolower(htmlspecialchars($karyawan['username']));
