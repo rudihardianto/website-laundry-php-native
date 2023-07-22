@@ -157,7 +157,7 @@ function update_user($profil)
     $username = strtolower(htmlspecialchars($profil['username']));
     $email    = htmlspecialchars($profil['email']);
     $no_telp  = htmlspecialchars($profil['no_telp']);
-    $alamat  = htmlspecialchars($profil['alamat']);
+    $alamat   = htmlspecialchars($profil['alamat']);
     $level    = $profil['level'];
 
     $profil = "UPDATE master SET
@@ -174,6 +174,7 @@ function update_user($profil)
 
     return mysqli_affected_rows($db);
 }
+
 /* END: User */
 
 /* START: CRUD (Management karyawan) */
@@ -242,6 +243,7 @@ function delete_karyawan($id_karyawan)
 
     return mysqli_affected_rows($db);
 }
+
 /* END: CRUD (Management karyawan) */
 
 /* START: CRUD Cuci Komplit */
@@ -304,6 +306,7 @@ function delete_ck($del_ck)
 
     return mysqli_affected_rows($db);
 }
+
 /* END: CRUD Cuci Komplit */
 
 /* START: CRUD Dry Clean */
@@ -367,6 +370,7 @@ function delete_dc($del_dc)
 
     return mysqli_affected_rows($db);
 }
+
 /* END: CRUD Dry Clean */
 
 /* START: CRUD Cuci Satuan */
@@ -431,6 +435,7 @@ function delete_cs($del_cs)
 
     return mysqli_affected_rows($db);
 }
+
 /* END: CRUD Cuci Satuan */
 
 /* START: CRUD Order */
@@ -617,6 +622,7 @@ function del_or_cs($or_numb_cs)
 
     return mysqli_affected_rows($db);
 }
+
 /* END: CRUD Order */
 
 /* START: Transaksi Bayar */
@@ -761,4 +767,5 @@ function transaksi_dc($trans_dc)
 
     return mysqli_affected_rows($db);
 }
+
 /* END: Transaksi Bayar */

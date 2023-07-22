@@ -86,7 +86,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="<?=url('akun/profil.php');?>">Profil</a></li>
-                        <li><a class="dropdown-item" href="<?=url('akun/pesanan_saya.php');?>">Pesanan Saya</a></li>
+                        <li><a class="dropdown-item" href="<?=url('akun/ubah_password.php');?>">Ubah Password</a></li>
                         <li>
                             <a class="dropdown-item" href="<?=url('logout.php')?>"
                                 onclick="return confirm('Hi <?=$_SESSION['nama']?>, Ingin Keluar?');">
