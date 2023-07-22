@@ -1,58 +1,58 @@
 <?php
-    require_once '../_header.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+require_once '../_header.php';
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://localhost/laundry_rizal_skripsi/';
         </script>
         ";
-        exit();
-    }
+    exit();
+}
 
-    $id_user = $_SESSION["id_user"];
+$id_user = $_SESSION["id_user"];
 
-    if (isset($_POST["ubah_password"])) {
-        // ambil semua inputan
-        $old_pw = $_POST["old_password"];
-        $new_pw = $_POST["new_password"];
-        $cfm_pw = $_POST["confirm_password"];
+if (isset($_POST["ubah_password"])) {
+    // ambil semua inputan
+    $old_pw = $_POST["old_password"];
+    $new_pw = $_POST["new_password"];
+    $cfm_pw = $_POST["confirm_password"];
 
-        // cek apakah old password benar
-        $sql = "SELECT * FROM master WHERE id_user = '".$id_user."'";
-        $result = mysqli_query($db, $sql);
-        $row = mysqli_fetch_object($result);
+    // cek apakah old password benar
+    $sql    = "SELECT * FROM master WHERE id_user = '".$id_user."'";
+    $result = mysqli_query($db, $sql);
+    $row    = mysqli_fetch_object($result);
 
-        // cek apakah password yang diinputkan lama sama
-        if (password_verify($old_pw, $row->password)) {
-            // jika new password & confirm password sama
-            if ($new_pw == $cfm_pw) {
-                // ubah password
-                $sql = "UPDATE master SET password = '".password_hash($new_pw, PASSWORD_DEFAULT)."' WHERE id_user = '".$id_user."'";
-                mysqli_query($db, $sql);
+    // cek apakah password yang diinputkan lama sama
+    if (password_verify($old_pw, $row->password)) {
+        // jika new password & confirm password sama
+        if ($new_pw == $cfm_pw) {
+            // ubah password
+            $sql = "UPDATE master SET password = '".password_hash($new_pw, PASSWORD_DEFAULT)."' WHERE id_user = '".$id_user."'";
+            mysqli_query($db, $sql);
 
-                echo "
+            echo "
                     <script>
                         alert('Selamat, Password berhasil diubah!');
                         document.location='http://localhost/laundry_rizal_skripsi/akun/ubah_password.php';
                     </script>
                 ";
-            } else {
-                echo "
+        } else {
+            echo "
                     <script>
                         alert('Maaf, Password baru tidak sama dengan konfirmasi password!');
                         document.location='http://localhost/laundry_rizal_skripsi/akun/ubah_password.php';
                     </script>
                 ";
-            }
-        } else {
-            echo "
+        }
+    } else {
+        echo "
                 <script>
                     alert('Maaf, Password lama anda salah!');
                     document.location='http://localhost/laundry_rizal_skripsi/akun/ubah_password.php';
                 </script>
             ";
-        }
     }
+}
 
 ?>
 
@@ -78,7 +78,6 @@
                         <div class="row justify-content-center">
                             <div class="col col-md-10">
                                 <form method="post" action="">
-                                    <input type="hidden" name="username" value="<?= $_SESSION['username']; ?>">
                                     <div class="mb-3 row">
                                         <label for="old_password" class="col-sm-3 col-form-label">Password</label>
                                         <div class="col-sm-9">
