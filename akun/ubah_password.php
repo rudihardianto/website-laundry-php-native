@@ -105,8 +105,8 @@ if (isset($_POST["ubah_password"])) {
                                     <div class="d-flex justify-content-end gap-2">
                                         <a href="" class="btn btn-outline-secondary">Refresh</a>
 
-                                        <button type="submit" name="ubah_password" class="btn btn-primary">
-                                            <!-- onclick="return confirm('Ingin ubah password?');" -->
+                                        <button type="submit" name="ubah_password" class="btn btn-primary"
+                                            onclick="return confirm('Ingin ubah password?');">
                                             Ubah Password
                                         </button>
                                     </div>
