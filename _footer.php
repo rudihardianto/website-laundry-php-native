@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col">
-                <p class="py-3 text-muted">Copyright © 2023 | Project Skripsi Rizal hanafi</p>
+                <p class="py-3 text-muted">Copyright © 2023 | Dry Laundry</p>
             </div>
         </div>
     </div>
