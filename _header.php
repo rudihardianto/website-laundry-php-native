@@ -1,11 +1,11 @@
-<?php
-require_once '_functions.php';
-if (!isset($_SESSION['login'])) {
-    header("Location: login.php");
-    exit;
-}
-$levelAdmin         = $_SESSION['level'] == 'Admin';
-$levelAdminKaryawan = $_SESSION['level'] == 'Admin' || $_SESSION['level'] == 'Karyawan';
+<?php 
+    require_once '_functions.php';
+    if (!isset($_SESSION['login'])) {
+        header("Location: login.php");
+        exit;
+    }
+    $levelAdmin = $_SESSION['level'] == 'Admin';    
+    $levelAdminKaryawan = $_SESSION['level'] == 'Admin' || $_SESSION['level'] == 'Karyawan';
 ?>
 
 <!DOCTYPE html>
@@ -19,24 +19,26 @@ $levelAdminKaryawan = $_SESSION['level'] == 'Admin' || $_SESSION['level'] == 'Ka
     <link rel="shortcut icon" href="<?=url('_assets/img/logo/dry_dry.png')?>" type="image/x-icon">
 
     <!-- bootstrap 5 -->
-    <link rel="stylesheet" href="_assets/bootstrap-5.3.0/css/bootstrap.min.css">
-    <script src="_assets/bootstrap-5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="_assets/javascript/dselect.js"></script>
+    <link rel="stylesheet" href="<?=url('_assets/bootstrap-5.3.0/css/bootstrap.min.css');?>">
+    <script src="<?=url('_assets/bootstrap-5.3.0/js/bootstrap.bundle.min.js');?>"></script>
+    <script src="<?= url('_assets/javascript/dselect.js'); ?>"></script>
 
     <!-- datatables css -->
     <link rel="stylesheet"
-        href="_assets/bootstrap-5.3.0/css/datatables/cdnjs.cloudflare.com_ajax_libs_twitter-bootstrap_5.2.0_css_bootstrap.min.css">
+        href="<?= url('_assets/bootstrap-5.3.0/css/datatables/cdnjs.cloudflare.com_ajax_libs_twitter-bootstrap_5.2.0_css_bootstrap.min.css'); ?>">
     <link rel="stylesheet"
-        href="_assets/bootstrap-5.3.0/css/datatables/cdn.datatables.net_1.13.4_css_dataTables.bootstrap5.min.css">
+        href="<?= url('_assets/bootstrap-5.3.0/css/datatables/cdn.datatables.net_1.13.4_css_dataTables.bootstrap5.min.css'); ?>">
 
     <!-- datatables js -->
-    <script defer src="_assets/javascript/datatables/code.jquery.com_jquery-3.5.1.js"></script>
-    <script defer src="_assets/javascript/datatables/cdn.datatables.net_1.13.4_js_jquery.dataTables.min.js">
+    <script defer src="<?= url('_assets/javascript/datatables/code.jquery.com_jquery-3.5.1.js'); ?>"></script>
+    <script defer
+        src="<?= url('_assets/javascript/datatables/cdn.datatables.net_1.13.4_js_jquery.dataTables.min.js'); ?>">
     </script>
-    <script defer src="_assets/javascript/datatables/cdn.datatables.net_1.13.4_js_dataTables.bootstrap5.min.js">
+    <script defer
+        src="<?= url('_assets/javascript/datatables/cdn.datatables.net_1.13.4_js_dataTables.bootstrap5.min.js'); ?>">
     </script>
 
-    <script defer src="_assets/javascript/script.js"></script>
+    <script defer src="<?= url('_assets/javascript/script.js'); ?>"></script>
 </head>
 
 <body>
@@ -63,16 +65,16 @@ $levelAdminKaryawan = $_SESSION['level'] == 'Admin' || $_SESSION['level'] == 'Ka
                     <li class="nav-item mx-md-2">
                         <a class="nav-link" href="<?=url('paket/list-harga.php');?>">List Harga</a>
                     </li>
-                    <?php if ($levelAdmin) {?>
+                    <?php if($levelAdmin) { ?>
                     <li class="nav-item mx-md-2">
                         <a class="nav-link" href="<?=url('karyawan/index.php');?>">Management Karyawan</a>
                     </li>
-                    <?php }?>
-                    <?php if ($levelAdminKaryawan) {?>
+                    <?php } ?>
+                    <?php if($levelAdminKaryawan) { ?>
                     <li class="nav-item mx-md-2">
                         <a class="nav-link" href="<?=url('paket/index.php');?>">Management Paket</a>
                     </li>
-                    <?php }?>
+                    <?php } ?>
                     <li class="nav-item mx-md-2">
                         <a class="nav-link" href="<?=url('about.php');?>">Tentang Kami</a>
                     </li>
