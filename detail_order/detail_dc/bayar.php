@@ -3,7 +3,7 @@
     if (!isset($_SESSION['login'])) {
         echo "
         <script>
-            document.location='http://localhost/laundry_rizal_skripsi/';
+            document.location='http://dry_laundry.test';
         </script>
         ";
         exit();
@@ -16,7 +16,7 @@
             echo "
             <script>
                 alert('Pembayaran Berhasil!');
-                document.location='http://localhost/laundry_rizal_skripsi/riwayat_transaksi/index.php';
+                document.location='http://dry_laundry.test/riwayat_transaksi/index.php';
             </script>
         ";
         } else {

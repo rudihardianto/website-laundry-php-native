@@ -3,7 +3,7 @@
     if (isset($_SESSION["login"]) && isset($_SESSION['username'])) {
         echo "
         <script>
-            document.location='http://localhost/laundry_rizal_skripsi/';
+            document.location='http://dry_laundry.test';
         </script>
         ";
         exit();
@@ -54,7 +54,7 @@
                     
                     echo "
                     <script>
-                        document.location='http://localhost/laundry_rizal_skripsi/';
+                        document.location='http://dry_laundry.test';
                     </script>
                     ";
                 } else {

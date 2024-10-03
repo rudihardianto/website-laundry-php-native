@@ -3,7 +3,7 @@ require_once '../_header.php';
 if (!isset($_SESSION['login'])) {
     echo "
         <script>
-            document.location='http://localhost/laundry_rizal_skripsi/';
+            document.location='http://dry_laundry.test';
         </script>
         ";
     exit();

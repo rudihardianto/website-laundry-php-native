@@ -3,7 +3,7 @@
     if (!isset($_SESSION['login'])) {
         echo "
         <script>
-            document.location='http://localhost/laundry_rizal_skripsi/';
+            document.location='http://dry_laundry.test';
         </script>
         ";
         exit();
@@ -18,7 +18,7 @@
 
 <?php if (isset($_POST['bayar_ck'])) : ?>
 <script>
-window.location = "http://localhost/laundry_rizal_skripsi/detail_order/detail_ck/bayar.php?or_ck_number=<?=$no_ck?>"
+window.location = "http://dry_laundry.test/detail_order/detail_ck/bayar.php?or_ck_number=<?=$no_ck?>"
 </script>
 <?php endif ?>
 

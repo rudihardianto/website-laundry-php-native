@@ -5,7 +5,7 @@
     if (isset($_SESSION["login"]) && isset($_SESSION['master'])) {
         echo "
         <script>
-            document.location='http://localhost/laundry_rizal_skripsi/';
+            document.location='http://dry_laundry.test';
         </script>
         ";
         exit();
@@ -16,7 +16,7 @@
             echo "
                 <script>
                     alert('Selamat, Pendaftaran akun anda berhasil!');
-                    document.location='http://localhost/laundry_rizal_skripsi/login.php';
+                    document.location='http://dry_laundry.test/login.php';
                 </script>
         ";
         } else {
