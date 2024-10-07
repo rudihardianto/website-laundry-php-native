@@ -1,17 +1,18 @@
-<?php 
-    require_once '../../_header.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+<?php
+require_once '../../_header.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
+    exit();
+}
 ?>
 
 <?php if (isset($_POST['tambah'])): ?>
-<?php if (add_ck($_POST) > 0): ?>
+<?php if (addCk($_POST) > 0): ?>
 <!-- berhasil -->
 <div class="container">
     <div class="row justify-content-center">

@@ -1,5 +1,6 @@
 <?php
 require_once '../../_header.php';
+
 if (!isset($_SESSION['login'])) {
     echo "
     <script>
@@ -10,7 +11,7 @@ if (!isset($_SESSION['login'])) {
 }
 $id_ck = $_GET['id_ck'];
 
-if (delete_ck($id_ck) > 0) {
+if (deleteCk($id_ck) > 0) {
     echo "
         <script>
             alert('Data berhasil dihapus!');

@@ -1,19 +1,20 @@
 <?php
-    require_once '../_header.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+require_once '../_header.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $profil = query("SELECT * FROM master WHERE id_user = '$_SESSION[id_user]'")[0];
-    // var_dump($profil);
+    exit();
+}
+$profil = query("SELECT * FROM master WHERE id_user = '$_SESSION[id_user]'")[0];
+// var_dump($profil);
 ?>
 
 <?php if (isset($_POST['update'])): ?>
-<?php if (update_user($_POST) > 0): ?>
+<?php if (updateUser($_POST) > 0): ?>
 <!-- berhasil -->
 <div class="container">
     <div class="row justify-content-center">

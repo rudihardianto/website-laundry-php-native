@@ -1,18 +1,19 @@
 <?php
-    require_once '../../_header.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+require_once '../../_header.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $data_dc = query('SELECT * FROM tb_dry_clean');
+    exit();
+}
+$data_dc = query('SELECT * FROM tb_dry_clean');
 ?>
 
 <?php if (isset($_POST['tambah'])): ?>
-<?php if (add_dc($_POST) > 0): ?>
+<?php if (addDc($_POST) > 0): ?>
 <!-- berhasil -->
 <div class="container">
     <div class="row justify-content-center">

@@ -1,14 +1,15 @@
 <?php
-    require_once '../_header.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+require_once '../_header.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $data_karyawan = query("SELECT * FROM master WHERE level = 'Karyawan'");
+    exit();
+}
+$data_karyawan = query("SELECT * FROM master WHERE level = 'Karyawan'");
 ?>
 
 <section id="karyawan" class="main-karyawan">
@@ -45,7 +46,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php $no = 1; foreach ($data_karyawan as $karyawan): ?>
+                                            <?php $no = 1;foreach ($data_karyawan as $karyawan): ?>
                                             <tr>
                                                 <th scope="row"><?=$no++;?></th>
                                                 <td><?=$karyawan['nama']?></td>
@@ -78,4 +79,4 @@
     </div>
 </section>
 
-<?php require_once '../_footer.php'; ?>
+<?php require_once '../_footer.php';?>

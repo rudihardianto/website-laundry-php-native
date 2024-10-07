@@ -1,14 +1,15 @@
 <?php
-    require_once '../../_header.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+require_once '../../_header.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $data_ck = query('SELECT * FROM tb_cuci_komplit');
+    exit();
+}
+$data_ck = query('SELECT * FROM tb_cuci_komplit');
 ?>
 
 <!-- START: daftar paket cuci komplit -->
@@ -63,7 +64,7 @@
                                                 <th scope="row"><?=$no++;?></th>
                                                 <td><?=$ck["nama_paket_ck"];?></td>
                                                 <td><?=$ck["waktu_kerja_ck"];?></td>
-                                                <td><?=$ck["kuantitas_ck"].' Kg';?></td>
+                                                <td><?=$ck["kuantitas_ck"] . ' Kg';?></td>
                                                 <td><?=$ck["tarif_ck"];?></td>
                                                 <td>
                                                     <a

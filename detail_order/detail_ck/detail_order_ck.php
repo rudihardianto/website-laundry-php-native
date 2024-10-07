@@ -1,26 +1,27 @@
-<?php 
-    require_once '../../_header.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+<?php
+require_once '../../_header.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $no_ck = $_GET['or_ck_number'];
-    $data = query("SELECT * FROM tb_order_ck WHERE or_ck_number = '$no_ck'")[0];
+    exit();
+}
+$no_ck = $_GET['or_ck_number'];
+$data  = query("SELECT * FROM tb_order_ck WHERE or_ck_number = '$no_ck'")[0];
 
-    $dataSukses = isset(query("SELECT * FROM tb_riwayat_ck WHERE or_number = '$no_ck'")[0]["status"]);
-    // var_dump($dataSukses);
+$dataSukses = isset(query("SELECT * FROM tb_riwayat_ck WHERE or_number = '$no_ck'")[0]["status"]);
+// var_dump($dataSukses);
 ?>
 
 
-<?php if (isset($_POST['bayar_ck'])) : ?>
+<?php if (isset($_POST['bayar_ck'])): ?>
 <script>
 window.location = "http://dry_laundry.test/detail_order/detail_ck/bayar.php?or_ck_number=<?=$no_ck?>"
 </script>
-<?php endif ?>
+<?php endif?>
 
 <!-- START: menu -->
 <section id="detail-order-ck" class="detail-order-ck">
@@ -35,7 +36,7 @@ window.location = "http://dry_laundry.test/detail_order/detail_ck/bayar.php?or_c
                             </div>
                             <div class="col text-end text-nowrap">
                                 <h5 class="card-title text-muted">No Order:
-                                    <span class="fw-bold text-black"><?= $data['or_ck_number']?></span>
+                                    <span class="fw-bold text-black"><?=$data['or_ck_number']?></span>
                                 </h5>
                             </div>
                         </div>
@@ -142,12 +143,12 @@ window.location = "http://dry_laundry.test/detail_order/detail_ck/bayar.php?or_c
                                                     <td colspan="4">
                                                         <input type="text" name="harga_perkilo" disabled
                                                             class="bg-white border border-0 text-black"
-                                                            value="<?= 'Rp. ' . $data['harga_perkilo']?>">
+                                                            value="<?='Rp. ' . $data['harga_perkilo']?>">
                                                     </td>
                                                     <td colspan="4">
                                                         <input type="text" name="tot_bayar" disabled
                                                             class="bg-white border border-0 text-black"
-                                                            value="<?= 'Rp. ' . $data['tot_bayar']?>">
+                                                            value="<?='Rp. ' . $data['tot_bayar']?>">
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -163,15 +164,15 @@ window.location = "http://dry_laundry.test/detail_order/detail_ck/bayar.php?or_c
                                         </div>
                                         <hr class="my-3">
                                         <div class="col text-end">
-                                            <?php if(!$dataSukses) { ?>
+                                            <?php if (!$dataSukses) {?>
                                             <button type="submit" name="bayar_ck" class="btn btn-primary">
                                                 Bayar Sekarang
                                             </button>
-                                            <?php } else { ?>
+                                            <?php } else {?>
                                             <span class="btn btn-success">
                                                 Sudah Dibayar
                                             </span>
-                                            <?php } ?>
+                                            <?php }?>
                                         </div>
                                     </div>
                                 </div>

@@ -1,17 +1,18 @@
-<?php 
-    require_once '../_header.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+<?php
+require_once '../_header.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $query_ck = query("SELECT * FROM tb_riwayat_ck ORDER BY id_ck DESC");
-    $query_dc = query("SELECT * FROM tb_riwayat_dc ORDER BY id_dc DESC");
-    $query_cs = query("SELECT * FROM tb_riwayat_cs ORDER BY id_cs DESC");
-    // var_dump($query_ck);
+    exit();
+}
+$query_ck = query("SELECT * FROM tb_riwayat_ck ORDER BY id_ck DESC");
+$query_dc = query("SELECT * FROM tb_riwayat_dc ORDER BY id_dc DESC");
+$query_cs = query("SELECT * FROM tb_riwayat_cs ORDER BY id_cs DESC");
+// var_dump($query_ck);
 ?>
 
 <!-- START: title daftar riwayat transaksi -->
@@ -53,10 +54,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php if (!empty($query_ck)) : ?>
-                                    <?php $i = 1; foreach($query_ck as $data_ck) : ?>
+                                    <?php if (!empty($query_ck)): ?>
+                                    <?php $i = 1;foreach ($query_ck as $data_ck): ?>
                                     <tr>
-                                        <th scope="row"><?= $i++; ?></th>
+                                        <th scope="row"><?=$i++;?></th>
                                         <td><?=$data_ck['or_number']?></td>
                                         <td><?=$data_ck['id_pelanggan']?></td>
                                         <td><?=$data_ck['pelanggan']?></td>
@@ -77,7 +78,7 @@
                                             </a>
                                         </td>
                                     </tr>
-                                    <?php endforeach ?>
+                                    <?php endforeach?>
                                     <?php endif?>
                                 </tbody>
                             </table>
@@ -117,10 +118,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php if (!empty($query_dc)) : ?>
-                                    <?php $i = 1; foreach($query_dc as $data_dc) : ?>
+                                    <?php if (!empty($query_dc)): ?>
+                                    <?php $i = 1;foreach ($query_dc as $data_dc): ?>
                                     <tr>
-                                        <th scope="row"><?= $i++; ?></th>
+                                        <th scope="row"><?=$i++;?></th>
                                         <td><?=$data_dc['or_number']?></td>
                                         <td><?=$data_dc['id_pelanggan']?></td>
                                         <td><?=$data_dc['pelanggan']?></td>
@@ -141,8 +142,8 @@
                                             </a>
                                         </td>
                                     </tr>
-                                    <?php endforeach ?>
-                                    <?php endif ?>
+                                    <?php endforeach?>
+                                    <?php endif?>
                                 </tbody>
                             </table>
                         </div>
@@ -181,10 +182,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php if (!empty($query_cs)) : ?>
-                                    <?php $i = 1; foreach($query_cs as $data_cs) : ?>
+                                    <?php if (!empty($query_cs)): ?>
+                                    <?php $i = 1;foreach ($query_cs as $data_cs): ?>
                                     <tr>
-                                        <th scope="row"><?= $i++; ?></th>
+                                        <th scope="row"><?=$i++;?></th>
                                         <td><?=$data_cs['or_number']?></td>
                                         <td><?=$data_cs['id_pelanggan']?></td>
                                         <td><?=$data_cs['pelanggan']?></td>
@@ -205,8 +206,8 @@
                                             </a>
                                         </td>
                                     </tr>
-                                    <?php endforeach ?>
-                                    <?php endif ?>
+                                    <?php endforeach?>
+                                    <?php endif?>
                                 </tbody>
                             </table>
                         </div>

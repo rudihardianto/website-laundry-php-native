@@ -1,14 +1,15 @@
 <?php
-    require_once '../../_header.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+require_once '../../_header.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $data_cs = query('SELECT * FROM tb_cuci_satuan');
+    exit();
+}
+$data_cs = query('SELECT * FROM tb_cuci_satuan');
 ?>
 
 <!-- START: daftar cuci satuan -->

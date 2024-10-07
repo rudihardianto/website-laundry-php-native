@@ -1,15 +1,16 @@
-<?php 
-    require_once '../../_functions.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+<?php
+require_once '../../_functions.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $id_ck = $_GET['id_ck'];
-    $data  = query("SELECT * FROM tb_riwayat_ck WHERE id_ck = '$id_ck'")[0];
+    exit();
+}
+$id_ck = $_GET['id_ck'];
+$data  = query("SELECT * FROM tb_riwayat_ck WHERE id_ck = '$id_ck'")[0];
 ?>
 
 <!DOCTYPE html>
@@ -118,16 +119,17 @@
                                                         </tr>
                                                         <tr>
                                                             <td colspan="4"><?=$data['j_paket']?></td>
-                                                            <td colspan="4"><?=$data['berat']." Kg"?></td>
+                                                            <td colspan="4"><?=$data['berat'] . " Kg"?></td>
                                                             <td colspan="4">
-                                                                <?="Rp. ".$data['h_perkilo']." x ".$data['berat']?></td>
+                                                                <?="Rp. " . $data['h_perkilo'] . " x " . $data['berat']?>
+                                                            </td>
                                                         </tr>
                                                         <tr>
                                                             <td colspan="8" class="text-end fw-semibold table-active">
                                                                 Total
                                                             </td>
                                                             <td colspan="4" class="fw-semibold">
-                                                                <?="Rp. ".$data['total']?>
+                                                                <?="Rp. " . $data['total']?>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -135,7 +137,7 @@
                                                                 Nominal Bayar
                                                             </td>
                                                             <td colspan="4" class="fw-semibold">
-                                                                <?="Rp. ".$data['nominal_byr']?>
+                                                                <?="Rp. " . $data['nominal_byr']?>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -143,7 +145,7 @@
                                                                 Uang Kembali
                                                             </td>
                                                             <td colspan="4" class="fw-semibold">
-                                                                <?="Rp. ".$data['kembalian']?>
+                                                                <?="Rp. " . $data['kembalian']?>
                                                             </td>
                                                         </tr>
                                                     </tbody>

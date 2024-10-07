@@ -1,8 +1,9 @@
 <?php
 require_once '../_header.php';
+
 $cs_number = $_GET['or_cs_number'];
 
-if (del_or_cs($cs_number) > 0) {
+if (deleteCs($cs_number) > 0) {
     echo "
         <script>
             alert('Data berhasil dihapus!');

@@ -1,5 +1,5 @@
 <?php 
-    require_once '_header.php';
+    require_once url('_header.php');
     if (!isset($_SESSION['login'])) {
         echo "
         <script>

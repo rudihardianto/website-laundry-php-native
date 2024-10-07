@@ -1,14 +1,15 @@
 <?php
-    require_once '../../_header.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+require_once '../../_header.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $data_dc = query('SELECT * FROM tb_dry_clean');
+    exit();
+}
+$data_dc = query('SELECT * FROM tb_dry_clean');
 ?>
 
 <!-- START: daftar paket dry clean -->

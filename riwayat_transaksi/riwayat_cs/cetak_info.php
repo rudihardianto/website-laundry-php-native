@@ -1,15 +1,16 @@
-<?php 
-    require_once '../../_functions.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+<?php
+require_once '../../_functions.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $id_cs = $_GET['id_cs'];
-    $data = query("SELECT * FROM tb_riwayat_cs WHERE id_cs = '$id_cs'")[0];
+    exit();
+}
+$id_cs = $_GET['id_cs'];
+$data  = query("SELECT * FROM tb_riwayat_cs WHERE id_cs = '$id_cs'")[0];
 ?>
 
 <!DOCTYPE html>
@@ -127,7 +128,7 @@
                                                                 Total
                                                             </td>
                                                             <td colspan="4" class="fw-semibold">
-                                                                <?="Rp. ".$data['total']?>
+                                                                <?="Rp. " . $data['total']?>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -135,7 +136,7 @@
                                                                 Nominal Bayar
                                                             </td>
                                                             <td colspan="4" class="fw-semibold">
-                                                                <?="Rp. ".$data['nominal_byr']?>
+                                                                <?="Rp. " . $data['nominal_byr']?>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -143,7 +144,7 @@
                                                                 Uang Kembali
                                                             </td>
                                                             <td colspan="4" class="fw-semibold">
-                                                                <?="Rp. ".$data['kembalian']?>
+                                                                <?="Rp. " . $data['kembalian']?>
                                                             </td>
                                                         </tr>
                                                     </tbody>

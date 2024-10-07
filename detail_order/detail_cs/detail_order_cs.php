@@ -1,6 +1,7 @@
-<?php 
-   require_once('../../_header.php'); 
-   if (!isset($_SESSION['login'])) {
+<?php
+require_once '../../_header.php';
+
+if (!isset($_SESSION['login'])) {
     echo "
     <script>
         document.location='http://dry_laundry.test';
@@ -8,17 +9,17 @@
     ";
     exit();
 }
-   $no_cs = $_GET['or_cs_number'];
-   $data = query("SELECT * FROM tb_order_cs WHERE or_cs_number = '$no_cs'")[0];
+$no_cs = $_GET['or_cs_number'];
+$data  = query("SELECT * FROM tb_order_cs WHERE or_cs_number = '$no_cs'")[0];
 
-   $dataSukses = isset(query("SELECT * FROM tb_riwayat_cs WHERE or_number = '$no_cs'")[0]["status"]);
+$dataSukses = isset(query("SELECT * FROM tb_riwayat_cs WHERE or_number = '$no_cs'")[0]["status"]);
 ?>
 
-<?php if (isset($_POST['bayar_cs'])) : ?>
+<?php if (isset($_POST['bayar_cs'])): ?>
 <script>
 window.location = "http://dry_laundry.test/detail_order/detail_cs/bayar.php?or_cs_number=<?=$no_cs?>"
 </script>
-<?php endif ?>
+<?php endif?>
 
 <!-- START: menu -->
 <section id="detail-order-cs" class="detail-order-cs">
@@ -33,7 +34,7 @@ window.location = "http://dry_laundry.test/detail_order/detail_cs/bayar.php?or_c
                             </div>
                             <div class="col text-end text-nowrap">
                                 <h5 class="card-title text-muted">No Order:
-                                    <span class="fw-bold text-black"><?= $data['or_cs_number']?></span>
+                                    <span class="fw-bold text-black"><?=$data['or_cs_number']?></span>
                                 </h5>
                             </div>
                         </div>
@@ -140,12 +141,12 @@ window.location = "http://dry_laundry.test/detail_order/detail_cs/bayar.php?or_c
                                                     <td colspan="4">
                                                         <input type="text" name="harga_perpcs" disabled
                                                             class="bg-white border border-0 text-black"
-                                                            value="<?= 'Rp. ' . $data['harga_perpcs']?>">
+                                                            value="<?='Rp. ' . $data['harga_perpcs']?>">
                                                     </td>
                                                     <td colspan="4">
                                                         <input type="text" name="tot_bayar" disabled
                                                             class="bg-white border border-0 text-black"
-                                                            value="<?= 'Rp. ' . $data['tot_bayar']?>">
+                                                            value="<?='Rp. ' . $data['tot_bayar']?>">
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -161,15 +162,15 @@ window.location = "http://dry_laundry.test/detail_order/detail_cs/bayar.php?or_c
                                         </div>
                                         <hr class="my-3">
                                         <div class="col text-end">
-                                            <?php if(!$dataSukses) { ?>
+                                            <?php if (!$dataSukses) {?>
                                             <button type="submit" name="bayar_cs" class="btn btn-primary">
                                                 Bayar Sekarang
                                             </button>
-                                            <?php } else { ?>
+                                            <?php } else {?>
                                             <span class="btn btn-success">
                                                 Sudah Dibayar
                                             </span>
-                                            <?php } ?>
+                                            <?php }?>
                                         </div>
                                     </div>
                                 </div>

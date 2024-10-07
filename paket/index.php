@@ -1,13 +1,14 @@
-<?php 
-    require_once '../_header.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+<?php
+require_once '../_header.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
+    exit();
+}
 ?>
 
 <!-- START: daftar paket -->

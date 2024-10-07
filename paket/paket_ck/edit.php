@@ -1,19 +1,20 @@
 <?php
-    require_once '../../_header.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+require_once '../../_header.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $id_ck   = $_GET['id_ck'];
-    $data_ck = query("SELECT * FROM tb_cuci_komplit WHERE id_ck = '$id_ck'")[0];
+    exit();
+}
+$id_ck   = $_GET['id_ck'];
+$data_ck = query("SELECT * FROM tb_cuci_komplit WHERE id_ck = '$id_ck'")[0];
 ?>
 
 <?php if (isset($_POST['ubah'])): ?>
-<?php if (update_ck($_POST) > 0): ?>
+<?php if (updateCk($_POST) > 0): ?>
 <!-- berhasil -->
 <div class="container">
     <div class="row justify-content-center">

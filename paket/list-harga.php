@@ -1,16 +1,17 @@
-<?php 
-    require_once '../_header.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+<?php
+require_once '../_header.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $data_ck = query('SELECT * FROM tb_cuci_komplit');
-    $data_dc = query('SELECT * FROM tb_dry_clean');
-    $data_cs = query('SELECT * FROM tb_cuci_satuan');
+    exit();
+}
+$data_ck = query('SELECT * FROM tb_cuci_komplit');
+$data_dc = query('SELECT * FROM tb_dry_clean');
+$data_cs = query('SELECT * FROM tb_cuci_satuan');
 ?>
 
 <!-- START: list harga -->
@@ -45,7 +46,7 @@
                                                 <td><?=$no++;?></td>
                                                 <td><?=$ck["nama_paket_ck"];?></td>
                                                 <td><?=$ck["waktu_kerja_ck"];?></td>
-                                                <td><?=$ck["kuantitas_ck"].' Kg';?></td>
+                                                <td><?=$ck["kuantitas_ck"] . ' Kg';?></td>
                                                 <td><?=$ck["tarif_ck"];?></td>
                                             </tr>
                                             <?php endforeach;?>
@@ -77,7 +78,7 @@
                                                 <td><?=$no++;?></td>
                                                 <td><?=$dc["nama_paket_dc"];?></td>
                                                 <td><?=$dc["waktu_kerja_dc"];?></td>
-                                                <td><?=$dc["kuantitas_dc"].' Kg';?></td>
+                                                <td><?=$dc["kuantitas_dc"] . ' Kg';?></td>
                                                 <td><?=$dc["tarif_dc"];?></td>
                                             </tr>
                                             <?php endforeach;?>
@@ -109,7 +110,7 @@
                                                 <td><?=$no++;?></td>
                                                 <td><?=$cs['nama_cs'];?></td>
                                                 <td><?=$cs['waktu_kerja_cs'];?></td>
-                                                <td><?=$cs['kuantitas_cs'].' Kg';?></td>
+                                                <td><?=$cs['kuantitas_cs'] . ' Kg';?></td>
                                                 <td><?=$cs['tarif_cs'];?></td>
                                             </tr>
                                             <?php endforeach;?>

@@ -22,10 +22,16 @@ function query($query)
 // Absolute url adalah alamat yang menunjukkan suatu dokumen / direktori, dengan menyertakan alamat domain / host
 function url($url = null)
 {
-    // $url_utama = "http://localhost/laundry_rizal_skripsi";
+    // $url_utama = "http://localhost/dry_laundry";
     $url_utama = "http://dry_laundry.test";
-    if ($url != null) {
-        return $url_utama.'/'.$url;
+
+    if ($url !== null) {
+        // Menghapus slash di awal $url jika ada
+        $url = ltrim($url, '/');
+
+        // Menggabungkan $url_utama dan $url, lalu menghapus slash ganda
+
+        return rtrim($url_utama, '/') . '/' . $url;
     } else {
         return $url_utama;
     }
@@ -84,7 +90,7 @@ function formatDate($tgl)
         $tgl[1] = "Desember";
     }
 
-    $tgl = $tgl[2].' '.$tgl[1].' '.$tgl[0];
+    $tgl = $tgl[2] . ' ' . $tgl[1] . ' ' . $tgl[0];
 
     return $tgl;
 }
@@ -105,12 +111,12 @@ function randomString($length)
 
 /* START: User */
 // create
-function add_user($profil)
+function addUser($profil)
 {
     global $db;
 
     /* Generate ID Pelanggan */
-    $id_pelanggan = trim('PLG-'.randomString(4));
+    $id_pelanggan = trim('PLG-' . randomString(4));
     $nama         = ucwords(htmlspecialchars($profil['nama']));
     $username     = strtolower(stripslashes(htmlspecialchars($profil['username'])));
     $email        = htmlspecialchars($profil['email']);
@@ -163,7 +169,7 @@ function add_user($profil)
 }
 
 // update
-function update_user($profil)
+function updateUser($profil)
 {
     global $db;
 
@@ -194,11 +200,11 @@ function update_user($profil)
 
 /* START: CRUD (Management karyawan) */
 // create
-function add_karyawan($karyawan)
+function addKaryawan($karyawan)
 {
     global $db;
 
-    $id_kar   = trim('KRY-'.randomString(4));
+    $id_kar   = trim('KRY-' . randomString(4));
     $nama     = ucwords(htmlspecialchars($karyawan['nama']));
     $email    = htmlspecialchars($karyawan['email']);
     $username = strtolower(htmlspecialchars($karyawan['username']));
@@ -229,7 +235,7 @@ function add_karyawan($karyawan)
 }
 
 // update
-function update_karyawan($up_kary)
+function updateKaryawan($up_kary)
 {
     global $db;
 
@@ -251,7 +257,7 @@ function update_karyawan($up_kary)
 }
 
 // delete
-function delete_karyawan($id_karyawan)
+function deleteKaryawan($id_karyawan)
 {
     global $db;
     mysqli_query($db, "DELETE FROM master WHERE id_user = '$id_karyawan'");
@@ -263,7 +269,7 @@ function delete_karyawan($id_karyawan)
 
 /* START: CRUD Cuci Komplit */
 // create
-function add_ck($data_ck)
+function addCk($data_ck)
 {
     global $db;
     $nama_pkt_ck  = ucwords(htmlspecialchars($data_ck['nama_paket_ck']));
@@ -292,7 +298,7 @@ function add_ck($data_ck)
 }
 
 // update
-function update_ck($edit_ck)
+function updateCk($edit_ck)
 {
     global $db;
 
@@ -314,7 +320,7 @@ function update_ck($edit_ck)
 }
 
 // delete
-function delete_ck($del_ck)
+function deleteCk($del_ck)
 {
     global $db;
     mysqli_query($db, "DELETE FROM tb_cuci_komplit WHERE id_ck = '$del_ck'");
@@ -326,7 +332,7 @@ function delete_ck($del_ck)
 
 /* START: CRUD Dry Clean */
 // create
-function add_dc($data_dc)
+function addDc($data_dc)
 {
     global $db;
 
@@ -356,7 +362,7 @@ function add_dc($data_dc)
 }
 
 // update
-function update_dc($edit_dc)
+function updateDc($edit_dc)
 {
     global $db;
 
@@ -378,7 +384,7 @@ function update_dc($edit_dc)
 }
 
 // delete
-function delete_dc($del_dc)
+function deleteDc($del_dc)
 {
     global $db;
     mysqli_query($db, "DELETE FROM tb_dry_clean WHERE id_dc = '$del_dc'");
@@ -390,7 +396,7 @@ function delete_dc($del_dc)
 
 /* START: CRUD Cuci Satuan */
 // create
-function add_cs($data_cs)
+function addCs($data_cs)
 {
     global $db;
 
@@ -421,7 +427,7 @@ function add_cs($data_cs)
 }
 
 // update
-function update_cs($edit_cs)
+function updateCs($edit_cs)
 {
     global $db;
 
@@ -443,7 +449,7 @@ function update_cs($edit_cs)
 }
 
 // delete
-function delete_cs($del_cs)
+function deleteCs($del_cs)
 {
     global $db;
     mysqli_query($db, "DELETE FROM tb_cuci_satuan WHERE id_cs = '$del_cs'");
@@ -455,7 +461,7 @@ function delete_cs($del_cs)
 
 /* START: CRUD Order */
 // Create Order Cuci Komplit
-function order_ck($order_ck)
+function orderCk($order_ck)
 {
     global $db;
 
@@ -493,7 +499,7 @@ function order_ck($order_ck)
         /* Generate nomor order */
         $str      = uniqid();
         $limitNum = substr($str, 0, 7);
-        $orderNum = 'CK-'.strtoupper($limitNum);
+        $orderNum = 'CK-' . strtoupper($limitNum);
     }
 
     $insert_ck = "INSERT INTO tb_order_ck VALUES(
@@ -507,7 +513,7 @@ function order_ck($order_ck)
 }
 
 // Hapus Daftar Orderan Cuci Komplit
-function del_or_ck($or_numb_ck)
+function delOrCk($or_numb_ck)
 {
     global $db;
     $del_query_ck = "DELETE FROM tb_order_ck WHERE or_ck_number='$or_numb_ck'";
@@ -517,7 +523,7 @@ function del_or_ck($or_numb_ck)
 }
 
 // Create Order Dry Clean
-function order_dc($order_dc)
+function orderDc($order_dc)
 {
     global $db;
 
@@ -554,7 +560,7 @@ function order_dc($order_dc)
         // Generate Nomor Order
         $no_dc       = uniqid();
         $limitNum    = substr($no_dc, 0, 7);
-        $orderNum_dc = 'DC-'.strtoupper($limitNum);
+        $orderNum_dc = 'DC-' . strtoupper($limitNum);
     }
 
     $query_dc = "INSERT INTO tb_order_dc VALUES(
@@ -569,7 +575,7 @@ function order_dc($order_dc)
 }
 
 // Hapus Daftar Orderan Dry Clean
-function del_or_dc($or_numb_dc)
+function delOrDc($or_numb_dc)
 {
     global $db;
     $del_query_dc = "DELETE FROM tb_order_dc WHERE or_dc_number='$or_numb_dc'";
@@ -579,7 +585,7 @@ function del_or_dc($or_numb_dc)
 }
 
 // Create Order Cuci Satuan
-function order_cs($order_cs)
+function orderCs($order_cs)
 {
     global $db;
 
@@ -615,7 +621,7 @@ function order_cs($order_cs)
         // Generate Nomor Order
         $noCs        = uniqid();
         $limitNo_cs  = substr($noCs, 0, 7);
-        $orderNum_cs = 'CS-'.strtoupper($limitNo_cs);
+        $orderNum_cs = 'CS-' . strtoupper($limitNo_cs);
     }
 
     $query_cs = "INSERT INTO tb_order_cs VALUES (
@@ -629,7 +635,7 @@ function order_cs($order_cs)
 }
 
 // Hapus Daftar Orderan Cuci Satuan
-function del_or_cs($or_numb_cs)
+function delOrCs($or_numb_cs)
 {
     global $db;
     $del_query_cs = "DELETE FROM tb_order_cs WHERE or_cs_number='$or_numb_cs'";
@@ -642,7 +648,7 @@ function del_or_cs($or_numb_cs)
 
 /* START: Transaksi Bayar */
 // transaksi cuci komplit
-function transaksi_ck($trans_ck)
+function transaksiCk($trans_ck)
 {
     global $db;
 
@@ -689,7 +695,7 @@ function transaksi_ck($trans_ck)
 }
 
 // transaksi cuci satuan
-function transaksi_cs($trans_cs)
+function transaksiCs($trans_cs)
 {
     global $db;
 
@@ -737,7 +743,7 @@ function transaksi_cs($trans_cs)
 }
 
 // transaksi dry clean
-function transaksi_dc($trans_dc)
+function transaksiDc($trans_dc)
 {
     global $db;
 

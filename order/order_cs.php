@@ -1,20 +1,21 @@
 <?php
-    require_once '../_header.php';
-    if (!isset($_SESSION['login'])) {
-        echo "
+require_once '../_header.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $id_pel_cs = query("SELECT * FROM master WHERE level ='User' ORDER BY id_user");
-    $data_cs   = query("SELECT * FROM tb_cuci_satuan");
+    exit();
+}
+$id_pel_cs = query("SELECT * FROM master WHERE level ='User' ORDER BY id_user");
+$data_cs   = query("SELECT * FROM tb_cuci_satuan");
 ?>
 
 
 <?php if (isset($_POST['order_cs'])): ?>
-<?php if (order_cs($_POST) > 0): ?>
+<?php if (orderCs($_POST) > 0): ?>
 <!-- berhasil -->
 <div class="container">
     <div class="row justify-content-center">
@@ -89,12 +90,12 @@
 
                         <!-- START: form -->
                         <?php
-                        if (isset($_GET['id_user'])) {
-                            //menampilkan data pelanggan berdasarkan pilihan combobox ke dalam form
-                            $id_user = $_GET['id_user'];
-                            $id      = mysqli_query($db, "SELECT * FROM master WHERE id_user='$id_user' ORDER BY id_user");
-                            $id_user = mysqli_fetch_array($id);
-                        ?>
+if (isset($_GET['id_user'])) {
+    //menampilkan data pelanggan berdasarkan pilihan combobox ke dalam form
+    $id_user = $_GET['id_user'];
+    $id      = mysqli_query($db, "SELECT * FROM master WHERE id_user='$id_user' ORDER BY id_user");
+    $id_user = mysqli_fetch_array($id);
+    ?>
                         <form action="" method="post">
                             <div class="row d-flex">
                                 <div class="col-12 col-md-6">
@@ -172,7 +173,8 @@
                                 </div>
                             </div>
                         </form>
-                        <?php }?>
+                        <?php
+}?>
                         <!-- END: form -->
                     </div>
                 </div>

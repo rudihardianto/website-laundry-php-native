@@ -1,13 +1,14 @@
 <?php
-    require_once '_functions.php';
-    if (isset($_SESSION["login"]) && isset($_SESSION['username'])) {
-        echo "
+require_once '_functions.php';
+
+if (isset($_SESSION["login"]) && isset($_SESSION['username'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,37 +29,37 @@
 
 <body>
 
-    <?php 
-        if (isset($_POST['login'])) {
-            $username = $_POST['username'];   
-            $password = $_POST['password'];   
+    <?php
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-            $data = mysqli_query($db,  "SELECT * FROM master WHERE username = '$username'");
+    $data = mysqli_query($db, "SELECT * FROM master WHERE username = '$username'");
 
-            // cek username
-            if (mysqli_num_rows($data) > 0) {
-                // cek password
-                $hasil = mysqli_fetch_assoc($data);
-                if (password_verify($password, $hasil['password'])) {
-                    // set session
-			        $_SESSION['id_user'] = $hasil['id_user'];
-			        $_SESSION['id_pelanggan'] = $hasil['id_pelanggan'];
-			        $_SESSION['nama'] = $hasil['nama'];
-                    $_SESSION['username'] = $hasil['username'];;
-			        $_SESSION['email'] = $hasil['email'];
-			        $_SESSION['no_telp'] = $hasil['no_telp'];
-			        $_SESSION['alamat'] = $hasil['alamat'];
-			        $_SESSION['password'] = $hasil['password'];
-			        $_SESSION['level'] = $hasil['level'];
-                    $_SESSION['login'] = true;
-                    
-                    echo "
+    // cek username
+    if (mysqli_num_rows($data) > 0) {
+        // cek password
+        $hasil = mysqli_fetch_assoc($data);
+        if (password_verify($password, $hasil['password'])) {
+            // set session
+            $_SESSION['id_user']      = $hasil['id_user'];
+            $_SESSION['id_pelanggan'] = $hasil['id_pelanggan'];
+            $_SESSION['nama']         = $hasil['nama'];
+            $_SESSION['username']     = $hasil['username'];
+            $_SESSION['email']        = $hasil['email'];
+            $_SESSION['no_telp']      = $hasil['no_telp'];
+            $_SESSION['alamat']       = $hasil['alamat'];
+            $_SESSION['password']     = $hasil['password'];
+            $_SESSION['level']        = $hasil['level'];
+            $_SESSION['login']        = true;
+
+            echo "
                     <script>
                         document.location='http://dry_laundry.test';
                     </script>
                     ";
-                } else {
-                    echo '
+        } else {
+            echo '
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col col-md-4 mt-5">
@@ -70,11 +71,11 @@
                         </div>
                     </div>
                     ';
-                    header("refresh:2"); // refresh halaman 2 detik
-                }
-            }
+            header("refresh:2"); // refresh halaman 2 detik
         }
-    ?>
+    }
+}
+?>
 
     <section id="login" class="login mt-5">
         <div class="container">

@@ -1,5 +1,5 @@
 <?php 
-    require_once('_functions.php');
+    require_once '_functions.php';
 
     // cek apabila user sudah login
     if (isset($_SESSION["login"]) && isset($_SESSION['master'])) {

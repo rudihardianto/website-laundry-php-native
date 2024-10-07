@@ -1,5 +1,6 @@
 <?php
 require_once '../_header.php';
+
 if (!isset($_SESSION['login'])) {
     echo "
         <script>
@@ -18,7 +19,7 @@ if (isset($_POST["ubah_password"])) {
     $cfm_pw = $_POST["confirm_password"];
 
     // cek apakah old password benar
-    $sql    = "SELECT * FROM master WHERE id_user = '".$id_user."'";
+    $sql    = "SELECT * FROM master WHERE id_user = '" . $id_user . "'";
     $result = mysqli_query($db, $sql);
     $row    = mysqli_fetch_object($result);
 
@@ -27,7 +28,7 @@ if (isset($_POST["ubah_password"])) {
         // jika new password & confirm password sama
         if ($new_pw == $cfm_pw) {
             // ubah password
-            $sql = "UPDATE master SET password = '".password_hash($new_pw, PASSWORD_DEFAULT)."' WHERE id_user = '".$id_user."'";
+            $sql = "UPDATE master SET password = '" . password_hash($new_pw, PASSWORD_DEFAULT) . "' WHERE id_user = '" . $id_user . "'";
             mysqli_query($db, $sql);
 
             echo "

@@ -1,15 +1,16 @@
-<?php 
-    require_once('../../_header.php');
-    if (!isset($_SESSION['login'])) {
-        echo "
+<?php
+require_once '../../_header.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $get_id = $_GET['id_ck'];
-    $data = query("SELECT * FROM tb_riwayat_ck WHERE id_ck = $get_id")[0];
+    exit();
+}
+$get_id = $_GET['id_ck'];
+$data   = query("SELECT * FROM tb_riwayat_ck WHERE id_ck = $get_id")[0];
 ?>
 
 <!-- START: menu -->

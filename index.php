@@ -1,4 +1,5 @@
 <?php
+    require_once '_functions.php';
     require_once '_header.php';
     $jml_karyawan = count(query('SELECT * FROM master WHERE level ="Karyawan"'));
 ?>

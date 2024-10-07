@@ -1,32 +1,33 @@
-<?php 
-    require_once('../../_functions.php');
-    if (!isset($_SESSION['login'])) {
-        echo "
+<?php
+require_once '../../_functions.php';
+
+if (!isset($_SESSION['login'])) {
+    echo "
         <script>
             document.location='http://dry_laundry.test';
         </script>
         ";
-        exit();
-    }
-    $nomor_or = $_GET['or_cs_number'];
-    $data = query("SELECT * FROM tb_order_cs WHERE or_cs_number = '$nomor_or'")[0];
+    exit();
+}
+$nomor_or = $_GET['or_cs_number'];
+$data     = query("SELECT * FROM tb_order_cs WHERE or_cs_number = '$nomor_or'")[0];
 
-    if (isset($_POST['bayar'])) {
-        if (transaksi_cs($_POST) > 0) {
-            echo "
+if (isset($_POST['bayar'])) {
+    if (transaksi_cs($_POST) > 0) {
+        echo "
             <script>
                 alert('Pembayaran Berhasil!');
                 document.location='http://dry_laundry.test/riwayat_transaksi/index.php';
             </script>
         ";
-        } else {
-            echo "
+    } else {
+        echo "
             <script>
                 alert('Pembayaran Gagal!');
             </script>
         ";
-        }
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +78,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text">Rp</span>
                                         <input type="number" name="nominal" autocomplete="off" class="form-control"
-                                            placeholder="Nominal <?= 'Rp. ' . $data['tot_bayar']?>" required autofocus>
+                                            placeholder="Nominal <?='Rp. ' . $data['tot_bayar']?>" required autofocus>
                                     </div>
                                 </div>
                             </div>
