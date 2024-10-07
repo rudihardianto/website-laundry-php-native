@@ -1,10 +1,7 @@
 # dry laundry
 
 website management laundry (php native)
-
-# dry_laundry
-
-**dry_laundry** adalah sebuah website management laundry yang dibangun menggunakan PHP Native.
+**dry laundry** adalah sebuah website management laundry yang dibangun menggunakan PHP Native.
 
 ## Fitur
 
@@ -42,8 +39,8 @@ website management laundry (php native)
 
     ```php
     define('DB_HOST', 'localhost');
-    define('DB_USER', 'username');
-    define('DB_PASS', '');
+    define('DB_USER', 'root');
+    define('DB_PASS', ''); // bisa di isi 'root', tergantung konfigurasi DB kalian masing".
     define('DB_NAME', 'dry_laundry');
     ```
 
