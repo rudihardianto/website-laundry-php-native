@@ -12,7 +12,7 @@
     }
 
     if (isset($_POST['register'])) {
-        if (add_user($_POST) > 0) {
+        if (addUser($_POST) > 0) {
             echo "
                 <script>
                     alert('Selamat, Pendaftaran akun anda berhasil!');
